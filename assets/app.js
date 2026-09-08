@@ -6,10 +6,14 @@ function esc(s){return String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&l
 function fmtDrop(x){return Number(x).toFixed(2).replace(/\.00$/,'').replace(/(\.\d)0$/,'$1')+'%';}
 function addOptions(id,vals){const el=$(id);vals.forEach(v=>{const o=document.createElement('option');o.value=v;o.textContent=v;el.appendChild(o);});}
 function populateFilters(){
-  addOptions('rank',uniq(DATA.map(x=>x.rank)));addOptions('type',uniq(DATA.map(x=>x.type)));
-  addOptions('ability',uniq(DATA.flatMap(x=>x.abilities.map(a=>a.name))));addOptions('region',uniq(DATA.map(x=>x.region)));
-  $('totalStat').textContent=DATA.length;$('normalStat').textContent=DATA.filter(x=>x.rank==='一般').length;
-  $('eliteStat').textContent=DATA.filter(x=>x.rank==='菁英').length;$('bossStat').textContent=DATA.filter(x=>x.rank==='王怪').length;
+  addOptions('rank',uniq(DATA.map(x=>x.rank))); addOptions('type',uniq(DATA.map(x=>x.type)));
+  addOptions('ability',uniq(DATA.flatMap(x=>x.abilities.map(a=>a.name)))); addOptions('region',uniq(DATA.map(x=>x.region)));
+  $('totalStat').textContent=DATA.length; $('normalStat').textContent=DATA.filter(x=>x.rank==='一般').length;
+  $('eliteStat').textContent=DATA.filter(x=>x.rank==='菁英').length; $('bossStat').textContent=DATA.filter(x=>x.rank==='王怪').length;
+}
+function iconStyle(id){
+  const n=Math.max(1,Number(id)||1)-1, col=n%16, row=Math.floor(n/16);
+  return `--icon-x:${-col*35}px;--icon-y:${-row*35}px`;
 }
 function render(){
   const q=$('q').value.trim().toLowerCase(),rank=$('rank').value,type=$('type').value,ability=$('ability').value,region=$('region').value;
@@ -18,19 +22,23 @@ function render(){
     return (!q||blob.includes(q))&&(!rank||x.rank===rank)&&(!type||x.type===type)&&(!ability||x.abilities.some(a=>a.name===ability))&&(!region||x.region===region);
   });
   $('count').textContent=data.length;
-  const grid=$('grid');grid.innerHTML='';
+  const grid=$('grid'); grid.innerHTML=''; grid.className='core-list';
   if(!data.length){grid.innerHTML='<div class="empty">找不到符合條件的核心資料。</div>';return;}
+  const head=document.createElement('div'); head.className='list-head';
+  head.innerHTML='<div>核心</div><div>怪物</div><div>核心名稱／類別</div><div>能力</div><div>掉落率</div><div>出沒地圖</div><div>階級</div>';
+  grid.appendChild(head);
   data.forEach(x=>{
-    const card=document.createElement('article');card.className='card';card.style.setProperty('--accent',COLORS[x.type]||'#65788a');
-    const abilities=x.abilities.map(a=>`<div class="ability">${esc(a.name)} <strong>+${esc(a.value)}</strong></div>`).join('');
-    card.innerHTML=`<div class="topline"><div class="monster">${esc(x.monster)}</div><div class="rank">${esc(x.rank)}</div></div>
-    <div class="core-row"><span class="badge">${esc(x.type)}</span><span class="core-name">${esc(x.core)}</span></div>
-    <div class="abilities">${abilities}</div>
-    <div class="detail">區域｜<span>${esc(x.region)}</span></div>
-    <div class="footer-row"><div><div class="drop-label">核心掉落率</div><div class="drop">${fmtDrop(x.dropRate)}</div></div><button class="open-btn">查看出沒地圖</button></div>
-    <div class="more"><div class="detail">出沒地圖｜<span>${esc(x.maps||'未標示')}</span></div>${x.collection?`<div class="detail">收藏組｜<span>${esc(x.collection)}</span></div>`:''}</div>`;
-    card.querySelector('.open-btn').onclick=()=>{card.classList.toggle('expanded');card.querySelector('.open-btn').textContent=card.classList.contains('expanded')?'收合':'查看出沒地圖';};
-    grid.appendChild(card);
+    const row=document.createElement('article'); row.className='core-item'; row.style.setProperty('--accent',COLORS[x.type]||'#65788a');
+    const abilities=x.abilities.map(a=>`<span class="ability">${esc(a.name)} <strong>+${esc(a.value)}</strong></span>`).join('');
+    row.innerHTML=`
+      <div class="icon-cell"><span class="core-icon" style="${iconStyle(x.id)}" title="${esc(x.core)}"></span></div>
+      <div class="monster-cell"><strong>${esc(x.monster)}</strong><small>${esc(x.region)}</small></div>
+      <div class="core-cell"><span class="badge">${esc(x.type)}</span><span class="core-name">${esc(x.core)}</span></div>
+      <div class="abilities">${abilities}</div>
+      <div class="drop">${fmtDrop(x.dropRate)}</div>
+      <div class="map-cell"><span>${esc(x.maps||'未標示')}</span>${x.collection?`<small>${esc(x.collection)}</small>`:''}</div>
+      <div class="rank">${esc(x.rank)}</div>`;
+    grid.appendChild(row);
   });
 }
 function resetFilters(){['q','rank','type','ability','region'].forEach(id=>$(id).value='');render();}
@@ -39,13 +47,9 @@ async function boot(){
     const files=Array.from({length:10},(_,i)=>`cores/${String(i+1).padStart(2,'0')}.json`);
     const payloads=await Promise.all(files.map(async file=>{const r=await fetch(file,{cache:'no-store'});if(!r.ok)throw new Error(file);return r.json();}));
     DATA=payloads.flatMap(p=>p.cores||[]).sort((a,b)=>a.id-b.id);
-    const meta=payloads[0]||{};
-    $('updated').textContent=`資料版本 ${meta.version||'-'}｜更新 ${meta.updated||'-'}`;
-    populateFilters();render();
-  }catch(e){
-    $('grid').innerHTML='<div class="empty">核心資料載入失敗，請稍後重新整理頁面。</div>';
-  }
+    const meta=payloads[0]||{}; $('updated').textContent=`資料版本 ${meta.version||'-'}｜更新 ${meta.updated||'-'}`;
+    populateFilters(); render();
+  }catch(e){ $('grid').innerHTML='<div class="empty">核心資料載入失敗，請稍後重新整理頁面。</div>'; }
 }
 ['q','rank','type','ability','region'].forEach(id=>$(id).addEventListener(id==='q'?'input':'change',render));
-$('reset').addEventListener('click',resetFilters);
-boot();
+$('reset').addEventListener('click',resetFilters); boot();
