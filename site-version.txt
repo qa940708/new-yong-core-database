@@ -1,2 +1,2 @@
-NEW YONG Core Database v1.0.0
-Updated: 2026-09-08
+production-v1-core-v3-collection-v1
+Approved preview source: 3a3771c941e657ccc8116b4408410a4c800cb3b7
