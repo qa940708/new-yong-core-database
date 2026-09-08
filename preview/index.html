@@ -6,43 +6,64 @@
 <meta name="description" content="NEW YONG 怪物核心圖鑑：查詢怪物掉落核心、能力值、出沒地圖與掉落率。"/>
 <title>NEW YONG｜怪物核心圖鑑</title>
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml"/>
-<link rel="stylesheet" href="assets/styles.css"/>
+<link rel="stylesheet" href="assets/styles.css?v=2"/>
 </head>
 <body>
-<header><div class="header-inner">
-<div class="brand"><div class="logo">Y</div><div class="brand-copy"><strong>YONG 經典校園</strong><span>NEW YONG CLASSIC EP9 · CORE DATABASE</span></div></div>
-<div class="header-note">核心顏色只代表分類，不代表強弱</div>
-</div></header>
+<header>
+  <div class="top-line"></div>
+  <div class="header-inner">
+    <div class="brand">
+      <img class="brand-logo" alt="YONG 經典校園" src="data:image/webp;base64,UklGRrhcAABXRUJQVlA4IKxcAACwXwCdASpoAHgAPpE4m0iloyKhIjsACgFQJaQ//UgjJok6VMNViIDv9ZWmN/v1j2HqvUaaT8Gd/uzb93RqxmKrjGaRFdcv9cqNF9iZZkVIteRsMhAqVst30NJLiHy+vRS+HmHXKBDjD+q9sLLBuVGBDoYl2HhQX+5gF9Q4j4jV+Ci8QxN8m+huP8AbGQ+7iU7kguYvELIk5R0xkaUdOgJdTHBrmQyZZd2O3M7V4FSLpu7mxEUb2AvY5WYWGqXx+fV65K+pXt+KEFXpXtDEscOQGKGzDzQsacIAW27nJaTG8kA9+W7eJgd+M1z2Xhf6R58cbq4CmA5R+Wfsyf+QJpQ9xH/EdzRz2DbRM4qIUBjzDmRBKnFS/dgc1bX7rx6Q8SA7+ID/nGI2wJG/oWtXtqxWYr6COIxxhLlD17uW3Z5uC67gI+yCWJ0x3xYi+i5jZQkNnS6LxPZFk/kde9uRJO7DfH1QBP5qzT5YxS2APz4G3xRuP6iGU8C5CLZ5kHHT39ZP9kxWTzRCsxgu+tcPwIxTIazVyyKfOaGRrqOmA2qdWd5o0jA4xqMhN5U3cUj5Uw0BwkEUxj8wOgpK5XxhtO6CVjEDe3lAZ8DRx/jrKnLRhsvGFcNHaNusVRmNuUda8CxxWv1W2xt7U7kREahDClo1o8LvQIM30+dwwLxRTpx6WAKB8aI0jTCs4VNxQdUwK5J0DrqH1Q6A9NgAfBwGIWs1of4LjOCNUaU8XgwIkxiQXcIwHci1KyolbTBxm/iu2rZLBcFMrpqLaHF2Y3lJXvWJSTGvA6Ft3u7GjoB0Oia4EaCu36pd/W+iWYssUsBoR+iiHbTkYaRjYQya/TCf7JOHITCMkcIvkIIZgRnJTaPEvJP0mWz7qpp6jzYed3L3N7Edl1xH4rEe2r6ca9Oo2RlLgW5PaS1YN80fNuCjMPvbxabTAqkuzFgFA0NHwkTcMl6rNkEZw1EHIZuy7KffmWuYBbLmzvkbhcaQZ5F0Kq0/1Qj1pvUtHkd41b9i5d0ln44Z+c/ABUQnTrvTIf3hEDkJviFFuRKqi0/ZGvzzS5Jk6Q6p3RJQz+29V42n5kPTk1IIPN6o4LgD5zZyWs7jPMClFH0ZnwWM7xJwW+e4Qs+dU/BWxxd7xq+7j4gA1XgHQ2IzKaoNPtjXEXzG3RgC0/GkbBeJv3dJD4tfDxNWUJn+hO4BTwD2n6EG2QdXf4Y5HoMpgo/lq0jROU1sYcOQxlXyu3VY9gD/6SVVzeua93yPdRQR+dz6PiVEfciVh4z4Z+jLkRuSke5lBHxqz7R34L5fqPUCgvoIjUApulnxjZOEP2FZ/qncLOSmmoj1j7g5TR96tI8rF97vEvhPZHoKtaTh3ES6d2qkjpbl/dnr6P8Rd8FBTRUkeu5XkbKMuRre/sZRU+MsCpMJNWzFM0QpqmFRAqx3rZPqKxz4S0p9i2LjUYQlXvKHxpwRiWuSuosVpYmrw4CVi9U+NxiVs+IAyHILd70BRQr3SByqgBljEZTyIUCYdmXe5FEG/7Pf99+IOfyd1H5FJPiUmr11Ehe2P+e6ywPTlkyYC0hpLW0CfswfLWRvKf4ZLS75QWl9n3mFvEEXK+bFo+s4F2cvsxWjAqW4u5w6FZ0vRrd6WyoHUkfhzJBxu4wuQtJaVTdhQfMXA6+1iwbrsfX0mw+m9a1pBPkr7tm+jJoDTzlIvfqr6+r3fWfdD/xw0TRy4J66REKBMDdg+qGIoICOWqIeopWc8L6QpxE4MaoLLWQO8cxnYPeK+ra1P0uO+2MXgf/BcjVaBAfaSyGeDpZG+0nYk2sA4J0aiEZVG9in62jI/HZo6UiMKm6Q9fqeEXgDq2U6rTnBr/H3QwvaHjTwBtUhXf/mj5nF4DKc9d4rOa1tZ1B9W5tIP0fhP18NtAGbWuKi4ncx7Gup+0bn6cY6pwmKwgNpEYUG2EPN3q4Xf0m2dGJweA3SIoGwgoYzGhqLSwaQ7e4HYbAfzYt+cv6xX9HXoG5vDb7vcTnZGOZ1AKa33Zl3d9NtI36AmTYQx/Dg9tL97g9gPjSn5hOBbi9D74Pzl3Y9VwAA"/>
+      <div class="brand-copy">
+        <strong>怪物核心圖鑑</strong>
+        <span>NEW YONG CLASSIC EP9 · CORE DATABASE</span>
+      </div>
+    </div>
+    <div class="header-note">核心顏色僅代表分類，不代表強弱</div>
+  </div>
+</header>
+
 <main>
 <section class="hero">
-<div class="kicker">OFFICIAL PLAYER GUIDE</div>
-<h1>怪物核心圖鑑</h1>
-<p>搜尋怪物、核心能力或出沒地圖。官方只公開資料，不限制配裝方向；玩家可依自己的玩法自由探索。</p>
-<div class="update" id="updated">載入資料中…</div>
+  <div class="hero-frame">
+    <div class="kicker">OFFICIAL PLAYER GUIDE</div>
+    <h1>怪物核心圖鑑</h1>
+    <p>搜尋怪物、核心能力或出沒地圖。官方只公開資料，不限制配裝方向；玩家可依自己的玩法自由探索。</p>
+    <div class="update" id="updated">載入資料中…</div>
+  </div>
 </section>
+
 <section class="stats">
-<div class="stat"><div class="n" id="totalStat">0</div><div class="l">怪物核心</div></div>
-<div class="stat"><div class="n" id="normalStat">0</div><div class="l">一般怪</div></div>
-<div class="stat"><div class="n" id="eliteStat">0</div><div class="l">菁英怪</div></div>
-<div class="stat"><div class="n" id="bossStat">0</div><div class="l">王怪</div></div>
+  <div class="stat"><div class="n" id="totalStat">0</div><div class="l">怪物核心</div></div>
+  <div class="stat"><div class="n" id="normalStat">0</div><div class="l">一般怪</div></div>
+  <div class="stat"><div class="n" id="eliteStat">0</div><div class="l">菁英怪</div></div>
+  <div class="stat"><div class="n" id="bossStat">0</div><div class="l">王怪</div></div>
 </section>
+
 <section class="controls">
-<input class="search" id="q" placeholder="搜尋怪物、核心、能力或出沒地圖…"/>
-<select id="rank"><option value="">全部怪物階級</option></select>
-<select id="type"><option value="">全部核心類別</option></select>
-<select id="ability"><option value="">全部能力</option></select>
-<select id="region"><option value="">全部區域</option></select>
-<button class="reset" id="reset">清除篩選</button>
+  <input class="search" id="q" placeholder="搜尋怪物、核心、能力或出沒地圖…"/>
+  <select id="rank"><option value="">全部怪物階級</option></select>
+  <select id="type"><option value="">全部核心類別</option></select>
+  <select id="ability"><option value="">全部能力</option></select>
+  <select id="region"><option value="">全部區域</option></select>
+  <button class="reset" id="reset">清除篩選</button>
 </section>
+
 <div class="meta-row">
-<div><span id="count">0</span> 筆符合條件</div>
-<div class="legend">
-<b style="color:#e84b45">● 猛攻</b><b style="color:#d6a33b">● 守護</b><b style="color:#3d8ee8">● 精準</b><b style="color:#9b5de5">● 疾影</b><b style="color:#38b66b">● 鬥魂</b>
+  <div><span id="count">0</span> 筆符合條件</div>
+  <div class="legend">
+    <b style="color:#ef5c4f">● 猛攻</b>
+    <b style="color:#e0b454">● 守護</b>
+    <b style="color:#4da0ff">● 精準</b>
+    <b style="color:#a46cff">● 疾影</b>
+    <b style="color:#47c77a">● 鬥魂</b>
+  </div>
 </div>
-</div>
+
 <section id="grid" class="grid"></section>
 <div class="site-footer">NEW YONG CLASSIC EP9｜怪物核心公開資料庫<br>顏色僅代表核心類別，不代表核心強弱。</div>
 </main>
-<script src="assets/app.js"></script>
+
+<script src="assets/app.js?v=2"></script>
 </body>
 </html>
