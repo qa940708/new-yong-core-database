@@ -13,7 +13,7 @@ function populateFilters(){
 }
 function iconStyle(id){
   const n=Math.max(1,Number(id)||1)-1, col=n%16, row=Math.floor(n/16);
-  return `--icon-x:${-col*35}px;--icon-y:${-row*35}px`;
+  return `display:block;width:35px;height:35px;border:none;background-image:url('/preview/assets/core-icons-atlas.png?v=3');background-repeat:no-repeat;background-size:560px 315px;background-position:${-col*35}px ${-row*35}px`;
 }
 function render(){
   const q=$('q').value.trim().toLowerCase(),rank=$('rank').value,type=$('type').value,ability=$('ability').value,region=$('region').value;
