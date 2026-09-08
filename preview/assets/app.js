@@ -15,6 +15,10 @@ function iconStyle(id){
   const n=Math.max(1,Number(id)||1)-1, col=n%16, row=Math.floor(n/16);
   return `display:block;width:35px;height:35px;border:none;background-image:url('/preview/assets/core-icons-atlas.png?v=3');background-repeat:no-repeat;background-size:560px 315px;background-position:${-col*35}px ${-row*35}px`;
 }
+function syncTypeButtons(){
+  const current=$('type').value;
+  document.querySelectorAll('.type-btn').forEach(btn=>btn.classList.toggle('active',btn.dataset.type===current));
+}
 function render(){
   const q=$('q').value.trim().toLowerCase(),rank=$('rank').value,type=$('type').value,ability=$('ability').value,region=$('region').value;
   const data=DATA.filter(x=>{
@@ -22,6 +26,7 @@ function render(){
     return (!q||blob.includes(q))&&(!rank||x.rank===rank)&&(!type||x.type===type)&&(!ability||x.abilities.some(a=>a.name===ability))&&(!region||x.region===region);
   });
   $('count').textContent=data.length;
+  syncTypeButtons();
   const grid=$('grid'); grid.innerHTML=''; grid.className='core-list';
   if(!data.length){grid.innerHTML='<div class="empty">找不到符合條件的核心資料。</div>';return;}
   const head=document.createElement('div'); head.className='list-head';
@@ -52,4 +57,5 @@ async function boot(){
   }catch(e){ $('grid').innerHTML='<div class="empty">核心資料載入失敗，請稍後重新整理頁面。</div>'; }
 }
 ['q','rank','type','ability','region'].forEach(id=>$(id).addEventListener(id==='q'?'input':'change',render));
+document.querySelectorAll('.type-btn').forEach(btn=>btn.addEventListener('click',()=>{$('type').value=btn.dataset.type;render();}));
 $('reset').addEventListener('click',resetFilters); boot();
