@@ -6,7 +6,7 @@
 <meta name="description" content="NEW YONG 怪物核心圖鑑：查詢怪物掉落核心、能力值、出沒地圖與掉落率。"/>
 <title>NEW YONG｜怪物核心圖鑑</title>
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml"/>
-<link rel="stylesheet" href="assets/styles.css?v=3"/>
+<link rel="stylesheet" href="assets/styles.css?v=4"/>
 </head>
 <body>
 <header>
@@ -40,13 +40,32 @@
   <div class="stat"><div class="n" id="bossStat">0</div><div class="l">王怪</div></div>
 </section>
 
-<section class="controls">
-  <input class="search" id="q" placeholder="搜尋怪物、核心、能力或出沒地圖…"/>
-  <select id="rank"><option value="">全部怪物階級</option></select>
-  <select id="type"><option value="">全部核心類別</option></select>
-  <select id="ability"><option value="">全部能力</option></select>
-  <select id="region"><option value="">全部區域</option></select>
-  <button class="reset" id="reset">清除篩選</button>
+<section class="filter-panel">
+  <div class="filter-title-row">
+    <div>
+      <div class="filter-kicker">CORE FILTER</div>
+      <h2>核心分類</h2>
+    </div>
+    <div class="filter-hint">點擊分類可快速篩選</div>
+  </div>
+
+  <div class="type-buttons" id="typeButtons">
+    <button type="button" class="type-btn active" data-type="">全部</button>
+    <button type="button" class="type-btn attack" data-type="猛攻">猛攻</button>
+    <button type="button" class="type-btn guard" data-type="守護">守護</button>
+    <button type="button" class="type-btn accuracy" data-type="精準">精準</button>
+    <button type="button" class="type-btn shadow" data-type="疾影">疾影</button>
+    <button type="button" class="type-btn spirit" data-type="鬥魂">鬥魂</button>
+  </div>
+
+  <section class="controls">
+    <input class="search" id="q" placeholder="搜尋怪物、核心、能力或出沒地圖…"/>
+    <select id="rank"><option value="">全部怪物階級</option></select>
+    <select id="ability"><option value="">全部能力</option></select>
+    <select id="region"><option value="">全部區域</option></select>
+    <button class="reset" id="reset">清除篩選</button>
+    <select id="type" class="type-select-hidden" aria-hidden="true" tabindex="-1"><option value="">全部核心類別</option></select>
+  </section>
 </section>
 
 <div class="meta-row">
@@ -64,6 +83,6 @@
 <div class="site-footer">NEW YONG CLASSIC EP9｜怪物核心公開資料庫<br>顏色僅代表核心類別，不代表核心強弱。</div>
 </main>
 
-<script src="assets/app.js?v=2"></script>
+<script src="assets/app.js?v=4"></script>
 </body>
 </html>
