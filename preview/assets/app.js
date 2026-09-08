@@ -19,6 +19,7 @@ function syncTypeButtons(){
   const current=$('type').value;
   document.querySelectorAll('.type-btn').forEach(btn=>btn.classList.toggle('active',btn.dataset.type===current));
 }
+function rankClass(rank){return rank==='王怪'?'rank-boss':rank==='菁英'?'rank-elite':'rank-normal';}
 function render(){
   const q=$('q').value.trim().toLowerCase(),rank=$('rank').value,type=$('type').value,ability=$('ability').value,region=$('region').value;
   const data=DATA.filter(x=>{
@@ -36,13 +37,13 @@ function render(){
     const row=document.createElement('article'); row.className='core-item'; row.style.setProperty('--accent',COLORS[x.type]||'#65788a');
     const abilities=x.abilities.map(a=>`<span class="ability">${esc(a.name)} <strong>+${esc(a.value)}</strong></span>`).join('');
     row.innerHTML=`
-      <div class="icon-cell"><span class="core-icon" style="${iconStyle(x.id)}" title="${esc(x.core)}"></span></div>
+      <div class="icon-cell"><div class="icon-frame"><span class="core-icon" style="${iconStyle(x.id)}" title="${esc(x.core)}"></span></div></div>
       <div class="monster-cell"><strong>${esc(x.monster)}</strong><small>${esc(x.region)}</small></div>
       <div class="core-cell"><span class="badge">${esc(x.type)}</span><span class="core-name">${esc(x.core)}</span></div>
       <div class="abilities">${abilities}</div>
-      <div class="drop">${fmtDrop(x.dropRate)}</div>
+      <div class="drop"><small>掉落率</small><strong>${fmtDrop(x.dropRate)}</strong></div>
       <div class="map-cell"><span>${esc(x.maps||'未標示')}</span>${x.collection?`<small>${esc(x.collection)}</small>`:''}</div>
-      <div class="rank">${esc(x.rank)}</div>`;
+      <div class="rank ${rankClass(x.rank)}">${esc(x.rank)}</div>`;
     grid.appendChild(row);
   });
 }
