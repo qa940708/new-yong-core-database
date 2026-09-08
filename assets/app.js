@@ -36,8 +36,11 @@ function render(){
 function resetFilters(){['q','rank','type','ability','region'].forEach(id=>$(id).value='');render();}
 async function boot(){
   try{
-    const res=await fetch('cores.json',{cache:'no-store'});const payload=await res.json();DATA=payload.cores||[];
-    $('updated').textContent=`資料版本 ${payload.version||'-'}｜更新 ${payload.updated||'-'}`;
+    const files=Array.from({length:10},(_,i)=>`cores/${String(i+1).padStart(2,'0')}.json`);
+    const payloads=await Promise.all(files.map(async file=>{const r=await fetch(file,{cache:'no-store'});if(!r.ok)throw new Error(file);return r.json();}));
+    DATA=payloads.flatMap(p=>p.cores||[]).sort((a,b)=>a.id-b.id);
+    const meta=payloads[0]||{};
+    $('updated').textContent=`資料版本 ${meta.version||'-'}｜更新 ${meta.updated||'-'}`;
     populateFilters();render();
   }catch(e){
     $('grid').innerHTML='<div class="empty">核心資料載入失敗，請稍後重新整理頁面。</div>';
