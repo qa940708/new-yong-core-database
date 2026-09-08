@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="description" content="NEW YONG 怪物核心圖鑑：查詢怪物掉落核心、能力值、出沒地圖與掉落率。"/>
+<title>NEW YONG｜怪物核心圖鑑</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="assets/styles.css"/>
+</head>
+<body>
+<header><div class="header-inner">
+<div class="brand"><div class="logo">Y</div><div class="brand-copy"><strong>YONG 經典校園</strong><span>NEW YONG CLASSIC EP9 · CORE DATABASE</span></div></div>
+<div class="header-note">核心顏色只代表分類，不代表強弱</div>
+</div></header>
+<main>
+<section class="hero">
+<div class="kicker">OFFICIAL PLAYER GUIDE</div>
+<h1>怪物核心圖鑑</h1>
+<p>搜尋怪物、核心能力或出沒地圖。官方只公開資料，不限制配裝方向；玩家可依自己的玩法自由探索。</p>
+<div class="update" id="updated">載入資料中…</div>
+</section>
+<section class="stats">
+<div class="stat"><div class="n" id="totalStat">0</div><div class="l">怪物核心</div></div>
+<div class="stat"><div class="n" id="normalStat">0</div><div class="l">一般怪</div></div>
+<div class="stat"><div class="n" id="eliteStat">0</div><div class="l">菁英怪</div></div>
+<div class="stat"><div class="n" id="bossStat">0</div><div class="l">王怪</div></div>
+</section>
+<section class="controls">
+<input class="search" id="q" placeholder="搜尋怪物、核心、能力或出沒地圖…"/>
+<select id="rank"><option value="">全部怪物階級</option></select>
+<select id="type"><option value="">全部核心類別</option></select>
+<select id="ability"><option value="">全部能力</option></select>
+<select id="region"><option value="">全部區域</option></select>
+<button class="reset" id="reset">清除篩選</button>
+</section>
+<div class="meta-row">
+<div><span id="count">0</span> 筆符合條件</div>
+<div class="legend">
+<b style="color:#e84b45">● 猛攻</b><b style="color:#d6a33b">● 守護</b><b style="color:#3d8ee8">● 精準</b><b style="color:#9b5de5">● 疾影</b><b style="color:#38b66b">● 鬥魂</b>
+</div>
+</div>
+<section id="grid" class="grid"></section>
+<div class="site-footer">NEW YONG CLASSIC EP9｜怪物核心公開資料庫<br>顏色僅代表核心類別，不代表核心強弱。</div>
+</main>
+<script src="assets/app.js"></script>
+</body>
+</html>
