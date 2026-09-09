@@ -177,7 +177,7 @@
     });
   });
 
-  fetch(new URL('features/data.json?v=feature-production-v4', base), { cache: 'no-store' })
+  fetch(new URL('features/data.json?v=feature-production-v5', base), { cache: 'no-store' })
     .then((response) => {
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       return response.json();

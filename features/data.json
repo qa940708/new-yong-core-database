@@ -1,5 +1,5 @@
 {
-  "version": "feature-guide-production-v4",
+  "version": "feature-guide-production-v5",
   "updated": "2026-09-09",
   "features": [
     {
@@ -10,9 +10,20 @@
       "alias": "線上商城",
       "location": "遊戲畫面中央下方的快捷功能列",
       "summary": "使用商城幣瀏覽與購買商城道具，並可先查看部分道具的角色外觀預覽。",
-      "steps": ["點擊快捷列的「遊戲商城」圖示。", "使用左側分類或商品名稱搜尋要找的道具。", "確認價格、庫存與預覽內容後，加入購買欄並完成購買。"],
-      "tips": ["右側預覽可切換男性、女性與姿勢。", "購買前請確認商城幣餘額、商品名稱與數量。"],
-      "media": {"url": "assets/feature-media/item-shop-v2.mp4", "poster": "assets/feature-media/item-shop-v2.jpg", "duration": 48.5}
+      "steps": [
+        "點擊快捷列的「遊戲商城」圖示。",
+        "使用左側分類或商品名稱搜尋要找的道具。",
+        "確認價格、庫存與預覽內容後，加入購買欄並完成購買。"
+      ],
+      "tips": [
+        "右側預覽可切換男性、女性與姿勢。",
+        "購買前請確認商城幣餘額、商品名稱與數量。"
+      ],
+      "media": {
+        "url": "assets/feature-media/item-shop-v2.mp4",
+        "poster": "assets/feature-media/item-shop-v2.jpg",
+        "duration": 48.5
+      }
     },
     {
       "id": "limited-shop",
@@ -22,9 +33,20 @@
       "alias": "限時商品",
       "location": "遊戲畫面中央下方的快捷功能列",
       "summary": "依每日、每週與每月分類查看限時商品及剩餘重置時間。",
-      "steps": ["點擊快捷列的「限時商城」圖示。", "切換每日、每週或每月頁籤。", "查看商品內容與重置時間後再進行購買。"],
-      "tips": ["不同頁籤會依各自週期更新。", "畫面沒有商品時，代表目前該分類尚無可購買內容。"],
-      "media": {"url": "assets/feature-media/limited-shop.mp4", "poster": "assets/feature-media/limited-shop.jpg", "duration": 10.5}
+      "steps": [
+        "點擊快捷列的「限時商城」圖示。",
+        "切換每日、每週或每月頁籤。",
+        "查看商品內容與重置時間後再進行購買。"
+      ],
+      "tips": [
+        "不同頁籤會依各自週期更新。",
+        "畫面沒有商品時，代表目前該分類尚無可購買內容。"
+      ],
+      "media": {
+        "url": "assets/feature-media/limited-shop.mp4",
+        "poster": "assets/feature-media/limited-shop.jpg",
+        "duration": 10.5
+      }
     },
     {
       "id": "collection",
@@ -34,10 +56,26 @@
       "alias": "收藏系統",
       "location": "遊戲畫面中央下方的快捷功能列",
       "summary": "查看各收藏組合的指定核心、完成能力與目前登錄進度。",
-      "steps": ["開啟「個人收藏」，使用上方條件尋找收藏組合。", "選擇收藏組合，查看能力與指定核心。", "確認核心名稱與內容後，將符合條件的核心放入右側登錄區並完成登錄。"],
-      "tips": ["收藏需求以介面列出的指定核心為準。", "登錄前可將滑鼠移至核心圖示，核對核心名稱與能力。"],
-      "media": {"url": "assets/feature-media/collection-overview.mp4", "poster": "assets/feature-media/collection-overview.jpg", "duration": 24.5},
-      "extraMedia": {"label": "收入收藏物品", "url": "assets/feature-media/collection-register.mp4", "poster": "assets/feature-media/collection-register.jpg", "duration": 21.6}
+      "steps": [
+        "開啟「個人收藏」，使用上方條件尋找收藏組合。",
+        "選擇收藏組合，查看能力與指定核心。",
+        "確認核心名稱與內容後，將符合條件的核心放入右側登錄區並完成登錄。"
+      ],
+      "tips": [
+        "收藏需求以介面列出的指定核心為準。",
+        "登錄前可將滑鼠移至核心圖示，核對核心名稱與能力。"
+      ],
+      "media": {
+        "url": "assets/feature-media/collection-overview.mp4",
+        "poster": "assets/feature-media/collection-overview.jpg",
+        "duration": 24.5
+      },
+      "extraMedia": {
+        "label": "收入收藏物品",
+        "url": "assets/feature-media/collection-register.mp4",
+        "poster": "assets/feature-media/collection-register.jpg",
+        "duration": 21.6
+      }
     },
     {
       "id": "life-log",
@@ -47,9 +85,19 @@
       "alias": "角色紀錄",
       "location": "遊戲畫面中央下方的快捷功能列",
       "summary": "集中查看角色排名、積分、遊玩時間、連殺紀錄，以及 PVP、PVE 戰鬥紀錄。",
-      "steps": ["點擊快捷列的「生活紀錄簿」圖示。", "從左側查看排名、積分、遊玩與連殺資料。", "從右側分別查看 PVP 與 PVE 戰鬥紀錄。"],
-      "tips": ["資料會依角色目前實際紀錄顯示。"],
-      "media": {"url": "assets/feature-media/life-log.mp4", "poster": "assets/feature-media/life-log.jpg", "duration": 8}
+      "steps": [
+        "點擊快捷列的「生活紀錄簿」圖示。",
+        "從左側查看排名、積分、遊玩與連殺資料。",
+        "從右側分別查看 PVP 與 PVE 戰鬥紀錄。"
+      ],
+      "tips": [
+        "資料會依角色目前實際紀錄顯示。"
+      ],
+      "media": {
+        "url": "assets/feature-media/life-log.mp4",
+        "poster": "assets/feature-media/life-log.jpg",
+        "duration": 8
+      }
     },
     {
       "id": "ranking",
@@ -59,9 +107,19 @@
       "alias": "排行榜",
       "location": "遊戲畫面中央下方的快捷功能列",
       "summary": "按照不同榜單、遊戲模式與職業篩選伺服器玩家排名。",
-      "steps": ["點擊快捷列的「玩家排名」圖示。", "選擇全部、等級、復活、富豪或組織等榜單。", "使用左側條件切換遊戲模式與職業。"],
-      "tips": ["榜單內容與更新狀態以遊戲內顯示為準。"],
-      "media": {"url": "assets/feature-media/ranking.mp4", "poster": "assets/feature-media/ranking.jpg", "duration": 15.5}
+      "steps": [
+        "點擊快捷列的「玩家排名」圖示。",
+        "選擇全部、等級、復活、富豪或組織等榜單。",
+        "使用左側條件切換遊戲模式與職業。"
+      ],
+      "tips": [
+        "榜單內容與更新狀態以遊戲內顯示為準。"
+      ],
+      "media": {
+        "url": "assets/feature-media/ranking.mp4",
+        "poster": "assets/feature-media/ranking.jpg",
+        "duration": 15.5
+      }
     },
     {
       "id": "boss-info",
@@ -71,9 +129,20 @@
       "alias": "怪物資訊",
       "location": "遊戲畫面中央下方的快捷功能列",
       "summary": "查詢王怪的等級、血量、攻防、掉落物、出沒地圖及重生時間。",
-      "steps": ["點擊快捷列的「王怪資訊」圖示。", "從左側怪物列表選擇要查詢的王怪。", "查看右側能力、掉落物、出沒頻道、地圖與重生倒數。"],
-      "tips": ["綠色名稱與驚嘆號可協助辨識目前可查看的王怪資訊。", "實際出現狀態仍以遊戲內即時資料為準。"],
-      "media": {"url": "assets/feature-media/boss-info.mp4", "poster": "assets/feature-media/boss-info.jpg", "duration": 16.8}
+      "steps": [
+        "點擊快捷列的「王怪資訊」圖示。",
+        "從左側怪物列表選擇要查詢的王怪。",
+        "查看右側能力、掉落物、出沒頻道、地圖與重生倒數。"
+      ],
+      "tips": [
+        "綠色名稱與驚嘆號可協助辨識目前可查看的王怪資訊。",
+        "實際出現狀態仍以遊戲內即時資料為準。"
+      ],
+      "media": {
+        "url": "assets/feature-media/boss-info.mp4",
+        "poster": "assets/feature-media/boss-info.jpg",
+        "duration": 16.8
+      }
     },
     {
       "id": "ougi-system",
@@ -83,9 +152,20 @@
       "alias": "奧義技能",
       "location": "遊戲畫面中央下方的快捷功能列",
       "summary": "查看角色所屬部門的初階、中階與高階奧義，以及技能需求與效果。",
-      "steps": ["點擊快捷列的「奧義系統」圖示。", "切換初階、中階或高階奧義頁籤。", "將滑鼠移至技能圖示，查看學習條件、效果、持續時間與冷卻時間。"],
-      "tips": ["目前開放內容仍以遊戲版本公告為準。", "網站另有完整奧義技能資料頁可供查詢。"],
-      "media": {"url": "assets/feature-media/ougi-system.mp4", "poster": "assets/feature-media/ougi-system.jpg", "duration": 8.3},
+      "steps": [
+        "點擊快捷列的「奧義系統」圖示。",
+        "切換初階、中階或高階奧義頁籤。",
+        "將滑鼠移至技能圖示，查看學習條件、效果、持續時間與冷卻時間。"
+      ],
+      "tips": [
+        "目前開放內容仍以遊戲版本公告為準。",
+        "網站另有完整奧義技能資料頁可供查詢。"
+      ],
+      "media": {
+        "url": "assets/feature-media/ougi-system.mp4",
+        "poster": "assets/feature-media/ougi-system.jpg",
+        "duration": 8.3
+      },
       "link": "../ougi/"
     },
     {
@@ -95,9 +175,21 @@
       "alias": "快捷列補給設定",
       "location": "左上方 Q／W／E／A／S／D 快捷列旁的齒輪",
       "summary": "設定 HP、MP、SP 的補給門檻，啟用自動喝水，協助戰鬥時補充狀態。",
-      "steps": ["準備恢復道具並放入快捷列；影片示範放入 Q 欄。", "點擊快捷列旁的齒輪，開啟「自動喝水」。", "拖曳 HP、MP、SP 滑桿，設定各自的百分比門檻。", "按下「開始」，確認遊戲出現啟用提示。"],
-      "tips": ["影片中的百分比僅為操作示範，可依需求調整。", "使用前請確認恢復道具與剩餘數量；本功能不是自動打怪。"],
-      "media": {"url": "assets/feature-media/auto-potion-v3.mp4", "poster": "assets/feature-media/auto-potion-v3.jpg", "duration": 13.8}
+      "steps": [
+        "準備恢復道具並放入快捷列；影片示範放入 Q 欄。",
+        "點擊快捷列旁的齒輪，開啟「自動喝水」。",
+        "拖曳 HP、MP、SP 滑桿，設定各自的百分比門檻。",
+        "按下「開始」，確認遊戲出現啟用提示。"
+      ],
+      "tips": [
+        "影片中的百分比僅為操作示範，可依需求調整。",
+        "使用前請確認恢復道具與剩餘數量；本功能不是自動打怪。"
+      ],
+      "media": {
+        "url": "assets/feature-media/auto-potion-v3.mp4",
+        "poster": "assets/feature-media/auto-potion-v3.jpg",
+        "duration": 13.8
+      }
     },
     {
       "id": "crafting",
@@ -106,9 +198,43 @@
       "alias": "工匠系統",
       "location": "遊戲畫面右下方功能列的工匠系統按鈕",
       "summary": "依製作配方準備材料與遊戲幣，設定數量後合成道具；影片以奧義技能書自選箱為例。",
-      "steps": ["從右下方功能列開啟「工匠系統」。", "選擇製作分類與左側配方，查看產物與所需材料。", "核對材料數量、製作機率、製作費用，輸入生產數量。", "按下「開始製作」，完成後到背包確認產物。"],
-      "tips": ["配方的材料、費用與成功率各自不同，以選取配方顯示為準。", "影片也示範製作完成後，開啟自選箱並選擇技能書。"],
-      "media": {"url": "assets/feature-media/crafting-v4.mp4", "poster": "assets/feature-media/crafting-v4.jpg", "duration": 20}
+      "steps": [
+        "從右下方功能列開啟「工匠系統」。",
+        "選擇製作分類與左側配方，查看產物與所需材料。",
+        "核對材料數量、製作機率、製作費用，輸入生產數量。",
+        "按下「開始製作」，完成後到背包確認產物。"
+      ],
+      "tips": [
+        "配方的材料、費用與成功率各自不同，以選取配方顯示為準。",
+        "影片也示範製作完成後，開啟自選箱並選擇技能書。"
+      ],
+      "media": {
+        "url": "assets/feature-media/crafting-v4.mp4",
+        "poster": "assets/feature-media/crafting-v4.jpg",
+        "duration": 20
+      }
+    },
+    {
+      "id": "pet-system",
+      "category": "growth",
+      "name": "寵物系統",
+      "alias": "寵物召喚與技能配置",
+      "location": "背包內的寵物卡，以及召喚後的「寵物」視窗",
+      "summary": "使用寵物卡召喚夥伴，學習寵物技能並配置 A／B 欄位，也可查看寵物的名稱、類型與飽滿度。",
+      "steps": [
+        "開啟寵物禮盒，取得並使用寵物卡召喚寵物。",
+        "開啟「寵物」視窗，查看寵物資料與飽滿度。",
+        "使用寵物技能文書學習技能，再從 A／B 下拉選單選擇要配置的技能。"
+      ],
+      "tips": [
+        "影片示範 A 欄配置「攻擊力提升」、B 欄配置「防禦力提升」。",
+        "影片另展示寵物飼料；技能效果與道具使用條件，以遊戲內說明為準。"
+      ],
+      "media": {
+        "url": "assets/feature-media/pet-system-v1.mp4",
+        "poster": "assets/feature-media/pet-system-v1.jpg",
+        "duration": 37.417
+      }
     },
     {
       "id": "appearance",
@@ -117,9 +243,21 @@
       "alias": "角色外觀欄位",
       "location": "角色裝備視窗下方的「外觀」選項",
       "summary": "在角色裝備視窗切換外觀欄位，穿戴外觀道具，查看角色造型變化。",
-      "steps": ["開啟角色裝備視窗與背包，準備要穿戴的外觀道具。", "點選裝備視窗下方的「外觀」。", "將上衣、褲子、鞋子等外觀道具放入對應欄位。", "關閉視窗，在遊戲畫面確認整體造型。"],
-      "tips": ["影片示範上衣、褲子與鞋子的外觀穿戴。", "請確認外觀道具適用部位及使用限制；其他效果以道具說明為準。"],
-      "media": {"url": "assets/feature-media/appearance-v3.mp4", "poster": "assets/feature-media/appearance-v3.jpg", "duration": 16.5}
+      "steps": [
+        "開啟角色裝備視窗與背包，準備要穿戴的外觀道具。",
+        "點選裝備視窗下方的「外觀」。",
+        "將上衣、褲子、鞋子等外觀道具放入對應欄位。",
+        "關閉視窗，在遊戲畫面確認整體造型。"
+      ],
+      "tips": [
+        "影片示範上衣、褲子與鞋子的外觀穿戴。",
+        "請確認外觀道具適用部位及使用限制；其他效果以道具說明為準。"
+      ],
+      "media": {
+        "url": "assets/feature-media/appearance-v3.mp4",
+        "poster": "assets/feature-media/appearance-v3.jpg",
+        "duration": 16.5
+      }
     },
     {
       "id": "quest-guide",
@@ -128,9 +266,21 @@
       "alias": "任務追蹤與移動",
       "location": "任務視窗，以及遊戲畫面右側的任務追蹤列",
       "summary": "追蹤任務後，從右側任務目標啟動自動引導，讓角色移動至任務地點。",
-      "steps": ["開啟任務視窗，展開任務分類。", "勾選要追蹤的任務，讓目標顯示在畫面右側。", "點選右側追蹤列中的任務目標，啟動角色移動。", "抵達目的地後，依任務內容與 NPC 互動或繼續操作。"],
-      "tips": ["引導期間可使用右側「停止行動」按鈕停止移動。", "影片示範從學院前往任務 NPC；自動引導不代表自動完成所有任務。"],
-      "media": {"url": "assets/feature-media/quest-guide-v3.mp4", "poster": "assets/feature-media/quest-guide-v3.jpg", "duration": 29.25}
+      "steps": [
+        "開啟任務視窗，展開任務分類。",
+        "勾選要追蹤的任務，讓目標顯示在畫面右側。",
+        "點選右側追蹤列中的任務目標，啟動角色移動。",
+        "抵達目的地後，依任務內容與 NPC 互動或繼續操作。"
+      ],
+      "tips": [
+        "引導期間可使用右側「停止行動」按鈕停止移動。",
+        "影片示範從學院前往任務 NPC；自動引導不代表自動完成所有任務。"
+      ],
+      "media": {
+        "url": "assets/feature-media/quest-guide-v3.mp4",
+        "poster": "assets/feature-media/quest-guide-v3.jpg",
+        "duration": 29.25
+      }
     }
   ]
 }
