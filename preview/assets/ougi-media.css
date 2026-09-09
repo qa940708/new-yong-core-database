@@ -2,10 +2,12 @@
 .ougi-page .video-slot.has-video{border-style:solid;align-self:start;justify-content:flex-start;gap:8px;padding:16px;min-height:0}
 .ougi-page .video-slot .media-heading{margin:0;color:#efd091;font-size:17px}
 .ougi-page .video-slot .media-label{margin:0 0 4px;color:#cfbd9d;font-size:12px}
+.ougi-page .video-slot .media-title-row{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;width:100%;text-align:left}
+.ougi-page .video-slot .media-badges{display:flex;gap:5px;flex:none}.ougi-page .video-slot .media-badges span{padding:3px 7px;border:1px solid #6d502c;border-radius:999px;color:#c9b28a;background:#151008;font-size:10px}
 .ougi-page .video-slot video{display:block;width:100%;height:auto;max-height:none;aspect-ratio:816/490;object-fit:contain;background:#050403;border:1px solid #684820;border-radius:8px}
 .ougi-page .video-slot video[hidden],.ougi-page .video-slot button[hidden]{display:none}
 .ougi-page .video-slot .media-note{font-size:11px;line-height:1.8;margin:4px 0 0;color:#ae9a7b}
-.ougi-page .video-slot #ougi-video-status{font-size:12px;line-height:1.7;margin:0;color:#bfa982}
+.ougi-page .video-slot .media-status-row{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%}.ougi-page .video-slot #ougi-video-status{font-size:12px;line-height:1.7;margin:0;color:#bfa982;text-align:left}.ougi-page .video-slot .media-replay{width:auto;min-height:38px;padding:7px 11px;border-color:#79592f;background:#1f160b;color:#e4c787;font-size:12px;white-space:nowrap}
 .ougi-page .video-slot[data-media-status="error"]{border-style:dashed;min-height:245px;justify-content:center}
 .ougi-page .video-slot .media-retry{width:auto;padding:9px 16px;min-height:44px;border-color:#916931;color:#ead1a3;background:#251a0e}
 .ougi-page .video-slot .media-retry:focus-visible{outline:2px solid #efcb7c;outline-offset:3px}
