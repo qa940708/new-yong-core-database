@@ -1,5 +1,5 @@
 {
-  "version": "feature-guide-preview-v1",
+  "version": "feature-guide-preview-v2",
   "updated": "2026-09-09",
   "features": [
     {
@@ -10,7 +10,7 @@
       "summary": "使用商城幣瀏覽與購買商城道具，並可先查看部分道具的角色外觀預覽。",
       "steps": ["點擊快捷列的「遊戲商城」圖示。", "使用左側分類或商品名稱搜尋要找的道具。", "確認價格、庫存與預覽內容後，加入購買欄並完成購買。"],
       "tips": ["右側預覽可切換男性、女性與姿勢。", "購買前請確認商城幣餘額、商品名稱與數量。"],
-      "media": {"url": "assets/feature-media/item-shop.mp4", "poster": "assets/feature-media/item-shop.jpg", "duration": 48.5}
+      "media": {"url": "assets/feature-media/item-shop-v2.mp4", "poster": "assets/feature-media/item-shop-v2.jpg", "duration": 48.5}
     },
     {
       "id": "limited-shop",
