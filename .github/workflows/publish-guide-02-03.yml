@@ -1,0 +1,157 @@
+name: Publish completed travel and collection guides
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/publish-guide-02-03.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    outputs:
+      sha: ${{ steps.commit.outputs.sha }}
+    steps:
+      - name: Checkout current main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Prepare media tools
+        run: |
+          if ! command -v ffmpeg >/dev/null; then
+            sudo apt-get update -qq
+            sudo apt-get install -y -qq ffmpeg
+          fi
+          python3 -m py_compile .github/scripts/publish-guide-02-03.py
+          node --check .github/scripts/check-guide-02-03.cjs
+      - name: Import exact approved MP4 files and prepare guide pages
+        run: python3 .github/scripts/publish-guide-02-03.py
+      - name: Prepare browser checks
+        run: |
+          npm install --prefix "$RUNNER_TEMP/guide-browser" --no-audit --no-fund playwright
+          if command -v google-chrome >/dev/null; then
+            echo "CHROME_BIN=$(command -v google-chrome)" >> "$GITHUB_ENV"
+          else
+            "$RUNNER_TEMP/guide-browser/node_modules/.bin/playwright" install --with-deps chromium
+          fi
+      - name: Verify real playback, all chapter jumps, mobile layout and original guide
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 > "$RUNNER_TEMP/guide-http.log" 2>&1 &
+          SERVER_PID=$!
+          trap 'kill "$SERVER_PID" 2>/dev/null || true' EXIT
+          sleep 1
+          node .github/scripts/check-guide-02-03.cjs
+      - name: Save playback checks and visual evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: guide-02-03-playback-check
+          path: ${{ runner.temp }}/guide-check
+          if-no-files-found: warn
+          retention-days: 14
+      - name: Commit only the verified guide release
+        id: commit
+        run: |
+          git add -- guide/index.html guide/travel.html guide/collection.html assets/guide-series.css assets/guide-media/travel-v3* assets/guide-media/collection-v2* assets/guide-media/guide-02-03-manifest.json
+          python3 - <<'PY'
+          import subprocess
+          paths = subprocess.check_output(['git','diff','--cached','--name-only'], text=True).splitlines()
+          allowed = {'guide/index.html','guide/travel.html','guide/collection.html','assets/guide-series.css','assets/guide-media/guide-02-03-manifest.json'}
+          assert all(p in allowed or p.startswith('assets/guide-media/travel-v3') or p.startswith('assets/guide-media/collection-v2') for p in paths), 'Unrelated staged file'
+          print('Verified publication scope:', ', '.join(paths))
+          PY
+          git diff --cached --stat
+          if ! git diff --cached --quiet; then
+            git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Publish guide 02 travel and guide 03 collection with original approved videos'
+            git push origin HEAD:main
+          fi
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+  deploy:
+    needs: publish
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout the verified release
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.publish.outputs.sha }}
+      - name: Do not deploy over a newer main commit
+        env:
+          EXPECTED_SHA: ${{ needs.publish.outputs.sha }}
+        run: |
+          test "$(git ls-remote origin refs/heads/main | cut -f1)" = "$EXPECTED_SHA"
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Upload verified site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - name: Deploy official website
+        id: deployment
+        uses: actions/deploy-pages@v4
+      - name: Verify official pages and exact public video bytes
+        shell: python
+        run: |
+          import hashlib, json, pathlib, time, urllib.request
+          root = pathlib.Path('.')
+          domain = (root/'CNAME').read_text().strip()
+          assert domain == 'newyongdata.online'
+          base = 'https://' + domain + '/'
+          manifest = json.loads((root/'assets/guide-media/guide-02-03-manifest.json').read_text())
+          report = {'domain':domain, 'guides':[]}
+          for guide in manifest['guides']:
+            last_error = None
+            for attempt in range(12):
+              try:
+                suffix = '?release=guide-02-03-v1&check=' + str(time.time_ns())
+                with urllib.request.urlopen(base + guide['page'] + suffix, timeout=45) as response:
+                  page = response.read().decode('utf-8')
+                assert guide['title'] in page and '../' + guide['video'] in page
+                assert 'cloudfront.net' not in page and '_jwt=' not in page
+                with urllib.request.urlopen(base + guide['video'] + suffix, timeout=90) as response:
+                  data = response.read(guide['bytes'] + 1)
+                assert len(data) == guide['bytes']
+                assert hashlib.sha256(data).hexdigest() == guide['sha256']
+                report['guides'].append({'id':guide['id'],'page':base+guide['page'],'video':base+guide['video'],'sha256':guide['sha256'],'bytes':guide['bytes'],'status':'passed'})
+                print('LIVE VERIFIED:', guide['id'], guide['bytes'], 'bytes; original SHA-256 matched')
+                break
+              except Exception as error:
+                last_error = type(error).__name__
+                if attempt == 11:
+                  raise RuntimeError('Official site verification failed: ' + guide['id'] + ' (' + last_error + ')') from None
+                time.sleep(10)
+          with urllib.request.urlopen(base + 'guide/?release=guide-02-03-v1&check=' + str(time.time_ns()), timeout=45) as response:
+            index = response.read().decode('utf-8')
+          assert './travel.html' in index and './collection.html' in index
+          assert '../assets/guide-media/start-v1.mp4' in index
+          assert index.index('功能導覽') < index.index('核心圖鑑')
+          report['index'] = 'All three guide entries present; original video preserved; function guide remains first'
+          report['status'] = 'passed'
+          (root/'live-verification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
+          print('LIVE VERIFIED: all three guide entries and original navigation')
+      - name: Save official website verification
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: guide-02-03-live-verification
+          path: live-verification.json
+          if-no-files-found: warn
+          retention-days: 14
