@@ -1,0 +1,44 @@
+[
+  {
+    "start": 0,
+    "end": 4.5,
+    "number": "01",
+    "title": "確認核心槽"
+  },
+  {
+    "start": 4.5,
+    "end": 13,
+    "number": "02",
+    "title": "使用開孔器"
+  },
+  {
+    "start": 13,
+    "end": 24,
+    "number": "03",
+    "title": "開孔可能失敗"
+  },
+  {
+    "start": 24,
+    "end": 39,
+    "number": "04",
+    "title": "裝入核心"
+  },
+  {
+    "start": 39,
+    "end": 55,
+    "number": "05",
+    "title": "一次移除全部核心"
+  },
+  {
+    "start": 55,
+    "end": 67,
+    "number": "06",
+    "title": "同類核心不可重複"
+  },
+  {
+    "start": 67,
+    "end": 79.3,
+    "number": "07",
+    "title": "確認裝備配置"
+  }
+]
