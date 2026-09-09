@@ -25,7 +25,7 @@
   function pickers(dept) {
     $('departments').innerHTML=data.departments.map(d=>{
       const s=d.stages.initial.skills[0];
-      return `<button type="button" class="dept-btn${d.status==='planned'?' planned':''}" data-department="${d.id}" aria-pressed="${d.id===deptId}">${s?icon(s.icon):'<span class="dept-plus" aria-hidden="true">＋</span>'}<span><strong>${esc(d.name)}</strong><small>${s?'初階已開放':'預留部門・未開放'}</small></span></button>`;
+      return `<button type="button" class="dept-btn${d.status==='planned'?' planned':''}" data-department="${d.id}" aria-pressed="${d.id===deptId}">${s?icon(s.icon):'<span class="dept-plus" aria-hidden="true">＋</span>'}<span class="dept-copy"><strong>${esc(d.name)}</strong><small>${s?`初階・${esc(s.name)}`:'預留部門・未開放'}</small></span><span class="dept-state">${s?'開放':'預留'}</span></button>`;
     }).join('');
     $('stages').innerHTML=data.stages.map(s=>{
       const available=dept.stages[s.id].status==='available';
@@ -43,16 +43,20 @@
     const label=dept.name+'・'+stage.name+'・'+skill.name;
     // ougi-media-v4 posters: only original gameplay stills.
     let poster='';try{const p=new URL(v.poster,base);if(v.poster&&(p.protocol==='https:'||p.origin===location.origin))poster=p.href;}catch(_){}
-    return `<h3 class="media-heading">實機施放展示</h3><p class="media-label">${esc(label)}</p><video id="ougi-video" controls playsinline preload="metadata" width="816" height="490" poster="${esc(poster)}" aria-label="${esc(label+' 實機施放錄影')}" src="${esc(url.href)}">此瀏覽器不支援影片播放。</video><p id="ougi-video-status" role="status" aria-live="polite">正在讀取實機影片…</p><button type="button" id="ougi-video-retry" class="media-retry" hidden>重新載入影片</button><p class="media-note">${v.hasAudio===false?'此錄影無音軌。':''}錄影片段僅示範施放動作；技能持續與冷卻以等級資料為準。</p>`;
+    return `<div class="media-title-row"><div><h3 class="media-heading">實機施放展示</h3><p class="media-label">${esc(label)}</p></div><div class="media-badges"><span>實機</span><span>${fmt(v.duration||0)} 秒</span></div></div><video id="ougi-video" controls playsinline preload="metadata" width="816" height="490" poster="${esc(poster)}" aria-label="${esc(label+' 實機施放錄影')}" src="${esc(url.href)}">此瀏覽器不支援影片播放。</video><div class="media-status-row"><p id="ougi-video-status" role="status" aria-live="polite">正在讀取實機影片…</p><button type="button" id="ougi-video-replay" class="media-replay" hidden>重新播放</button></div><button type="button" id="ougi-video-retry" class="media-retry" hidden>重新載入影片</button><p class="media-note">${v.hasAudio===false?'此錄影無音軌。':''}影片僅示範施放動作；實際持續與冷卻以等級資料為準。</p>`;
   }
   function bindVideo() {
     const player=$('ougi-video');if(!player)return;
-    const slot=player.closest('.video-slot'),status=$('ougi-video-status'),retry=$('ougi-video-retry');
+    const slot=player.closest('.video-slot'),status=$('ougi-video-status'),retry=$('ougi-video-retry'),replay=$('ougi-video-replay');
     slot.dataset.mediaStatus='loading';
     const ready=()=>{if(!player.isConnected)return;player.hidden=false;retry.hidden=true;slot.dataset.mediaStatus='ready';status.textContent='點擊播放，可暫停、拖曳與全螢幕查看。';};
     player.addEventListener('loadedmetadata',ready);
-    player.addEventListener('error',()=>{if(!player.isConnected)return;player.hidden=true;retry.hidden=false;slot.dataset.mediaStatus='error';status.textContent='影片暫時無法讀取，請重新載入或稍後再試。技能資料仍可正常查閱。';});
-    retry.onclick=()=>{retry.hidden=true;slot.dataset.mediaStatus='loading';status.textContent='正在重新讀取實機影片…';player.load();};
+    player.addEventListener('play',()=>{replay.hidden=true;status.textContent='正在播放實機施放動作。';});
+    player.addEventListener('pause',()=>{if(!player.ended&&player.currentTime>0)status.textContent='影片已暫停，可拖曳時間軸繼續查看。';});
+    player.addEventListener('ended',()=>{replay.hidden=false;status.textContent='播放完畢。';});
+    player.addEventListener('error',()=>{if(!player.isConnected)return;player.hidden=true;retry.hidden=false;replay.hidden=true;slot.dataset.mediaStatus='error';status.textContent='影片暫時無法讀取，請重新載入或稍後再試。技能資料仍可正常查閱。';});
+    replay.onclick=async()=>{player.currentTime=0;try{await player.play();}catch(_){status.textContent='請點擊影片上的播放按鈕。';}};
+    retry.onclick=()=>{retry.hidden=true;replay.hidden=true;slot.dataset.mediaStatus='loading';status.textContent='正在重新讀取實機影片…';player.load();};
     if(player.readyState>=1)ready();
   }
   function render() {
@@ -60,6 +64,7 @@
     const dept=data.departments.find(d=>d.id===deptId), stage=data.stages.find(s=>s.id===stageId), entry=dept.stages[stageId];
     pickers(dept);
     $('selection-status').textContent=`${dept.name}・${stage.name}・${entry.status==='available'?'已開放':'尚未開放'}`;
+    $('active-selection').innerHTML=`<span>目前選擇</span><strong>${esc(dept.name)}</strong><i aria-hidden="true">／</i><strong>${esc(stage.name)}</strong><em>${entry.status==='available'?'已開放':'尚未開放'}</em>`;
     const available=entry.status==='available'&&entry.skills.length>0;
     $('initial-guide').hidden=!(available&&stageId==='initial');
     if(!available) {
@@ -71,7 +76,7 @@
     const v=s.video;
     const playable=videoMarkup(v,dept,stage,s);if(playable)video=playable;
     const rows=Array.from({length:s.maxLevel},(_,n)=>`<tr${n===i?' class="selected" aria-current="true"':''}><td>Lv.${n+1}</td>${s.effects.map(e=>`<td>${columnValue(e,n)}</td>`).join('')}<td>${s.duration[n]} 秒</td><td>${s.cooldown[n]} 秒</td></tr>`).join('');
-    $('skill-content').innerHTML=`<article class="ougi-panel skill-panel"><div class="skill-overview"><div><div class="skill-heading">${framed(s.icon)}<div><div class="kicker">${esc(dept.name)} · ${esc(stage.name)}</div><h2>奧義・${esc(s.name)}</h2></div></div><p class="skill-description">${esc(s.description)}技能等級越高，效果、持續與冷卻依下表變化。</p><div class="level-control"><label for="skill-level">查看技能等級</label><select id="skill-level">${Array.from({length:s.maxLevel},(_,n)=>`<option value="${n+1}"${n+1===level?' selected':''}>Lv.${n+1}${n+1===s.maxLevel?'（滿級）':''}</option>`).join('')}</select><small>僅切換資料顯示，不會操作遊戲角色。</small></div><div class="effect-grid">${s.effects.map(e=>`<div class="effect-stat"><small>Lv.${level} ${esc(e.name)}</small><strong>${effect(e,i)}</strong></div>`).join('')}</div><div class="timing-row"><span>持續時間 <strong>${s.duration[i]} 秒</strong></span><span>冷卻時間 <strong>${s.cooldown[i]} 秒</strong></span></div></div><div class="video-slot${playable?' has-video':''}">${video}</div></div><div class="growth-header"><h3>初階奧義 Lv.1～Lv.${s.maxLevel} 完整成長表</h3><span>技能等級與奧義階段分開顯示</span></div><div class="ougi-table-wrap" tabindex="0" role="region" aria-label="${esc(s.name)}完整成長表"><table class="ougi-table"><thead><tr><th scope="col">等級</th>${s.effects.map(e=>`<th scope="col">${esc(e.name)}</th>`).join('')}<th scope="col">持續</th><th scope="col">冷卻</th></tr></thead><tbody>${rows}</tbody></table></div><p class="ougi-footnote">以上為本技能的各等級效果，不將每級數值相加。初階最高 Lv.${s.maxLevel}；中高階的等級與條件另行公布。</p></article>`;
+    $('skill-content').innerHTML=`<article class="ougi-panel skill-panel"><div class="skill-heading">${framed(s.icon)}<div><div class="kicker">${esc(dept.name)} · ${esc(stage.name)}</div><h2>奧義・${esc(s.name)}</h2><p class="skill-description">${esc(s.description)}技能等級越高，效果、持續與冷卻依下表變化。</p></div><span class="skill-open-badge">初階已開放</span></div><div class="skill-overview"><div class="skill-data"><div class="level-control"><label for="skill-level">查看技能等級</label><select id="skill-level">${Array.from({length:s.maxLevel},(_,n)=>`<option value="${n+1}"${n+1===level?' selected':''}>Lv.${n+1}${n+1===s.maxLevel?'（滿級）':''}</option>`).join('')}</select><small>切換後，下方數值與成長表會同步標示。</small></div><div class="effect-grid">${s.effects.map(e=>`<div class="effect-stat"><small>Lv.${level} ${esc(e.name)}</small><strong>${effect(e,i)}</strong></div>`).join('')}</div><div class="timing-row"><span>持續時間 <strong>${s.duration[i]} 秒</strong></span><span>冷卻時間 <strong>${s.cooldown[i]} 秒</strong></span></div></div><div class="video-slot${playable?' has-video':''}">${video}</div></div><div class="growth-header"><h3>初階奧義 Lv.1～Lv.${s.maxLevel} 完整成長表</h3><span>目前查看 Lv.${level}</span></div><div class="ougi-table-wrap" tabindex="0" role="region" aria-label="${esc(s.name)}完整成長表"><table class="ougi-table"><thead><tr><th scope="col">等級</th>${s.effects.map(e=>`<th scope="col">${esc(e.name)}</th>`).join('')}<th scope="col">持續</th><th scope="col">冷卻</th></tr></thead><tbody>${rows}</tbody></table></div><p class="ougi-footnote">以上為本技能的各等級效果，不將每級數值相加。初階最高 Lv.${s.maxLevel}；中高階的等級與條件另行公布。</p></article>`;
     bindVideo();
     $('skill-level').onchange=e=>{level=Number(e.target.value);setUrl();render();$('skill-level').focus({preventScroll:true});};
   }
@@ -89,9 +94,10 @@
       const response=await fetch(new URL('ougi/data.json',base),{cache:'no-store'});if(!response.ok)throw new Error('技能資料載入失敗');data=await response.json();
       if(data.schemaVersion!==2||!Array.isArray(data.departments)||!Array.isArray(data.stages))throw new Error('技能資料格式錯誤');
       for(const d of data.departments)for(const stage of data.stages){const t=d.stages[stage.id];if(!t||!Array.isArray(t.skills))throw new Error('階段資料不完整');for(const s of t.skills){if(!Number.isInteger(s.maxLevel)||s.effects.some(e=>e.values.length!==s.maxLevel)||s.duration.length!==s.maxLevel||s.cooldown.length!==s.maxLevel)throw new Error('等級資料不完整');}}
-      fromUrl();guide();render();$('updated').textContent='奧義實機展示預覽 v4｜資料整理 '+data.updated;
+      fromUrl();guide();render();$('updated').textContent='奧義技能預覽 v5｜資料整理 '+data.updated;
       $('departments').onclick=e=>{const b=e.target.closest('[data-department]');if(!b)return;deptId=b.dataset.department;setUrl();render();document.querySelector(`[data-department="${deptId}"]`).focus({preventScroll:true});};
       $('stages').onclick=e=>{const b=e.target.closest('[data-stage]');if(!b)return;stageId=b.dataset.stage;setUrl();render();document.querySelector(`[data-stage="${stageId}"]`).focus({preventScroll:true});};
+      for(const group of [$('departments'),$('stages')])group.addEventListener('keydown',e=>{if(!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(e.key))return;const buttons=[...group.querySelectorAll('button')],current=buttons.indexOf(document.activeElement);if(current<0)return;e.preventDefault();const delta=['ArrowRight','ArrowDown'].includes(e.key)?1:-1;buttons[(current+delta+buttons.length)%buttons.length].focus();});
       window.addEventListener('popstate',()=>{fromUrl();render();});
     } catch(err) {
       $('updated').textContent='載入未完成';$('skill-content').innerHTML='<div class="empty" role="alert">奧義資料暫時無法載入。<p><button type="button" id="ougi-retry">重新載入</button></p></div>';$('ougi-retry').onclick=()=>location.reload();console.error(err);
