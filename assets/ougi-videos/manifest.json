@@ -1,0 +1,54 @@
+[
+  {
+    "department": "fighter",
+    "source": "20260909_095250.mp4",
+    "sourceIn": 0.95,
+    "sourceOut": 5.45,
+    "duration": 4.5,
+    "width": 816,
+    "height": 490,
+    "fps": 30,
+    "hasAudio": false,
+    "sha256": "3092e84f614da624e1f3b9e44f2909f8f9292307c754ceccbfc49d02805e534b",
+    "bytes": 1018464
+  },
+  {
+    "department": "sword",
+    "source": "20260909_095314.mp4",
+    "sourceIn": 0.4,
+    "sourceOut": 4.9,
+    "duration": 4.5,
+    "width": 816,
+    "height": 490,
+    "fps": 30,
+    "hasAudio": false,
+    "sha256": "3f176cbb4e17bb404739e1f7415cb95bbdc5b3374275f879651ecd08c962b96d",
+    "bytes": 1162813
+  },
+  {
+    "department": "archer",
+    "source": "20260909_095333.mp4",
+    "sourceIn": 0.25,
+    "sourceOut": 4.75,
+    "duration": 4.5,
+    "width": 816,
+    "height": 490,
+    "fps": 30,
+    "hasAudio": false,
+    "sha256": "31be5be3e14cd050fdcc0eb0904d13542ef6b8b14f149a8f6b89a0fccee91052",
+    "bytes": 1158945
+  },
+  {
+    "department": "qigong",
+    "source": "20260909_095224.mp4",
+    "sourceIn": 1.1,
+    "sourceOut": 5.6,
+    "duration": 4.5,
+    "width": 816,
+    "height": 490,
+    "fps": 30,
+    "hasAudio": false,
+    "sha256": "10f1ac1c5c2c8fbd0c9960d3ecedc3ec1802a6600f284a0c5583ed65a4a6528b",
+    "bytes": 1176846
+  }
+]

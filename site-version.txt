@@ -1,2 +1,2 @@
-production-v1-core-v3-collection-v1
-Approved preview source: 3a3771c941e657ccc8116b4408410a4c800cb3b7
+production-v2-core-v3-collection-v1-ougi-v5
+Ougi production promotion: 2026-09-09
