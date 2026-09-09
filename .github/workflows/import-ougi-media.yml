@@ -1,0 +1,213 @@
+name: Import verified ougi gameplay clips into preview
+
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/import-ougi-media.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    outputs:
+      commit: ${{ steps.commit.outputs.sha }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Prepare media verification tools
+        run: |
+          if ! command -v ffmpeg >/dev/null; then
+            sudo apt-get update -qq
+            sudo apt-get install -y -qq ffmpeg
+          fi
+      - name: Import only the four user-supplied gameplay clips
+        shell: python
+        run: |
+          import copy, hashlib, json, pathlib, subprocess, tempfile, urllib.request
+          root = pathlib.Path('.')
+          output = root / 'preview/assets/ougi-videos'
+          output.mkdir(parents=True, exist_ok=True)
+          clips = [
+            {'id':'fighter','source':'20260909_095250.mp4','start':0.95,'posterAt':1.7,'sha256':'3092e84f614da624e1f3b9e44f2909f8f9292307c754ceccbfc49d02805e534b','url':'https://d2jqrm6oza8nb6.cloudfront.net/datasets/2609cbd4-5327-4134-98e0-9a477a1264ed.mp4?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiMTRkMDcyYzU3YmE0ZjdmMiIsImJ1Y2tldCI6InJ1bndheS1kYXRhc2V0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc4OTA2MTE4OX0.5SeWpq1IDp4rj8OKECMKLqhR1gT010gjo3t2g501GvM'},
+            {'id':'sword','source':'20260909_095314.mp4','start':0.40,'posterAt':1.72,'sha256':'3f176cbb4e17bb404739e1f7415cb95bbdc5b3374275f879651ecd08c962b96d','url':'https://d2jqrm6oza8nb6.cloudfront.net/datasets/afdacfed-0e82-46cc-be13-49d1cf482b59.mp4?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiYWVhY2JkYWQ2OTkwNjMyOSIsImJ1Y2tldCI6InJ1bndheS1kYXRhc2V0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc4OTAzOTUzM30.FRcnjlEem-4c7n8GQeglXZfZYzoXnQHVv2IRNkNSIpk'},
+            {'id':'archer','source':'20260909_095333.mp4','start':0.25,'posterAt':1.9,'sha256':'31be5be3e14cd050fdcc0eb0904d13542ef6b8b14f149a8f6b89a0fccee91052','url':'https://d2jqrm6oza8nb6.cloudfront.net/datasets/3cc04a31-7356-4579-bb4f-de2b99c692f1.mp4?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiM2U0N2E0N2UwNjU4ZTFiZSIsImJ1Y2tldCI6InJ1bndheS1kYXRhc2V0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc4OTA0NTc1OH0.9pIyTyy8i6LGl0lfa-wMXmqOZa7deWjRDzNZvY9Pdqw'},
+            {'id':'qigong','source':'20260909_095224.mp4','start':1.10,'posterAt':2.0,'sha256':'10f1ac1c5c2c8fbd0c9960d3ecedc3ec1802a6600f284a0c5583ed65a4a6528b','url':'https://d2jqrm6oza8nb6.cloudfront.net/datasets/0b836f71-76da-4b12-a9df-0cb6486e05fa.mp4?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiNzE0ODBiMGIxNmY5NTUzZiIsImJ1Y2tldCI6InJ1bndheS1kYXRhc2V0cyIsInN0YWdlIjoicHJvZCIsImV4cCI6MTc4OTA5MDgyN30.xiw7OKhPjFPLj8S9C2swmeSE4KJUndmPpvkTZQJzkiY'}
+          ]
+          data_path = root / 'preview/ougi/data.json'
+          data = json.loads(data_path.read_text())
+          original = copy.deepcopy(data)
+          assert data['schemaVersion'] == 2
+          manifest = []
+          for clip in clips:
+            name = clip['id'] + '-initial-v1'
+            target = output / (name + '.mp4')
+            # Reuse a verified repository copy on a re-run; temporary transfer links are not website dependencies.
+            if not target.exists() or hashlib.sha256(target.read_bytes()).hexdigest() != clip['sha256']:
+              try:
+                with urllib.request.urlopen(clip['url'], timeout=90) as response:
+                  payload = response.read(20 * 1024 * 1024)
+              except Exception:
+                raise RuntimeError('Media transfer failed for ' + clip['id']) from None
+              assert hashlib.sha256(payload).hexdigest() == clip['sha256'], 'Media checksum mismatch'
+              target.write_bytes(payload)
+            metadata = json.loads(subprocess.check_output(['ffprobe','-v','error','-show_streams','-show_format','-of','json',str(target)]))
+            streams = metadata['streams']
+            assert len(streams) == 1 and streams[0]['codec_name'] == 'h264'
+            assert (streams[0]['width'], streams[0]['height']) == (816, 490)
+            assert streams[0]['avg_frame_rate'] == '30/1'
+            assert abs(float(metadata['format']['duration']) - 4.5) < 0.04
+            subprocess.run(['ffmpeg','-v','error','-i',str(target),'-f','null','-'],check=True)
+            poster = output / (name + '.jpg')
+            subprocess.run(['ffmpeg','-v','error','-y','-ss',str(clip['posterAt']),'-i',str(target),'-frames:v','1','-q:v','2',str(poster)],check=True)
+            dept = next(d for d in data['departments'] if d['id'] == clip['id'])
+            skill = dept['stages']['initial']['skills'][0]
+            skill['video'] = {'status':'available','url':'assets/ougi-videos/'+target.name,'poster':'assets/ougi-videos/'+poster.name,'width':816,'height':490,'hasAudio':False,'duration':4.5}
+            manifest.append({'department':clip['id'],'source':clip['source'],'sourceIn':clip['start'],'sourceOut':round(clip['start']+4.5,2),'duration':4.5,'width':816,'height':490,'fps':30,'hasAudio':False,'sha256':clip['sha256'],'bytes':target.stat().st_size})
+            print(clip['id'] + ': verified H.264, 816x490, 30fps, 4.5s; no audio track')
+          def rules_only(value):
+            value = copy.deepcopy(value)
+            value.pop('version', None)
+            for department in value['departments']:
+              for stage in department['stages'].values():
+                for skill in stage['skills']:
+                  skill.pop('video', None)
+            return value
+          assert rules_only(data) == rules_only(original), 'Non-video game data changed'
+          data['version'] = 'ougi-preview-v4-videos'
+          data_path.write_text(json.dumps(data,ensure_ascii=False,separators=(',',':'))+'\n')
+          (output/'manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n')
+          js_path = root / 'preview/assets/ougi.js'
+          js = js_path.read_text()
+          if '// ougi-media-v4 posters' not in js:
+            anchor = "    const label=dept.name+'・'+stage.name+'・'+skill.name;"
+            assert js.count(anchor) == 1, 'Unexpected player source; stop instead of overwriting'
+            addition = "\n    // ougi-media-v4 posters: only original gameplay stills.\n    let poster='';try{const p=new URL(v.poster,base);if(v.poster&&(p.protocol==='https:'||p.origin===location.origin))poster=p.href;}catch(_){}"
+            js = js.replace(anchor, anchor + addition)
+            anchor = 'width="816" height="490" hidden aria-label='
+            assert js.count(anchor) == 1
+            js = js.replace(anchor, 'width="816" height="490" poster="${esc(poster)}" aria-label=')
+          js = js.replace('影片暫時無法讀取；素材上傳完成後請重新載入。技能資料仍可正常查閱。','影片暫時無法讀取，請重新載入或稍後再試。技能資料仍可正常查閱。')
+          js = js.replace('奧義實機展示預覽 v3｜','奧義實機展示預覽 v4｜')
+          js_path.write_text(js)
+          html_path = root / 'preview/ougi/index.html'
+          html_path.write_text(html_path.read_text().replace('ougi-media-v1','ougi-media-v4'))
+          subprocess.run(['node','--check',str(js_path)],check=True)
+      - name: Prepare browser checks
+        run: |
+          npm install --prefix "$RUNNER_TEMP/ougi-browser" --no-audit --no-fund playwright
+          if command -v google-chrome >/dev/null; then
+            echo "CHROME_BIN=$(command -v google-chrome)" >> "$GITHUB_ENV"
+          else
+            "$RUNNER_TEMP/ougi-browser/node_modules/.bin/playwright" install --with-deps chromium
+          fi
+      - name: Verify real playback and preserve the catalogue
+        shell: bash
+        run: |
+          mkdir -p "$RUNNER_TEMP/ougi-check"
+          python3 -m http.server 8765 --bind 127.0.0.1 > "$RUNNER_TEMP/ougi-http.log" 2>&1 &
+          SERVER_PID=$!
+          trap 'kill "$SERVER_PID" 2>/dev/null || true' EXIT
+          node <<'JS'
+          const assert = require('node:assert/strict');
+          const fs = require('node:fs');
+          const {chromium} = require(process.env.RUNNER_TEMP + '/ougi-browser/node_modules/playwright');
+          (async()=>{
+            const browser = await chromium.launch({headless:true,...(process.env.CHROME_BIN?{executablePath:process.env.CHROME_BIN}:{})});
+            const page = await browser.newPage({viewport:{width:1440,height:1100}});
+            const errors=[];page.on('pageerror',err=>errors.push(String(err)));
+            const base='http://127.0.0.1:8765/preview/ougi/';
+            await page.goto(base);
+            await page.waitForSelector('[data-department="fighter"]');
+            const report=[];
+            for(const id of ['fighter','sword','archer','qigong']){
+              await page.locator(`[data-department="${id}"]`).click();
+              await page.waitForFunction(()=>document.querySelector('.video-slot')?.dataset.mediaStatus==='ready');
+              const v=await page.locator('#ougi-video').evaluate(el=>({src:el.currentSrc,duration:el.duration,width:el.videoWidth,height:el.videoHeight,poster:el.poster}));
+              assert(v.src.endsWith('/'+id+'-initial-v1.mp4'));
+              assert(v.poster.endsWith('/'+id+'-initial-v1.jpg'));
+              assert.equal(v.width,816);assert.equal(v.height,490);assert(Math.abs(v.duration-4.5)<0.04);
+              await page.locator('#ougi-video').evaluate(async el=>{el.muted=true;await el.play();});
+              await page.waitForFunction(()=>document.querySelector('#ougi-video').currentTime>0.25);
+              await page.locator('#ougi-video').evaluate(el=>{el.pause();el.currentTime=1.7;});
+              await page.waitForTimeout(150);
+              await page.screenshot({path:process.env.RUNNER_TEMP+'/ougi-check/'+id+'-desktop.png',fullPage:true});
+              report.push({department:id,playback:'passed',...v});
+              await page.locator('#skill-level').selectOption('1');
+              assert.equal(await page.locator('#skill-level').inputValue(),'1');
+              await page.locator('#skill-level').selectOption('9');
+            }
+            for(const stage of ['intermediate','advanced']){
+              await page.locator(`[data-stage="${stage}"]`).click();
+              assert.equal(await page.locator('#ougi-video').count(),0);
+              assert(await page.locator('#skill-content').innerText().then(s=>s.includes('尚未開放')));
+            }
+            for(const id of ['ultimate','supernatural','ninja']){
+              await page.locator(`[data-department="${id}"]`).click();
+              assert.equal(await page.locator('#ougi-video').count(),0);
+            }
+            await page.setViewportSize({width:390,height:844});
+            await page.goto(base);
+            await page.waitForFunction(()=>document.querySelector('.video-slot')?.dataset.mediaStatus==='ready');
+            assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'Mobile horizontal overflow');
+            await page.locator('#ougi-video').scrollIntoViewIfNeeded();
+            await page.screenshot({path:process.env.RUNNER_TEMP+'/ougi-check/fighter-mobile.png',fullPage:true});
+            await page.route('**/fighter-initial-v1.mp4',route=>route.abort());
+            await page.goto(base);
+            await page.waitForFunction(()=>document.querySelector('.video-slot')?.dataset.mediaStatus==='error');
+            assert(await page.locator('#ougi-video-retry').isVisible());
+            await page.unroute('**/fighter-initial-v1.mp4');
+            await page.locator('#ougi-video-retry').click();
+            await page.waitForFunction(()=>document.querySelector('.video-slot')?.dataset.mediaStatus==='ready');
+            assert.deepEqual(errors,[]);
+            fs.writeFileSync(process.env.RUNNER_TEMP+'/ougi-check/report.json',JSON.stringify({status:'passed',videos:report,mobile:'passed',reservedStages:'passed',reservedDepartments:'passed',retry:'passed',gameData:'unchanged'},null,2));
+            console.log('PASS: four actual video playbacks, level switching, reserved content, mobile layout and error/retry.');
+            await browser.close();
+          })().catch(err=>{console.error(err);process.exit(1);});
+          JS
+      - name: Keep visual and playback verification
+        uses: actions/upload-artifact@v4
+        with:
+          name: ougi-preview-playback-check
+          path: ${{ runner.temp }}/ougi-check
+          retention-days: 14
+      - name: Commit verified preview-only changes
+        id: commit
+        run: |
+          git add -- preview/assets/ougi-videos preview/assets/ougi.js preview/ougi/data.json preview/ougi/index.html
+          git diff --cached --stat
+          if ! git diff --cached --quiet; then
+            git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Integrate four trimmed ougi gameplay videos in preview'
+            git push origin HEAD:main
+          fi
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+  deploy:
+    needs: import
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    concurrency:
+      group: pages
+      cancel-in-progress: true
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.import.outputs.commit }}
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - uses: actions/deploy-pages@v4
+        id: deployment
