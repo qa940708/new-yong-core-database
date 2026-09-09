@@ -1,0 +1,13 @@
+/* guide-02-03-v1: additive styles; existing guide and catalog styles are unchanged. */
+.guide-series{display:flex;flex-wrap:wrap;gap:12px;margin:0 0 28px}
+.guide-series>a{display:flex;align-items:center;gap:11px;min-height:48px;padding:12px 18px;border:1px solid #654824;border-radius:10px;background:#171109;color:#cbb998;text-decoration:none;line-height:1.5}
+.guide-series>a>b{color:#d6a854;font-size:.875rem}
+.guide-series>a[aria-current=page]{border-color:#c7984c;background:#332411;color:#ffe0a2}
+.guide-series>a:hover{border-color:#d7a757;background:#2c2011}
+.guide-series-page .guide-player video{aspect-ratio:1040/848}
+.guide-series-page .chapter-button{min-height:72px;padding:11px 12px}
+.guide-series-page .picture-card img{aspect-ratio:1040/848}
+.chapter-connections{margin-top:28px}
+.chapter-connections .guide-series{margin-bottom:0}
+@media(max-width:850px){.guide-series-page .chapter-buttons{grid-template-columns:1fr}}
+@media(max-width:540px){.guide-series{display:grid;grid-template-columns:minmax(0,1fr);gap:9px}.guide-series>a{min-width:0;padding:12px 15px}.guide-series-page .picker-heading{flex-wrap:wrap}.guide-series-page .chapter-button{grid-template-columns:32px minmax(0,1fr) auto;gap:9px}.guide-series-page .step-number{width:32px;height:34px}.guide-series-page .chapter-eyebrow span{display:block;margin:7px 0 0}}

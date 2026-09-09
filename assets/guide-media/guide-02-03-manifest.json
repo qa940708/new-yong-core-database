@@ -1,0 +1,54 @@
+{
+  "release": "guide-02-03-v1",
+  "notes": "Original user-approved MP4 bytes. Website playback uses repository media, not temporary transfer URLs.",
+  "guides": [
+    {
+      "id": "travel",
+      "title": "操作、移動與地圖",
+      "publicTitle": "練等地圖基礎教學",
+      "sourceFilename": "NEW-YONG-guide-02-travel-preview (1).mp4",
+      "page": "guide/travel.html",
+      "video": "assets/guide-media/travel-v3.mp4",
+      "poster": "assets/guide-media/travel-v3.jpg",
+      "duration": 85,
+      "width": 1040,
+      "height": 848,
+      "hasAudio": true,
+      "sha256": "156542206092972efbe6692742d7bbb07d1de2fc1c829b2e8919456fc924ebf1",
+      "bytes": 15779850,
+      "sourcePreserved": true,
+      "chapters": [
+        0,
+        12,
+        30,
+        40,
+        64
+      ]
+    },
+    {
+      "id": "collection",
+      "title": "收藏使用方式",
+      "publicTitle": "收藏介紹",
+      "sourceFilename": "NEW-YONG-guide-03-collection-preview.mp4",
+      "page": "guide/collection.html",
+      "video": "assets/guide-media/collection-v2.mp4",
+      "poster": "assets/guide-media/collection-v2.jpg",
+      "duration": 38,
+      "width": 1040,
+      "height": 848,
+      "hasAudio": true,
+      "sha256": "2be7be0ffe1cb281f46bc9ce991e28ddc4663f195f3f722d66c463b19d7a0cdd",
+      "bytes": 2228038,
+      "sourcePreserved": true,
+      "chapters": [
+        0,
+        4,
+        10,
+        15,
+        20,
+        26,
+        31
+      ]
+    }
+  ]
+}
