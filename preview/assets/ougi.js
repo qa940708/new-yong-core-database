@@ -41,7 +41,9 @@
     let url;try{url=new URL(v.url,base);}catch(_){return null;}
     if(url.protocol!=='https:'&&url.origin!==location.origin)return null;
     const label=dept.name+'・'+stage.name+'・'+skill.name;
-    return `<h3 class="media-heading">實機施放展示</h3><p class="media-label">${esc(label)}</p><video id="ougi-video" controls playsinline preload="metadata" width="816" height="490" hidden aria-label="${esc(label+' 實機施放錄影')}" src="${esc(url.href)}">此瀏覽器不支援影片播放。</video><p id="ougi-video-status" role="status" aria-live="polite">正在讀取實機影片…</p><button type="button" id="ougi-video-retry" class="media-retry" hidden>重新載入影片</button><p class="media-note">${v.hasAudio===false?'此錄影無音軌。':''}錄影片段僅示範施放動作；技能持續與冷卻以等級資料為準。</p>`;
+    // ougi-media-v4 posters: only original gameplay stills.
+    let poster='';try{const p=new URL(v.poster,base);if(v.poster&&(p.protocol==='https:'||p.origin===location.origin))poster=p.href;}catch(_){}
+    return `<h3 class="media-heading">實機施放展示</h3><p class="media-label">${esc(label)}</p><video id="ougi-video" controls playsinline preload="metadata" width="816" height="490" poster="${esc(poster)}" aria-label="${esc(label+' 實機施放錄影')}" src="${esc(url.href)}">此瀏覽器不支援影片播放。</video><p id="ougi-video-status" role="status" aria-live="polite">正在讀取實機影片…</p><button type="button" id="ougi-video-retry" class="media-retry" hidden>重新載入影片</button><p class="media-note">${v.hasAudio===false?'此錄影無音軌。':''}錄影片段僅示範施放動作；技能持續與冷卻以等級資料為準。</p>`;
   }
   function bindVideo() {
     const player=$('ougi-video');if(!player)return;
@@ -49,7 +51,7 @@
     slot.dataset.mediaStatus='loading';
     const ready=()=>{if(!player.isConnected)return;player.hidden=false;retry.hidden=true;slot.dataset.mediaStatus='ready';status.textContent='點擊播放，可暫停、拖曳與全螢幕查看。';};
     player.addEventListener('loadedmetadata',ready);
-    player.addEventListener('error',()=>{if(!player.isConnected)return;player.hidden=true;retry.hidden=false;slot.dataset.mediaStatus='error';status.textContent='影片暫時無法讀取；素材上傳完成後請重新載入。技能資料仍可正常查閱。';});
+    player.addEventListener('error',()=>{if(!player.isConnected)return;player.hidden=true;retry.hidden=false;slot.dataset.mediaStatus='error';status.textContent='影片暫時無法讀取，請重新載入或稍後再試。技能資料仍可正常查閱。';});
     retry.onclick=()=>{retry.hidden=true;slot.dataset.mediaStatus='loading';status.textContent='正在重新讀取實機影片…';player.load();};
     if(player.readyState>=1)ready();
   }
@@ -87,7 +89,7 @@
       const response=await fetch(new URL('ougi/data.json',base),{cache:'no-store'});if(!response.ok)throw new Error('技能資料載入失敗');data=await response.json();
       if(data.schemaVersion!==2||!Array.isArray(data.departments)||!Array.isArray(data.stages))throw new Error('技能資料格式錯誤');
       for(const d of data.departments)for(const stage of data.stages){const t=d.stages[stage.id];if(!t||!Array.isArray(t.skills))throw new Error('階段資料不完整');for(const s of t.skills){if(!Number.isInteger(s.maxLevel)||s.effects.some(e=>e.values.length!==s.maxLevel)||s.duration.length!==s.maxLevel||s.cooldown.length!==s.maxLevel)throw new Error('等級資料不完整');}}
-      fromUrl();guide();render();$('updated').textContent='奧義實機展示預覽 v3｜資料整理 '+data.updated;
+      fromUrl();guide();render();$('updated').textContent='奧義實機展示預覽 v4｜資料整理 '+data.updated;
       $('departments').onclick=e=>{const b=e.target.closest('[data-department]');if(!b)return;deptId=b.dataset.department;setUrl();render();document.querySelector(`[data-department="${deptId}"]`).focus({preventScroll:true});};
       $('stages').onclick=e=>{const b=e.target.closest('[data-stage]');if(!b)return;stageId=b.dataset.stage;setUrl();render();document.querySelector(`[data-stage="${stageId}"]`).focus({preventScroll:true});};
       window.addEventListener('popstate',()=>{fromUrl();render();});
