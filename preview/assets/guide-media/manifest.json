@@ -1,0 +1,334 @@
+{
+  "source": "20260909_180919.mp4",
+  "version": "guide-preview-v7",
+  "duration": 62,
+  "size": [
+    1024,
+    848
+  ],
+  "fps": 30,
+  "hasAudio": true,
+  "narrationStatus": "user-recording-synchronized",
+  "cuts": [
+    {
+      "id": "create",
+      "start": 56,
+      "end": 64,
+      "hold": 0,
+      "length": 8,
+      "label": "初入校園｜成功建立角色",
+      "timelineStart": 0
+    },
+    {
+      "id": "gift",
+      "start": 74,
+      "end": 83,
+      "hold": 0,
+      "length": 9,
+      "label": "01｜開啟新生禮盒",
+      "timelineStart": 8
+    },
+    {
+      "id": "equipment",
+      "start": 83.5,
+      "end": 94.5,
+      "hold": 3,
+      "length": 14,
+      "label": "02｜穿上武器與防具",
+      "timelineStart": 17
+    },
+    {
+      "id": "supply",
+      "start": 102,
+      "end": 109,
+      "hold": 4,
+      "length": 11,
+      "label": "03｜準備補給",
+      "timelineStart": 31
+    },
+    {
+      "id": "battle",
+      "start": 124,
+      "end": 144,
+      "hold": 0,
+      "length": 20,
+      "label": "04｜找到怪物，開始練等",
+      "timelineStart": 42
+    }
+  ],
+  "subtitles": [
+    {
+      "start": 0,
+      "end": 8,
+      "text": "完成角色命名，選擇角色，準備進入校園。"
+    },
+    {
+      "start": 8,
+      "end": 17,
+      "text": "打開背包，開啟新生禮盒，查看裝備與道具。"
+    },
+    {
+      "start": 17,
+      "end": 24,
+      "text": "換上禮盒中的武器與防具，確認穿戴完成。"
+    },
+    {
+      "start": 24,
+      "end": 31,
+      "text": "部分新手裝備有期限，可將滑鼠移到道具上查看。"
+    },
+    {
+      "start": 31,
+      "end": 37,
+      "text": "把補給品放到快捷欄，確認自動喝水設定。"
+    },
+    {
+      "start": 37,
+      "end": 42,
+      "text": "準備好裝備與補給，就可以出發。"
+    },
+    {
+      "start": 42,
+      "end": 48,
+      "text": "前往學院內的怪物區，準備開始練等。"
+    },
+    {
+      "start": 48,
+      "end": 54,
+      "text": "準備好坐騎，按 V 就能搭乘。"
+    },
+    {
+      "start": 54,
+      "end": 58,
+      "text": "手動打怪，累積經驗。"
+    },
+    {
+      "start": 58,
+      "end": 62,
+      "text": "地上物品可按空白鍵撿取。"
+    }
+  ],
+  "videoSha256": "e266519c911e21d61be76e25c28cc660faa3b3fde7864cdf1d393d232fa1e2b5",
+  "audioType": "user supplied narration, background music and two sound effects",
+  "effects": [
+    {
+      "source": "effect-a",
+      "start": 5.95,
+      "end": 7.265125,
+      "purpose": "角色建立完成"
+    },
+    {
+      "source": "effect-b",
+      "start": 13.95,
+      "end": 16.1539375,
+      "purpose": "開啟新生禮盒"
+    },
+    {
+      "source": "effect-a",
+      "start": 28.65,
+      "end": 29.965125,
+      "purpose": "裝備確認完成"
+    },
+    {
+      "source": "effect-b",
+      "start": 46.25,
+      "end": 48.4539375,
+      "purpose": "準備搭乘坐騎"
+    },
+    {
+      "source": "effect-a",
+      "start": 56.75,
+      "end": 58.065125,
+      "purpose": "戰鬥與掉落物提示"
+    }
+  ],
+  "shortcuts": {
+    "V": "搭乘坐騎",
+    "Space": "撿取地上物品"
+  },
+  "audioDesign": {
+    "version": 7,
+    "duration": 62,
+    "containsNarration": true,
+    "narrationSource": "9月9日 (2).mp3",
+    "narrationLibraryId": "libfile_a7451d4c78648191bb9f9678cce36ed5",
+    "narrationSpeedUnchanged": true,
+    "narrationSyntheticGenerationUsed": false,
+    "voiceSegments": [
+      {
+        "id": "intro",
+        "sourceRange": [
+          2.3764791666666665,
+          5.043916666666667
+        ],
+        "start": 2.898645833333333,
+        "end": 5.566083333333333,
+        "speed": 1,
+        "text": "完成角色命名，準備進入校園。"
+      },
+      {
+        "id": "gift",
+        "sourceRange": [
+          5.3767708333333335,
+          9.635270833333333
+        ],
+        "start": 8.45,
+        "end": 12.708479166666667,
+        "speed": 1,
+        "text": "打開背包，開啟新生禮盒，看看有哪些裝備和道具。"
+      },
+      {
+        "id": "gear",
+        "sourceRange": [
+          9.974291666666666,
+          12.897583333333333
+        ],
+        "start": 17.45,
+        "end": 20.373291666666667,
+        "speed": 1,
+        "text": "換上武器與防具，確認穿戴完成。"
+      },
+      {
+        "id": "gear-expiry",
+        "sourceRange": [
+          13.2211875,
+          16.6565
+        ],
+        "start": 24.3,
+        "end": 27.7353125,
+        "speed": 1,
+        "text": "部分新手裝備有期限，記得查看道具說明。"
+      },
+      {
+        "id": "supplies",
+        "sourceRange": [
+          16.989791666666665,
+          21.2415
+        ],
+        "start": 31.35,
+        "end": 35.601708333333335,
+        "speed": 1,
+        "text": "接著準備補給，放上快捷欄，確認自動喝水設定。"
+      },
+      {
+        "id": "ready",
+        "sourceRange": [
+          21.568791666666666,
+          24.463791666666665
+        ],
+        "start": 37.15,
+        "end": 40.045,
+        "speed": 1,
+        "text": "裝備、補給都好了，就出發吧！"
+      },
+      {
+        "id": "out",
+        "sourceRange": [
+          24.7716875,
+          28.670291666666667
+        ],
+        "start": 42.35,
+        "end": 46.24860416666667,
+        "speed": 1,
+        "text": "準備好了，就到附近的怪物區，開始打怪練等吧！"
+      },
+      {
+        "id": "mount",
+        "sourceRange": [
+          28.975395833333334,
+          31.985583333333334
+        ],
+        "start": 48.4,
+        "end": 51.4101875,
+        "speed": 1,
+        "text": "準備好坐騎，按 V 鍵，就能搭乘。"
+      },
+      {
+        "id": "combat",
+        "sourceRange": [
+          32.3575,
+          34.4206875
+        ],
+        "start": 54.35,
+        "end": 56.4131875,
+        "speed": 1,
+        "text": "手動打怪，累積經驗。"
+      },
+      {
+        "id": "pickup",
+        "sourceRange": [
+          34.733,
+          37.4071875
+        ],
+        "start": 58.35,
+        "end": 61.0241875,
+        "speed": 1,
+        "text": "地上物品，按空白鍵就能撿取。"
+      }
+    ],
+    "musicSource": "背景音樂.mp4",
+    "musicSourceLibraryId": "libfile_875dc700ceb4819185989e625e42d779",
+    "musicSourceRange": [
+      0,
+      62
+    ],
+    "effectSources": [
+      {
+        "id": "effect-a",
+        "filename": "9月9日 (2)(1).mp3",
+        "libraryId": "libfile_4d86777247488191a7fc5ae94231b339"
+      },
+      {
+        "id": "effect-b",
+        "filename": "9月9日 (2)(2).mp3",
+        "libraryId": "libfile_c6875b4f660c81919ccea1daac9bc691"
+      }
+    ],
+    "effects": [
+      {
+        "source": "effect-a",
+        "start": 5.95,
+        "end": 7.265125,
+        "purpose": "角色建立完成"
+      },
+      {
+        "source": "effect-b",
+        "start": 13.95,
+        "end": 16.1539375,
+        "purpose": "開啟新生禮盒"
+      },
+      {
+        "source": "effect-a",
+        "start": 28.65,
+        "end": 29.965125,
+        "purpose": "裝備確認完成"
+      },
+      {
+        "source": "effect-b",
+        "start": 46.25,
+        "end": 48.4539375,
+        "purpose": "準備搭乘坐騎"
+      },
+      {
+        "source": "effect-a",
+        "start": 56.75,
+        "end": 58.065125,
+        "purpose": "戰鬥與掉落物提示"
+      }
+    ],
+    "oldEffectsUsed": false,
+    "musicDucking": "smooth volume reduction under spoken sections",
+    "sourceSha256": {
+      "narration": "0349019700127df5bd288c899cf3a67c41e1d4e371a820b022a029db4f6942a5",
+      "effect-a": "784ac44f8f7c4d598a39577be649d6d99308f35fd646e07360c587eadfb11169",
+      "effect-b": "67311a54f9870fa318849455e53d8d87348df8b7ab69768686d22485a33eb663"
+    },
+    "endingFade": [
+      61.15,
+      62
+    ],
+    "openingSpokenTitleRemoved": true
+  },
+  "openingTitleOverlay": false,
+  "closingTopic": "地上物品可按空白鍵撿取"
+}
