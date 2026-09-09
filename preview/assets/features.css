@@ -41,3 +41,62 @@
 @media(max-width:1050px){.feature-tabs{grid-template-columns:repeat(4,minmax(0,1fr))}.entry-links{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:760px){.feature-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));overflow:visible;padding:0}.feature-tab{min-width:0;padding:10px 5px;min-height:116px}.feature-tab small{display:none}.feature-heading h3{font-size:1.4rem}.feature-page section{scroll-margin-top:180px}}
 @media(max-width:430px){.feature-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}.entry-links{grid-template-columns:1fr 1fr}.entry-links button{padding:10px}}
+
+/* Keep the chosen tutorial in view; reveal reference material on demand. */
+.feature-page{max-width:1380px;padding-top:22px}
+.guide-intro{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:0 0 18px}
+.guide-intro h1{margin:0;color:#f2d18e;font-size:1.75rem;line-height:1.4}
+.guide-intro p{margin:6px 0 0;color:#cbbda9;font-size:1rem;line-height:1.7}
+.guide-intro .update{margin:0;flex:none;color:#baaa92;font-size:.875rem}
+.guide-disclosure{border:1px solid #644927;border-radius:10px;background:#110e09}
+.guide-disclosure>summary{display:list-item;position:relative;padding:14px 18px;color:#ddc69f;font-size:.875rem;line-height:1.7;cursor:pointer}
+.guide-disclosure>summary::marker{color:#d6ad67}
+.guide-disclosure>summary:hover{color:#ffe0a5;background:#21170d;border-radius:10px}
+.disclosure-hint{float:right;margin-left:12px;color:#baa78a;font-size:.875rem;font-weight:400}
+.interface-content{padding:0 16px 16px}
+.feature-section-title{align-items:center;margin:22px 0 12px}
+.feature-section-title h2{font-size:1rem;color:#d6bd97}
+.feature-categories{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:0 0 12px}
+.category-button{min-width:0;min-height:48px;padding:12px 10px;border:1px solid #604625;background:#110d08;color:#c6b394;font-size:1rem;font-weight:700;line-height:1.5}
+.category-button span{display:inline-grid;place-items:center;min-width:23px;margin-left:8px;border-radius:5px;background:#302311;color:#baa17b;font-size:.875rem;font-weight:400}
+.category-button[aria-pressed=true]{border-color:#dcaf60;background:#372612;color:#ffdf9d;box-shadow:inset 0 -2px #d3a052}
+.category-button[aria-pressed=true] span{background:#654619;color:#ffe4b3}
+.feature-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px;padding:0;overflow:visible}
+.feature-tab{display:flex;align-items:center;justify-content:center;gap:9px;flex:1 1 150px;width:auto;min-width:0;min-height:58px;padding:10px 14px;text-align:left;border-radius:8px}
+.feature-tab .tab-icon{flex:none;width:30px;height:30px;margin:0}
+.feature-tab strong{margin:0;font-size:1rem;line-height:1.5}
+.feature-card{grid-template-columns:minmax(0,1.08fr) minmax(0,1fr);align-items:start;gap:24px;padding:22px}
+.feature-heading{align-items:center;gap:10px;padding-bottom:12px}
+.feature-heading .feature-icon{width:34px;height:34px}
+.feature-heading .feature-number{width:34px;height:34px;font-size:.875rem}
+.feature-heading h3{font-size:1.4rem}
+.feature-summary{margin:12px 0;font-size:1rem;line-height:1.75}
+.feature-copy h4{margin:16px 0 9px}
+.location-box{padding:9px 12px;line-height:1.7}
+.feature-steps{gap:7px}
+.feature-steps li{padding:9px 10px 9px 42px;line-height:1.75}
+.feature-steps li:before{left:10px;top:10px;width:23px;height:23px}
+.feature-notes{margin-top:14px}
+.feature-notes .feature-tips{margin:0;padding:0 20px 15px 35px;color:#c4b292;line-height:1.85}
+.feature-link{margin-top:12px}
+.feature-detail{min-height:0}
+.media-caption span{color:#b5a185;font-size:.875rem}
+.feature-page .site-footer{color:#a08c70;font-size:.875rem}
+@media(max-width:1050px){.feature-card{grid-template-columns:1fr}.feature-media{max-width:760px}}
+@media(max-width:760px){
+  .feature-page{padding-top:18px}
+  .guide-intro{align-items:flex-start;flex-direction:column;gap:8px;margin-bottom:14px}
+  .guide-intro h1{font-size:1.5rem}
+  .guide-intro p{font-size:1rem}
+  .feature-section-title{flex-direction:row;align-items:center;gap:8px}
+  .feature-categories{gap:6px}
+  .category-button{padding:10px 4px;font-size:.875rem}
+  .category-button span{margin-left:4px;min-width:19px}
+  .feature-tab{flex:1 1 calc(50% - 8px);min-height:56px;padding:9px 8px;gap:7px}
+  .feature-tab strong{font-size:.875rem}
+  .feature-card{padding:14px;gap:18px}
+  .guide-disclosure>summary{padding:12px 14px}
+  .interface-map .disclosure-hint{display:none}
+  .interface-content{padding:0 10px 10px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}

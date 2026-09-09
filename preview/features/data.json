@@ -1,9 +1,10 @@
 {
-  "version": "feature-guide-preview-v3",
+  "version": "feature-guide-preview-v4",
   "updated": "2026-09-09",
   "features": [
     {
       "id": "item-shop",
+      "category": "daily",
       "icon": "assets/feature-icons/item-shop.png",
       "name": "道具商城",
       "alias": "線上商城",
@@ -15,6 +16,7 @@
     },
     {
       "id": "limited-shop",
+      "category": "daily",
       "icon": "assets/feature-icons/limited-shop.png",
       "name": "限時商城",
       "alias": "限時商品",
@@ -26,6 +28,7 @@
     },
     {
       "id": "collection",
+      "category": "growth",
       "icon": "assets/feature-icons/collection.png",
       "name": "個人收藏",
       "alias": "收藏系統",
@@ -38,6 +41,7 @@
     },
     {
       "id": "life-log",
+      "category": "battle",
       "icon": "assets/feature-icons/life-log.png",
       "name": "生活紀錄簿",
       "alias": "角色紀錄",
@@ -49,6 +53,7 @@
     },
     {
       "id": "ranking",
+      "category": "battle",
       "icon": "assets/feature-icons/ranking.png",
       "name": "玩家排名",
       "alias": "排行榜",
@@ -60,6 +65,7 @@
     },
     {
       "id": "boss-info",
+      "category": "battle",
       "icon": "assets/feature-icons/boss-info.png",
       "name": "王怪資訊",
       "alias": "怪物資訊",
@@ -71,6 +77,7 @@
     },
     {
       "id": "ougi-system",
+      "category": "growth",
       "icon": "assets/feature-icons/ougi-system.png",
       "name": "奧義系統",
       "alias": "奧義技能",
@@ -83,6 +90,7 @@
     },
     {
       "id": "auto-potion",
+      "category": "daily",
       "name": "自動喝水",
       "alias": "快捷列補給設定",
       "location": "左上方 Q／W／E／A／S／D 快捷列旁的齒輪",
@@ -93,16 +101,18 @@
     },
     {
       "id": "crafting",
+      "category": "growth",
       "name": "工匠合成",
       "alias": "工匠系統",
       "location": "遊戲畫面右下方功能列的工匠系統按鈕",
       "summary": "依製作配方準備材料與遊戲幣，設定數量後合成道具；影片以奧義技能書自選箱為例。",
       "steps": ["從右下方功能列開啟「工匠系統」。", "選擇製作分類與左側配方，查看產物與所需材料。", "核對材料數量、製作機率、製作費用，輸入生產數量。", "按下「開始製作」，完成後到背包確認產物。"],
       "tips": ["配方的材料、費用與成功率各自不同，以選取配方顯示為準。", "影片也示範製作完成後，開啟自選箱並選擇技能書。"],
-      "media": {"url": "assets/feature-media/crafting-v3.mp4", "poster": "assets/feature-media/crafting-v3.jpg", "duration": 22}
+      "media": {"url": "assets/feature-media/crafting-v4.mp4", "poster": "assets/feature-media/crafting-v4.jpg", "duration": 20}
     },
     {
       "id": "appearance",
+      "category": "growth",
       "name": "外觀系統",
       "alias": "角色外觀欄位",
       "location": "角色裝備視窗下方的「外觀」選項",
@@ -113,6 +123,7 @@
     },
     {
       "id": "quest-guide",
+      "category": "daily",
       "name": "任務自動引導",
       "alias": "任務追蹤與移動",
       "location": "任務視窗，以及遊戲畫面右側的任務追蹤列",

@@ -3,11 +3,20 @@
 
   const base = new URL('../', document.currentScript.src);
   const tabs = document.querySelector('#feature-tabs');
+  const categoryButtons = document.querySelector('#feature-categories');
+  const categoryCount = document.querySelector('#category-count');
   const detail = document.querySelector('#feature-detail');
   const updated = document.querySelector('#updated');
   const showFeatures = document.querySelector('#show-features');
   let features = [];
   let activeId = '';
+  let activeCategory = '';
+  const categories = [
+    { id: 'daily', name: '日常便利' },
+    { id: 'growth', name: '角色養成' },
+    { id: 'battle', name: '戰況查詢' }
+  ];
+  const visibleFeatures = () => features.filter((feature) => feature.category === activeCategory);
 
   const escapeHtml = (value) => String(value ?? '').replace(/[&<>'"]/g, (character) => ({
     '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;'
@@ -65,19 +74,19 @@
       <article id="panel-${escapeHtml(feature.id)}" class="feature-card" role="tabpanel" tabindex="0" aria-labelledby="tab-${escapeHtml(feature.id)}">
         <div class="feature-media">
           ${switches}
-          <video id="feature-video" controls playsinline preload="metadata" poster="${escapeHtml(mediaUrl(media.poster))}" src="${escapeHtml(mediaUrl(media.url))}">
+          <video id="feature-video" controls playsinline preload="none" poster="${escapeHtml(mediaUrl(media.poster))}" src="${escapeHtml(mediaUrl(media.url))}">
             您的瀏覽器不支援影片播放。
           </video>
           <div id="media-caption" class="media-caption"><strong>${escapeHtml(feature.name)}操作</strong><span>${formatDuration(media.duration)}・實機錄影・無旁白</span></div>
         </div>
         <div class="feature-copy">
-          <div class="feature-heading">${feature.icon ? `<img class="feature-icon" src="${escapeHtml(mediaUrl(feature.icon))}" width="34" height="34" alt="">` : `<span class="feature-number">${number}</span>`}<div><p>${escapeHtml(feature.alias)}</p><h3>${escapeHtml(feature.name)}</h3></div></div>
+          <div class="feature-heading">${feature.icon ? `<img class="feature-icon" src="${escapeHtml(mediaUrl(feature.icon))}" width="34" height="34" alt="">` : `<span class="feature-number">${number}</span>`}<h3>${escapeHtml(feature.name)}</h3></div>
           <p class="feature-summary">${escapeHtml(feature.summary)}</p>
           <div class="location-box"><span>功能入口</span><strong>${escapeHtml(feature.location)}</strong></div>
           <h4>操作步驟</h4>
           <ol class="feature-steps">${feature.steps.map((step) => `<li>${escapeHtml(step)}</li>`).join('')}</ol>
-          <h4>注意事項</h4>
-          <ul class="feature-tips">${feature.tips.map((tip) => `<li>${escapeHtml(tip)}</li>`).join('')}</ul>
+          <details class="feature-notes guide-disclosure"><summary>注意事項<span class="disclosure-hint">${feature.tips.length} 則</span></summary>
+          <ul class="feature-tips">${feature.tips.map((tip) => `<li>${escapeHtml(tip)}</li>`).join('')}</ul></details>
           ${guideLink}
         </div>
       </article>`;
@@ -91,6 +100,9 @@
     const feature = features.find((item) => item.id === id) || features[0];
     if (!feature) return;
     activeId = feature.id;
+    activeCategory = feature.category;
+    renderCategories();
+    renderTabs();
     tabs.querySelectorAll('[role="tab"]').forEach((tab) => {
       const selected = tab.dataset.id === activeId;
       tab.setAttribute('aria-selected', String(selected));
@@ -106,28 +118,48 @@
   };
 
   const renderTabs = () => {
-    tabs.innerHTML = features.map((feature, index) => `
+    tabs.setAttribute('aria-label', `${categories.find((category) => category.id === activeCategory)?.name || ''}功能`);
+    tabs.innerHTML = visibleFeatures().map((feature) => `
       <button class="feature-tab" type="button" role="tab" id="tab-${escapeHtml(feature.id)}" data-id="${escapeHtml(feature.id)}" aria-selected="false" tabindex="-1">
-        ${feature.icon ? `<img class="tab-icon" src="${escapeHtml(mediaUrl(feature.icon))}" width="34" height="34" alt="">` : `<span class="tab-number">${String(index + 1).padStart(2, '0')}</span>`}<strong>${escapeHtml(feature.name)}</strong><small>${escapeHtml(feature.alias)}</small>
+        ${feature.icon ? `<img class="tab-icon" src="${escapeHtml(mediaUrl(feature.icon))}" width="34" height="34" alt="">` : ''}<strong>${escapeHtml(feature.name)}</strong>
       </button>`).join('');
-    tabs.addEventListener('click', (event) => {
+  };
+
+  const renderCategories = () => {
+    categoryButtons.innerHTML = categories.map((category) => `
+      <button type="button" class="category-button" data-category="${category.id}" aria-pressed="${category.id === activeCategory}">${category.name}<span>${features.filter((feature) => feature.category === category.id).length}</span></button>`).join('');
+    categoryCount.textContent = `${categories.find((category) => category.id === activeCategory)?.name || ''}・${visibleFeatures().length} 項功能`;
+  };
+
+  categoryButtons.addEventListener('click', (event) => {
+    const button = event.target.closest('[data-category]');
+    if (!button) return;
+    const feature = features.find((item) => item.category === button.dataset.category);
+    if (feature) {
+      selectFeature(feature.id);
+      categoryButtons.querySelector(`[data-category="${CSS.escape(activeCategory)}"]`)?.focus({ preventScroll: true });
+    }
+  });
+
+  tabs.addEventListener('click', (event) => {
       const button = event.target.closest('[role="tab"]');
       if (button) selectFeature(button.dataset.id, true);
     });
     tabs.addEventListener('keydown', (event) => {
       if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
       event.preventDefault();
-      const current = features.findIndex((feature) => feature.id === activeId);
+      const items = visibleFeatures();
+      const current = items.findIndex((feature) => feature.id === activeId);
       let next = current;
-      if (event.key === 'ArrowLeft') next = (current - 1 + features.length) % features.length;
-      if (event.key === 'ArrowRight') next = (current + 1) % features.length;
+      if (event.key === 'ArrowLeft') next = (current - 1 + items.length) % items.length;
+      if (event.key === 'ArrowRight') next = (current + 1) % items.length;
       if (event.key === 'Home') next = 0;
-      if (event.key === 'End') next = features.length - 1;
-      selectFeature(features[next].id, true);
+      if (event.key === 'End') next = items.length - 1;
+      selectFeature(items[next].id, true);
     });
-  };
 
   const revealGuide = () => {
+    document.querySelector('.interface-map')?.removeAttribute('open');
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     document.querySelector('#feature-browser')?.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'start' });
     tabs.querySelector('[aria-selected="true"]')?.focus({ preventScroll: true });
@@ -145,7 +177,7 @@
     });
   });
 
-  fetch(new URL('features/data.json?v=feature-preview-v3', base), { cache: 'no-store' })
+  fetch(new URL('features/data.json?v=feature-preview-v4', base), { cache: 'no-store' })
     .then((response) => {
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       return response.json();
@@ -153,8 +185,7 @@
     .then((data) => {
       features = Array.isArray(data.features) ? data.features : [];
       if (!features.length) throw new Error('功能資料為空');
-      updated.textContent = `功能導覽 PREVIEW v3｜${features.length} 項功能｜實機素材 ${data.updated || ''}`;
-      renderTabs();
+      updated.textContent = `${features.length} 項功能・PREVIEW v4`;
       selectFeature(new URLSearchParams(location.search).get('feature') || features[0].id);
     })
     .catch(() => {

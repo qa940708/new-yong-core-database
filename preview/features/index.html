@@ -8,7 +8,7 @@
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../assets/styles.css?v=5">
 <link rel="stylesheet" href="../assets/collections.css?v=collection-v1-core-v3">
-<link rel="stylesheet" href="../assets/features.css?v=feature-preview-v3">
+<link rel="stylesheet" href="../assets/features.css?v=feature-preview-v4">
 </head>
 <body class="feature-body">
 <a class="skip-link" href="#feature-browser">跳到功能選擇</a>
@@ -18,24 +18,27 @@
 <div class="header-note">從介面位置快速找到功能</div></div>
 <nav class="guide-nav" aria-label="資料庫導覽"><a href="../">核心圖鑑</a><a href="../collections/">收藏圖鑑</a><a href="../ougi/">奧義技能</a><a href="./" aria-current="page">功能導覽</a><span>預覽測試區・正式內容請以主站為準</span></nav></header>
 <main class="feature-page">
-<section class="hero"><div class="hero-frame"><div class="kicker">PLAYER FEATURE GUIDE</div><h1>玩家功能導覽</h1><p>從遊戲介面找到功能入口，再用短片掌握實際操作。</p><div id="updated" class="update" role="status">11 項功能・第一、二批預覽</div><span class="feature-seal" aria-hidden="true">導</span></div></section>
-<section class="interface-map" aria-labelledby="interface-map-title">
-<div class="feature-section-title"><div><span>01</span><h2 id="interface-map-title">入口在哪裡？</h2></div><small>中央快捷列 7 項・其他介面 4 項</small></div>
-<div class="interface-shot"><img src="../assets/feature-media/ui-overview-v3.jpg" width="1024" height="770" alt="NEW YONG 遊戲主介面，七個主要功能圖示位於中央下方；自動喝水設定在左上快捷列旁"><button type="button" id="show-features" class="shortcut-callout"><strong>中央快捷列・7 項功能</strong><span>點此查看操作教學</span></button></div>
+<div class="guide-intro"><div><h1>玩家功能導覽</h1><p>選擇功能，查看入口、操作短片與步驟。</p></div><span id="updated" class="update" role="status">11 項功能・PREVIEW v4</span></div>
+<details class="interface-map guide-disclosure">
+<summary><span>找不到遊戲內的功能入口？</span><span class="disclosure-hint">查看介面總覽</span></summary>
+<div class="interface-content">
+<div class="interface-shot"><img src="../assets/feature-media/ui-overview-v3.jpg" loading="lazy" width="1024" height="770" alt="NEW YONG 遊戲主介面，七個主要功能圖示位於中央下方；自動喝水設定在左上快捷列旁"><button type="button" id="show-features" class="shortcut-callout"><strong>中央快捷列・7 項功能</strong><span>點此查看操作教學</span></button></div>
 <div class="entry-links" aria-label="其他功能入口">
 <button type="button" data-feature="auto-potion"><span>左上快捷列旁</span><strong>自動喝水</strong></button>
 <button type="button" data-feature="crafting"><span>右下功能列</span><strong>工匠合成</strong></button>
 <button type="button" data-feature="appearance"><span>角色裝備視窗</span><strong>外觀系統</strong></button>
 <button type="button" data-feature="quest-guide"><span>任務視窗／右側追蹤列</span><strong>任務自動引導</strong></button>
 </div>
-</section>
+</div>
+</details>
 <section id="feature-browser" class="feature-browser" aria-labelledby="feature-browser-title">
-<div class="feature-section-title"><div><span>02</span><h2 id="feature-browser-title">選擇功能</h2></div><small>點選名稱後切換實機操作與說明</small></div>
+<div class="feature-section-title"><h2 id="feature-browser-title">選擇功能</h2><small id="category-count"></small></div>
+<div id="feature-categories" class="feature-categories" role="group" aria-label="功能分類"></div>
 <div id="feature-tabs" class="feature-tabs" role="tablist" aria-label="玩家功能"></div>
 <div id="feature-detail" class="feature-detail"><div class="empty">載入功能資料中…</div></div>
 </section>
 <noscript><p class="catalog-note">請啟用 JavaScript，以切換功能與播放教學影片。</p></noscript>
 <footer class="site-footer">NEW YONG CLASSIC EP9｜玩家功能導覽<br>操作畫面為實機錄影；功能內容以正式遊戲版本為準。</footer>
 </main>
-<script src="../assets/features.js?v=feature-preview-v3" defer></script>
+<script src="../assets/features.js?v=feature-preview-v4" defer></script>
 </body></html>
