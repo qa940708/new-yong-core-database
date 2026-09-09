@@ -50,7 +50,7 @@ const { chromium } = require(path.join(process.env.RUNNER_TEMP, 'guide-browser/n
       chapters.push({ seek, playback: 'passed' });
     }
     await page.locator('#guide-video').evaluate(async video => { video.currentTime = video.duration - 0.6; await video.play(); });
-    await page.waitForFunction(() => document.querySelector('#guide-video').ended, { timeout: 15000 });
+    await page.waitForFunction(() => document.querySelector('#guide-video').ended, undefined, { timeout: 15000 });
     await page.locator('#guide-video').evaluate(video => { video.currentTime = 2.2; });
     await page.locator('img').evaluateAll(images => images.forEach(image => { image.loading = 'eager'; }));
     await page.waitForFunction(() => Array.from(document.images).every(image => image.complete && image.naturalWidth > 0));
@@ -58,6 +58,7 @@ const { chromium } = require(path.join(process.env.RUNNER_TEMP, 'guide-browser/n
     assert.equal(await page.locator('.player-meta a').getAttribute('href'), '../' + guide.video);
     await page.screenshot({ path: path.join(out, guide.id + '-desktop.png'), fullPage: true });
     report.guides.push({ id: guide.id, status: 'passed', metadata, chapters, endPlayback: 'passed', originalSha256: guide.sha256 });
+    console.log('PASS:', guide.id, 'playback, all chapter jumps, video ending and images');
     for (const width of [390, 320]) {
       await page.setViewportSize({ width, height: 844 });
       assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), guide.id + ': mobile horizontal overflow');
@@ -79,14 +80,27 @@ const { chromium } = require(path.join(process.env.RUNNER_TEMP, 'guide-browser/n
   await page.setViewportSize({ width: 390, height: 844 });
   assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), 'Original page mobile overflow');
   await page.screenshot({ path: path.join(out, 'guide-index-mobile.png'), fullPage: true });
-  await page.route('**/travel-v3.mp4', route => route.abort());
+  fs.writeFileSync(path.join(out, 'report.json'), JSON.stringify(report, null, 2));
+  // Begin the deliberate network failure only after the deferred player listeners exist.
   await page.goto(origin + '/guide/travel.html');
+  await page.waitForFunction(() => document.querySelector('#guide-video')?.readyState >= 1);
+  let blockedRequests = 0;
+  await page.route('**/travel-v3.mp4*', route => { blockedRequests += 1; return route.abort('failed'); });
+  await page.locator('#guide-video').evaluate(video => {
+    video.pause();
+    video.muted = true;
+    video.preload = 'auto';
+    video.querySelector('source').src = '../assets/guide-media/travel-v3.mp4?test=deliberate-load-error';
+    video.load();
+    video.play().catch(() => {});
+  });
   await page.waitForFunction(() => document.querySelector('#guide-video-error')?.hidden === false);
-  await page.unroute('**/travel-v3.mp4');
+  assert(blockedRequests > 0, 'The failure test did not intercept a media request');
+  await page.unroute('**/travel-v3.mp4*');
   await page.reload();
   await page.waitForFunction(() => document.querySelector('#guide-video')?.readyState >= 1);
   assert.equal(await page.locator('#guide-video-error').isVisible(), false);
-  report.errorFallback = 'Load error shown; normal playback restored after reload';
+  report.errorFallback = 'Actual media request blocked after initialization; load error shown; normal playback restored after reload';
   assert.deepEqual(errors, []);
   assert.deepEqual(missing, []);
   report.status = 'passed';
