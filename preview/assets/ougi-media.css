@@ -1,0 +1,12 @@
+/* Gameplay media only; preserve the approved catalogue layout and data. */
+.ougi-page .video-slot.has-video{border-style:solid;align-self:start;justify-content:flex-start;gap:8px;padding:16px;min-height:0}
+.ougi-page .video-slot .media-heading{margin:0;color:#efd091;font-size:17px}
+.ougi-page .video-slot .media-label{margin:0 0 4px;color:#cfbd9d;font-size:12px}
+.ougi-page .video-slot video{display:block;width:100%;height:auto;max-height:none;aspect-ratio:816/490;object-fit:contain;background:#050403;border:1px solid #684820;border-radius:8px}
+.ougi-page .video-slot video[hidden],.ougi-page .video-slot button[hidden]{display:none}
+.ougi-page .video-slot .media-note{font-size:11px;line-height:1.8;margin:4px 0 0;color:#ae9a7b}
+.ougi-page .video-slot #ougi-video-status{font-size:12px;line-height:1.7;margin:0;color:#bfa982}
+.ougi-page .video-slot[data-media-status="error"]{border-style:dashed;min-height:245px;justify-content:center}
+.ougi-page .video-slot .media-retry{width:auto;padding:9px 16px;min-height:44px;border-color:#916931;color:#ead1a3;background:#251a0e}
+.ougi-page .video-slot .media-retry:focus-visible{outline:2px solid #efcb7c;outline-offset:3px}
+@media(max-width:760px){.ougi-page .video-slot.has-video{padding:12px;gap:7px}.ougi-page .video-slot .media-heading{font-size:16px}}
