@@ -177,7 +177,7 @@
     });
   });
 
-  fetch(new URL('features/data.json?v=feature-preview-v4', base), { cache: 'no-store' })
+  fetch(new URL('features/data.json?v=feature-preview-v5', base), { cache: 'no-store' })
     .then((response) => {
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       return response.json();
@@ -185,7 +185,7 @@
     .then((data) => {
       features = Array.isArray(data.features) ? data.features : [];
       if (!features.length) throw new Error('功能資料為空');
-      updated.textContent = `${features.length} 項功能・PREVIEW v4`;
+      updated.textContent = `${features.length} 項功能・PREVIEW v5`;
       selectFeature(new URLSearchParams(location.search).get('feature') || features[0].id);
     })
     .catch(() => {
