@@ -1,9 +1,10 @@
 {
-  "version": "feature-guide-preview-v2",
+  "version": "feature-guide-preview-v3",
   "updated": "2026-09-09",
   "features": [
     {
       "id": "item-shop",
+      "icon": "assets/feature-icons/item-shop.png",
       "name": "道具商城",
       "alias": "線上商城",
       "location": "遊戲畫面中央下方的快捷功能列",
@@ -14,6 +15,7 @@
     },
     {
       "id": "limited-shop",
+      "icon": "assets/feature-icons/limited-shop.png",
       "name": "限時商城",
       "alias": "限時商品",
       "location": "遊戲畫面中央下方的快捷功能列",
@@ -24,6 +26,7 @@
     },
     {
       "id": "collection",
+      "icon": "assets/feature-icons/collection.png",
       "name": "個人收藏",
       "alias": "收藏系統",
       "location": "遊戲畫面中央下方的快捷功能列",
@@ -35,6 +38,7 @@
     },
     {
       "id": "life-log",
+      "icon": "assets/feature-icons/life-log.png",
       "name": "生活紀錄簿",
       "alias": "角色紀錄",
       "location": "遊戲畫面中央下方的快捷功能列",
@@ -45,6 +49,7 @@
     },
     {
       "id": "ranking",
+      "icon": "assets/feature-icons/ranking.png",
       "name": "玩家排名",
       "alias": "排行榜",
       "location": "遊戲畫面中央下方的快捷功能列",
@@ -55,6 +60,7 @@
     },
     {
       "id": "boss-info",
+      "icon": "assets/feature-icons/boss-info.png",
       "name": "王怪資訊",
       "alias": "怪物資訊",
       "location": "遊戲畫面中央下方的快捷功能列",
@@ -65,6 +71,7 @@
     },
     {
       "id": "ougi-system",
+      "icon": "assets/feature-icons/ougi-system.png",
       "name": "奧義系統",
       "alias": "奧義技能",
       "location": "遊戲畫面中央下方的快捷功能列",
@@ -73,6 +80,46 @@
       "tips": ["目前開放內容仍以遊戲版本公告為準。", "網站另有完整奧義技能資料頁可供查詢。"],
       "media": {"url": "assets/feature-media/ougi-system.mp4", "poster": "assets/feature-media/ougi-system.jpg", "duration": 8.3},
       "link": "../ougi/"
+    },
+    {
+      "id": "auto-potion",
+      "name": "自動喝水",
+      "alias": "快捷列補給設定",
+      "location": "左上方 Q／W／E／A／S／D 快捷列旁的齒輪",
+      "summary": "設定 HP、MP、SP 的補給門檻，啟用自動喝水，協助戰鬥時補充狀態。",
+      "steps": ["準備恢復道具並放入快捷列；影片示範放入 Q 欄。", "點擊快捷列旁的齒輪，開啟「自動喝水」。", "拖曳 HP、MP、SP 滑桿，設定各自的百分比門檻。", "按下「開始」，確認遊戲出現啟用提示。"],
+      "tips": ["影片中的百分比僅為操作示範，可依需求調整。", "使用前請確認恢復道具與剩餘數量；本功能不是自動打怪。"],
+      "media": {"url": "assets/feature-media/auto-potion-v3.mp4", "poster": "assets/feature-media/auto-potion-v3.jpg", "duration": 13.8}
+    },
+    {
+      "id": "crafting",
+      "name": "工匠合成",
+      "alias": "工匠系統",
+      "location": "遊戲畫面右下方功能列的工匠系統按鈕",
+      "summary": "依製作配方準備材料與遊戲幣，設定數量後合成道具；影片以奧義技能書自選箱為例。",
+      "steps": ["從右下方功能列開啟「工匠系統」。", "選擇製作分類與左側配方，查看產物與所需材料。", "核對材料數量、製作機率、製作費用，輸入生產數量。", "按下「開始製作」，完成後到背包確認產物。"],
+      "tips": ["配方的材料、費用與成功率各自不同，以選取配方顯示為準。", "影片也示範製作完成後，開啟自選箱並選擇技能書。"],
+      "media": {"url": "assets/feature-media/crafting-v3.mp4", "poster": "assets/feature-media/crafting-v3.jpg", "duration": 22}
+    },
+    {
+      "id": "appearance",
+      "name": "外觀系統",
+      "alias": "角色外觀欄位",
+      "location": "角色裝備視窗下方的「外觀」選項",
+      "summary": "在角色裝備視窗切換外觀欄位，穿戴外觀道具，查看角色造型變化。",
+      "steps": ["開啟角色裝備視窗與背包，準備要穿戴的外觀道具。", "點選裝備視窗下方的「外觀」。", "將上衣、褲子、鞋子等外觀道具放入對應欄位。", "關閉視窗，在遊戲畫面確認整體造型。"],
+      "tips": ["影片示範上衣、褲子與鞋子的外觀穿戴。", "請確認外觀道具適用部位及使用限制；其他效果以道具說明為準。"],
+      "media": {"url": "assets/feature-media/appearance-v3.mp4", "poster": "assets/feature-media/appearance-v3.jpg", "duration": 16.5}
+    },
+    {
+      "id": "quest-guide",
+      "name": "任務自動引導",
+      "alias": "任務追蹤與移動",
+      "location": "任務視窗，以及遊戲畫面右側的任務追蹤列",
+      "summary": "追蹤任務後，從右側任務目標啟動自動引導，讓角色移動至任務地點。",
+      "steps": ["開啟任務視窗，展開任務分類。", "勾選要追蹤的任務，讓目標顯示在畫面右側。", "點選右側追蹤列中的任務目標，啟動角色移動。", "抵達目的地後，依任務內容與 NPC 互動或繼續操作。"],
+      "tips": ["引導期間可使用右側「停止行動」按鈕停止移動。", "影片示範從學院前往任務 NPC；自動引導不代表自動完成所有任務。"],
+      "media": {"url": "assets/feature-media/quest-guide-v3.mp4", "poster": "assets/feature-media/quest-guide-v3.jpg", "duration": 29.25}
     }
   ]
 }

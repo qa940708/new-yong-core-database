@@ -62,7 +62,7 @@
       : '';
 
     detail.innerHTML = `
-      <article class="feature-card" role="tabpanel" aria-labelledby="tab-${escapeHtml(feature.id)}">
+      <article id="panel-${escapeHtml(feature.id)}" class="feature-card" role="tabpanel" tabindex="0" aria-labelledby="tab-${escapeHtml(feature.id)}">
         <div class="feature-media">
           ${switches}
           <video id="feature-video" controls playsinline preload="metadata" poster="${escapeHtml(mediaUrl(media.poster))}" src="${escapeHtml(mediaUrl(media.url))}">
@@ -71,13 +71,13 @@
           <div id="media-caption" class="media-caption"><strong>${escapeHtml(feature.name)}操作</strong><span>${formatDuration(media.duration)}・實機錄影・無旁白</span></div>
         </div>
         <div class="feature-copy">
-          <div class="feature-heading"><span>${number}</span><div><p>${escapeHtml(feature.alias)}</p><h3>${escapeHtml(feature.name)}</h3></div></div>
+          <div class="feature-heading">${feature.icon ? `<img class="feature-icon" src="${escapeHtml(mediaUrl(feature.icon))}" width="34" height="34" alt="">` : `<span class="feature-number">${number}</span>`}<div><p>${escapeHtml(feature.alias)}</p><h3>${escapeHtml(feature.name)}</h3></div></div>
           <p class="feature-summary">${escapeHtml(feature.summary)}</p>
           <div class="location-box"><span>功能入口</span><strong>${escapeHtml(feature.location)}</strong></div>
           <h4>操作步驟</h4>
-          <ol>${feature.steps.map((step) => `<li>${escapeHtml(step)}</li>`).join('')}</ol>
+          <ol class="feature-steps">${feature.steps.map((step) => `<li>${escapeHtml(step)}</li>`).join('')}</ol>
           <h4>注意事項</h4>
-          <ul>${feature.tips.map((tip) => `<li>${escapeHtml(tip)}</li>`).join('')}</ul>
+          <ul class="feature-tips">${feature.tips.map((tip) => `<li>${escapeHtml(tip)}</li>`).join('')}</ul>
           ${guideLink}
         </div>
       </article>`;
@@ -95,18 +95,20 @@
       const selected = tab.dataset.id === activeId;
       tab.setAttribute('aria-selected', String(selected));
       tab.tabIndex = selected ? 0 : -1;
+      if (selected) tab.setAttribute('aria-controls', `panel-${activeId}`);
+      else tab.removeAttribute('aria-controls');
     });
     renderFeature(feature);
     const url = new URL(location.href);
     url.searchParams.set('feature', activeId);
     history.replaceState(null, '', url);
-    if (focus) tabs.querySelector(`[data-id="${CSS.escape(activeId)}"]`)?.focus();
+    if (focus) tabs.querySelector(`[data-id="${CSS.escape(activeId)}"]`)?.focus({ preventScroll: true });
   };
 
   const renderTabs = () => {
     tabs.innerHTML = features.map((feature, index) => `
-      <button type="button" role="tab" id="tab-${escapeHtml(feature.id)}" data-id="${escapeHtml(feature.id)}" aria-selected="false" tabindex="-1">
-        <span>${String(index + 1).padStart(2, '0')}</span><strong>${escapeHtml(feature.name)}</strong><small>${escapeHtml(feature.alias)}</small>
+      <button class="feature-tab" type="button" role="tab" id="tab-${escapeHtml(feature.id)}" data-id="${escapeHtml(feature.id)}" aria-selected="false" tabindex="-1">
+        ${feature.icon ? `<img class="tab-icon" src="${escapeHtml(mediaUrl(feature.icon))}" width="34" height="34" alt="">` : `<span class="tab-number">${String(index + 1).padStart(2, '0')}</span>`}<strong>${escapeHtml(feature.name)}</strong><small>${escapeHtml(feature.alias)}</small>
       </button>`).join('');
     tabs.addEventListener('click', (event) => {
       const button = event.target.closest('[role="tab"]');
@@ -125,12 +127,25 @@
     });
   };
 
+  const revealGuide = () => {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.querySelector('#feature-browser')?.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'start' });
+    tabs.querySelector('[aria-selected="true"]')?.focus({ preventScroll: true });
+  };
+
   showFeatures?.addEventListener('click', () => {
-    document.querySelector('#feature-browser')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    window.setTimeout(() => tabs.querySelector('[aria-selected="true"]')?.focus(), 500);
+    selectFeature('item-shop');
+    revealGuide();
   });
 
-  fetch(new URL('features/data.json?v=feature-preview-v2', base), { cache: 'no-store' })
+  document.querySelectorAll('[data-feature]').forEach((button) => {
+    button.addEventListener('click', () => {
+      selectFeature(button.dataset.feature);
+      revealGuide();
+    });
+  });
+
+  fetch(new URL('features/data.json?v=feature-preview-v3', base), { cache: 'no-store' })
     .then((response) => {
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       return response.json();
@@ -138,7 +153,7 @@
     .then((data) => {
       features = Array.isArray(data.features) ? data.features : [];
       if (!features.length) throw new Error('功能資料為空');
-      updated.textContent = `功能導覽 PREVIEW v2｜實機素材 ${data.updated || ''}`;
+      updated.textContent = `功能導覽 PREVIEW v3｜${features.length} 項功能｜實機素材 ${data.updated || ''}`;
       renderTabs();
       selectFeature(new URLSearchParams(location.search).get('feature') || features[0].id);
     })

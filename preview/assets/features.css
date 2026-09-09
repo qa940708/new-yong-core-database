@@ -6,3 +6,38 @@
 @media(max-width:1050px){.feature-tabs{grid-template-columns:repeat(4,1fr)}.feature-card{grid-template-columns:1fr}.feature-media{max-width:760px;width:100%;margin:auto}.coming-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:760px){.feature-page .hero-frame{padding-right:18px}.feature-seal{display:none}.feature-section-title{align-items:flex-start;flex-direction:column;gap:5px}.feature-section-title h2{font-size:19px}.feature-tabs{display:flex;overflow-x:auto;padding:2px 2px 10px;scroll-snap-type:x proximity;scrollbar-width:thin;scrollbar-color:#7a572a #120e09}.feature-tab{flex:0 0 135px;scroll-snap-align:start}.feature-card{grid-template-columns:1fr;gap:18px;padding:14px}.feature-heading h2{font-size:24px}.feature-number{width:43px;height:43px}.feature-summary{font-size:14px}.shortcut-callout{bottom:3%;min-width:180px;padding:7px 12px}.shortcut-callout span{display:none}.coming-grid{grid-template-columns:1fr 1fr}.feature-detail{min-height:0}}
 @media(max-width:430px){.shortcut-callout{min-width:150px}.shortcut-callout strong{font-size:12px}.coming-grid{grid-template-columns:1fr}}
+
+/* Batch 2: exact in-game icons and the four additional entry locations. */
+.interface-shot{max-width:850px;margin-inline:auto}
+.shortcut-callout{bottom:13%}
+.shortcut-callout strong{font-size:.875rem}
+.shortcut-callout span{font-size:.75rem}
+.entry-links{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:14px}
+.entry-links button{width:100%;min-width:0;min-height:80px;padding:12px;border:1px solid #76562e;border-radius:10px;background:#171109;text-align:left;color:#e7c78b;cursor:pointer}
+.entry-links span,.entry-links strong{display:block;line-height:1.6}
+.entry-links span{font-size:.875rem;color:#bca98b}
+.entry-links strong{font-size:1rem}
+.entry-links button:hover{background:#2a1d0e;border-color:#dab16b}
+.feature-tabs{grid-template-columns:repeat(7,minmax(0,1fr))}
+.feature-tab{width:100%;min-height:118px;border:1px solid #79552b;border-radius:10px;cursor:pointer}
+.tab-icon{display:block;margin:0 auto 5px;width:34px;height:34px;image-rendering:pixelated}
+.tab-number{height:34px;display:grid!important;place-items:center;font-size:1rem!important;color:#d8b774!important}
+.feature-tab strong{font-size:.875rem;line-height:1.6}
+.feature-tab small{font-size:.75rem;color:#baa58a;line-height:1.5}
+.feature-icon{width:42px;height:42px;flex:none;image-rendering:pixelated}
+.feature-heading h3{margin:0;font-size:1.65rem;color:#f2d18e;line-height:1.4}
+.feature-heading p{font-size:.875rem;margin:0 0 3px}
+.feature-summary,.feature-steps li{font-size:1rem;line-height:1.8}
+.feature-copy h4{font-size:1rem;margin:20px 0 10px;color:#e6c588}
+.feature-tips,.location-box,.location-box strong,.feature-link{font-size:.875rem}
+.location-box>span{display:block;color:#ad9877;font-size:.875rem}
+.media-caption strong,.media-caption span{display:block}
+.media-caption{font-size:.875rem}
+.media-caption span{font-size:.75rem}
+.media-switches{margin:0 0 10px}
+.feature-media video{aspect-ratio:1024/770}
+.feature-section-title small{font-size:.875rem}
+.feature-page :focus-visible{outline:2px solid #f4d38e;outline-offset:4px}
+@media(max-width:1050px){.feature-tabs{grid-template-columns:repeat(4,minmax(0,1fr))}.entry-links{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.feature-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));overflow:visible;padding:0}.feature-tab{min-width:0;padding:10px 5px;min-height:116px}.feature-tab small{display:none}.feature-heading h3{font-size:1.4rem}.feature-page section{scroll-margin-top:180px}}
+@media(max-width:430px){.feature-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}.entry-links{grid-template-columns:1fr 1fr}.entry-links button{padding:10px}}
