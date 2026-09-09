@@ -1,0 +1,78 @@
+{
+  "version": "feature-guide-preview-v1",
+  "updated": "2026-09-09",
+  "features": [
+    {
+      "id": "item-shop",
+      "name": "道具商城",
+      "alias": "線上商城",
+      "location": "遊戲畫面中央下方的快捷功能列",
+      "summary": "使用商城幣瀏覽與購買商城道具，並可先查看部分道具的角色外觀預覽。",
+      "steps": ["點擊快捷列的「遊戲商城」圖示。", "使用左側分類或商品名稱搜尋要找的道具。", "確認價格、庫存與預覽內容後，加入購買欄並完成購買。"],
+      "tips": ["右側預覽可切換男性、女性與姿勢。", "購買前請確認商城幣餘額、商品名稱與數量。"],
+      "media": {"url": "assets/feature-media/item-shop.mp4", "poster": "assets/feature-media/item-shop.jpg", "duration": 27}
+    },
+    {
+      "id": "limited-shop",
+      "name": "限時商城",
+      "alias": "限時商品",
+      "location": "遊戲畫面中央下方的快捷功能列",
+      "summary": "依每日、每週與每月分類查看限時商品及剩餘重置時間。",
+      "steps": ["點擊快捷列的「限時商城」圖示。", "切換每日、每週或每月頁籤。", "查看商品內容與重置時間後再進行購買。"],
+      "tips": ["不同頁籤會依各自週期更新。", "畫面沒有商品時，代表目前該分類尚無可購買內容。"],
+      "media": {"url": "assets/feature-media/limited-shop.mp4", "poster": "assets/feature-media/limited-shop.jpg", "duration": 10.5}
+    },
+    {
+      "id": "collection",
+      "name": "個人收藏",
+      "alias": "收藏系統",
+      "location": "遊戲畫面中央下方的快捷功能列",
+      "summary": "查看各收藏組合的指定核心、完成能力與目前登錄進度。",
+      "steps": ["開啟「個人收藏」，使用上方條件尋找收藏組合。", "選擇收藏組合，查看能力與指定核心。", "確認核心名稱與內容後，將符合條件的核心放入右側登錄區並完成登錄。"],
+      "tips": ["收藏需求以介面列出的指定核心為準。", "登錄前可將滑鼠移至核心圖示，核對核心名稱與能力。"],
+      "media": {"url": "assets/feature-media/collection-overview.mp4", "poster": "assets/feature-media/collection-overview.jpg", "duration": 24.5},
+      "extraMedia": {"label": "收入收藏物品", "url": "assets/feature-media/collection-register.mp4", "poster": "assets/feature-media/collection-register.jpg", "duration": 21.6}
+    },
+    {
+      "id": "life-log",
+      "name": "生活紀錄簿",
+      "alias": "角色紀錄",
+      "location": "遊戲畫面中央下方的快捷功能列",
+      "summary": "集中查看角色排名、積分、遊玩時間、連殺紀錄，以及 PVP、PVE 戰鬥紀錄。",
+      "steps": ["點擊快捷列的「生活紀錄簿」圖示。", "從左側查看排名、積分、遊玩與連殺資料。", "從右側分別查看 PVP 與 PVE 戰鬥紀錄。"],
+      "tips": ["資料會依角色目前實際紀錄顯示。"],
+      "media": {"url": "assets/feature-media/life-log.mp4", "poster": "assets/feature-media/life-log.jpg", "duration": 8}
+    },
+    {
+      "id": "ranking",
+      "name": "玩家排名",
+      "alias": "排行榜",
+      "location": "遊戲畫面中央下方的快捷功能列",
+      "summary": "按照不同榜單、遊戲模式與職業篩選伺服器玩家排名。",
+      "steps": ["點擊快捷列的「玩家排名」圖示。", "選擇全部、等級、復活、富豪或組織等榜單。", "使用左側條件切換遊戲模式與職業。"],
+      "tips": ["榜單內容與更新狀態以遊戲內顯示為準。"],
+      "media": {"url": "assets/feature-media/ranking.mp4", "poster": "assets/feature-media/ranking.jpg", "duration": 15.5}
+    },
+    {
+      "id": "boss-info",
+      "name": "王怪資訊",
+      "alias": "怪物資訊",
+      "location": "遊戲畫面中央下方的快捷功能列",
+      "summary": "查詢王怪的等級、血量、攻防、掉落物、出沒地圖及重生時間。",
+      "steps": ["點擊快捷列的「王怪資訊」圖示。", "從左側怪物列表選擇要查詢的王怪。", "查看右側能力、掉落物、出沒頻道、地圖與重生倒數。"],
+      "tips": ["綠色名稱與驚嘆號可協助辨識目前可查看的王怪資訊。", "實際出現狀態仍以遊戲內即時資料為準。"],
+      "media": {"url": "assets/feature-media/boss-info.mp4", "poster": "assets/feature-media/boss-info.jpg", "duration": 16.8}
+    },
+    {
+      "id": "ougi-system",
+      "name": "奧義系統",
+      "alias": "奧義技能",
+      "location": "遊戲畫面中央下方的快捷功能列",
+      "summary": "查看角色所屬部門的初階、中階與高階奧義，以及技能需求與效果。",
+      "steps": ["點擊快捷列的「奧義系統」圖示。", "切換初階、中階或高階奧義頁籤。", "將滑鼠移至技能圖示，查看學習條件、效果、持續時間與冷卻時間。"],
+      "tips": ["目前開放內容仍以遊戲版本公告為準。", "網站另有完整奧義技能資料頁可供查詢。"],
+      "media": {"url": "assets/feature-media/ougi-system.mp4", "poster": "assets/feature-media/ougi-system.jpg", "duration": 8.3},
+      "link": "../ougi/"
+    }
+  ]
+}
