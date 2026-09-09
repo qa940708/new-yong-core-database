@@ -1,2 +1,2 @@
-production-v2-core-v3-collection-v1-ougi-v5
-Ougi production promotion: 2026-09-09
+production-v3-core-v3-collection-v1-ougi-v5-features-v4
+Feature guide production promotion: 2026-09-09
