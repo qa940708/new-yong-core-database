@@ -1,0 +1,63 @@
+{
+  "chapter": "05",
+  "name": "裝備強化",
+  "page": "guide/enhancement.html",
+  "video": "assets/guide-media/enhancement-v2.mp4",
+  "approved_source_filename": "NEW-YONG-guide-05-enhancement-voice-preview-v2.mp4",
+  "sha256": "51157f5701202f8d20178dd743739fabed9e01705b39b6b20b0d0369464d0ffc",
+  "bytes": 10474667,
+  "duration_seconds": 98,
+  "video_reencoded": false,
+  "audio_remixed": false,
+  "subtitle_status": "burned into approved video; sidecar VTT not enabled by default",
+  "screenshots": {
+    "poster": 17.8,
+    "materials": 7.5,
+    "risk": 41,
+    "protection": 61.7
+  },
+  "chapters": [
+    {
+      "start": 0,
+      "end": 12,
+      "number": "01",
+      "title": "認識強化材料"
+    },
+    {
+      "start": 12,
+      "end": 25,
+      "number": "02",
+      "title": "武器強化操作"
+    },
+    {
+      "start": 25,
+      "end": 44,
+      "number": "03",
+      "title": "進階強化與失敗"
+    },
+    {
+      "start": 44,
+      "end": 56,
+      "number": "04",
+      "title": "先裝備防爆項鍊"
+    },
+    {
+      "start": 56,
+      "end": 74,
+      "number": "05",
+      "title": "防爆保護的限制"
+    },
+    {
+      "start": 74,
+      "end": 88,
+      "number": "06",
+      "title": "防具強化示範"
+    },
+    {
+      "start": 88,
+      "end": 98,
+      "number": "07",
+      "title": "強化前再確認"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "start": 0,
+    "end": 12,
+    "number": "01",
+    "title": "認識強化材料"
+  },
+  {
+    "start": 12,
+    "end": 25,
+    "number": "02",
+    "title": "武器強化操作"
+  },
+  {
+    "start": 25,
+    "end": 44,
+    "number": "03",
+    "title": "進階強化與失敗"
+  },
+  {
+    "start": 44,
+    "end": 56,
+    "number": "04",
+    "title": "先裝備防爆項鍊"
+  },
+  {
+    "start": 56,
+    "end": 74,
+    "number": "05",
+    "title": "防爆保護的限制"
+  },
+  {
+    "start": 74,
+    "end": 88,
+    "number": "06",
+    "title": "防具強化示範"
+  },
+  {
+    "start": 88,
+    "end": 98,
+    "number": "07",
+    "title": "強化前再確認"
+  }
+]

@@ -1,0 +1,6 @@
+/* Six-chapter navigation only. No changes to game data or existing guide videos. */
+.guide-series.guide-series-six{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.guide-series-six>a{min-width:0;min-height:58px;padding:12px 16px}
+.guide-series-six>a>b{flex:none}
+.guide-series-six>a>span{min-width:0;overflow-wrap:anywhere}
+@media(max-width:760px){.guide-series.guide-series-six{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.guide-series-six>a{padding:10px 12px;gap:9px}}

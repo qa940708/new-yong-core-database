@@ -1,0 +1,44 @@
+[
+  {
+    "number": "01",
+    "start": 0,
+    "end": 14,
+    "title": "開啟改造視窗"
+  },
+  {
+    "number": "02",
+    "start": 14,
+    "end": 35,
+    "title": "保留與比較結果"
+  },
+  {
+    "number": "03",
+    "start": 35,
+    "end": 51,
+    "title": "單項鎖定"
+  },
+  {
+    "number": "04",
+    "start": 51,
+    "end": 68,
+    "title": "雙重鎖定"
+  },
+  {
+    "number": "05",
+    "start": 68,
+    "end": 85,
+    "title": "三重鎖定"
+  },
+  {
+    "number": "06",
+    "start": 85,
+    "end": 99,
+    "title": "消耗與注意事項"
+  },
+  {
+    "number": "07",
+    "start": 99,
+    "end": 112,
+    "title": "套用並確認結果"
+  }
+]

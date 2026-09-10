@@ -1,0 +1,63 @@
+{
+  "chapter": "06",
+  "name": "隨機改造卡",
+  "page": "guide/remodel.html",
+  "video": "assets/guide-media/remodel-v2.mp4",
+  "approved_source_filename": "NEW-YONG-guide-06-remodel-voice-preview-v2.mp4",
+  "sha256": "6701c0e5530dde93b0ff554fb5899cbbe72ea491f613676bdba4f32ddd735493",
+  "bytes": 12799106,
+  "duration_seconds": 112,
+  "video_reencoded": false,
+  "audio_remixed": false,
+  "subtitle_status": "burned into approved video; sidecar VTT not enabled by default",
+  "screenshots": {
+    "poster": 27,
+    "single": 42.5,
+    "double": 59.4,
+    "triple": 77
+  },
+  "chapters": [
+    {
+      "number": "01",
+      "start": 0,
+      "end": 14,
+      "title": "開啟改造視窗"
+    },
+    {
+      "number": "02",
+      "start": 14,
+      "end": 35,
+      "title": "保留與比較結果"
+    },
+    {
+      "number": "03",
+      "start": 35,
+      "end": 51,
+      "title": "單項鎖定"
+    },
+    {
+      "number": "04",
+      "start": 51,
+      "end": 68,
+      "title": "雙重鎖定"
+    },
+    {
+      "number": "05",
+      "start": 68,
+      "end": 85,
+      "title": "三重鎖定"
+    },
+    {
+      "number": "06",
+      "start": 85,
+      "end": 99,
+      "title": "消耗與注意事項"
+    },
+    {
+      "number": "07",
+      "start": 99,
+      "end": 112,
+      "title": "套用並確認結果"
+    }
+  ]
+}
