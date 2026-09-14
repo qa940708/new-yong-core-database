@@ -1,0 +1,131 @@
+/* The existing NEW YONG black-and-gold theme remains the shared foundation. */
+.festival-page{--festival-silver:#c5dced;--festival-gold:#e6c28a;--festival-muted:#bda990}
+.festival-page [hidden]{display:none!important}
+.festival-page .mainnav a{flex:1;min-width:0;text-align:center}
+.festival-page .brand img{object-fit:contain}
+.festival-hero.with-trailer{display:block;min-height:0;padding:8px 0 18px}
+.trailer-heading{display:flex;align-items:center;justify-content:space-between;gap:28px;margin-bottom:27px}
+.trailer-heading .eyebrow{font-size:9px;letter-spacing:3px;color:#d9b883;margin-bottom:12px}
+.trailer-heading .festival-kicker{font-size:19px;letter-spacing:3px;margin-bottom:8px}
+.trailer-heading h1{font:52px/1.2 var(--display);font-weight:800;letter-spacing:7px;margin:0;color:#f7e7c9}
+.trailer-heading-meta{text-align:right}
+.trailer-heading .festival-tagline{font-size:19px;margin:0 0 12px}
+.trailer-heading .festival-lead{font-size:12px;margin:0 0 16px}
+.trailer-heading .festival-numbers{justify-content:flex-end}
+.festival-trailer{position:relative;aspect-ratio:16/9;background:#070809;border:1px solid #9b743e;box-shadow:0 14px 45px #0006;overflow:hidden}
+.festival-trailer video{width:100%;height:100%;object-fit:contain;display:block}
+#trailer-start{position:absolute;inset:0;display:flex;gap:16px;align-items:flex-start;justify-content:flex-end;padding:24px 28px;background:linear-gradient(180deg,#050608ad,transparent 27%);border:0;color:#fff0d7;text-align:left;cursor:pointer}
+#trailer-start:hover .trailer-play-icon{background:#f2d299;color:#251c11}
+.trailer-play-icon{display:grid;place-items:center;border:1px solid #e4c48c;border-radius:50%;background:#271f13bf;width:55px;height:55px;flex-shrink:0;font-size:21px;padding-left:3px;box-shadow:0 0 25px #e0bc691f}
+#trailer-start>span:last-child{align-self:flex-start;padding-top:7px}
+.trailer-play-title{display:block;font:18px var(--display);letter-spacing:2px}
+#trailer-start small{display:block;font-size:10px;letter-spacing:1px;color:#d2b991;margin-top:7px}
+.trailer-caption{display:flex;justify-content:space-between;gap:16px;align-items:center;margin-top:14px;font-size:13px;letter-spacing:1px;color:#d8c19e}
+.trailer-caption small{color:#aa9273;margin-left:14px;font-size:10px}
+.trailer-caption>a{color:#e6c995;font-size:12px;text-decoration:none}
+.trailer-caption>a span{margin-left:12px}
+#trailer-error{font-size:12px;color:#e2c69c}
+@media(max-width:760px){.trailer-heading{align-items:flex-start;gap:12px}.trailer-heading h1{font-size:40px}.trailer-heading .festival-kicker{font-size:17px}.trailer-heading .festival-tagline{font-size:17px}.trailer-heading .festival-lead{max-width:245px;line-height:1.8}.trailer-heading .festival-numbers{gap:12px;font-size:9px}.trailer-heading .festival-numbers b{font-size:22px}}
+@media(max-width:600px){.festival-hero.with-trailer{padding-top:0}.trailer-heading{display:block;text-align:center;margin-bottom:20px}.trailer-heading h1{font-size:42px;letter-spacing:6px}.trailer-heading .eyebrow{font-size:8px;letter-spacing:2px}.trailer-heading .festival-kicker{font-size:19px}.trailer-heading-meta{text-align:center;margin-top:17px}.trailer-heading .festival-tagline{font-size:17px;margin:0}.trailer-heading .festival-lead{display:none}.trailer-heading .festival-numbers{justify-content:center;gap:18px;margin-top:15px;font-size:9px}.trailer-heading .festival-numbers b{font-size:22px}#trailer-start{gap:10px;padding:11px 13px}.trailer-play-icon{width:38px;height:38px;font-size:15px}.trailer-play-title{font-size:13px;letter-spacing:1px}#trailer-start small{font-size:8px;margin-top:5px}#trailer-start>span:last-child{padding-bottom:3px}.trailer-caption{font-size:10px;letter-spacing:0;margin-top:11px;gap:7px}.trailer-caption small{display:none}.trailer-caption>a{font-size:10px}.trailer-caption>a span{margin-left:3px}}
+.festival-page .tools{justify-content:flex-end}
+.festival-page main{padding-top:28px}
+.preview-note{display:flex;gap:12px;align-items:center;width:max-content;border:1px solid #947343;padding:7px 12px;font:11px Georgia,serif;letter-spacing:2px;color:#f0d3a4;background:#3c2b1790;margin:0 0 14px}
+.preview-note span{font:11px 'Microsoft JhengHei',sans-serif;letter-spacing:1px}
+.festival-hero{display:grid;grid-template-columns:1fr 1.16fr;align-items:center;gap:30px;min-height:510px;padding:15px 0 25px;position:relative}
+.festival-intro{position:relative;z-index:2}
+.festival-intro .eyebrow{font-size:10px;letter-spacing:3px;color:#d9b883;margin-bottom:19px}
+.festival-kicker{color:#e1c99e;font:25px var(--display);letter-spacing:4px;margin:0 0 12px}
+.festival-kicker span{font:13px 'Microsoft JhengHei',sans-serif;letter-spacing:3px;padding-left:13px;margin-left:10px;border-left:1px solid #88653d}
+.festival-intro h1{font:clamp(42px,5vw,68px)/1.2 var(--display);font-weight:800;letter-spacing:8px;color:#f7e7c9;margin:0;text-shadow:0 4px 24px #000}
+.festival-tagline{font:22px var(--display);letter-spacing:2px;color:#e9bf7f;margin:24px 0 13px}
+.festival-lead{font-size:14px;line-height:1.9;color:#c2b4a3}
+.festival-actions{display:flex;gap:12px;flex-wrap:wrap;margin:24px 0 27px}
+.festival-actions a{display:inline-flex;align-items:center;gap:12px}
+.festival-numbers{display:flex;gap:25px;color:#b49c7f;font-size:11px;letter-spacing:1px}
+.festival-numbers span{display:flex;align-items:baseline;gap:9px}
+.festival-numbers b{font:26px Georgia,serif;color:#e8c591}
+.festival-hero-art{align-self:stretch;position:relative;min-height:470px;isolation:isolate;overflow:hidden}
+.hero-halo{position:absolute;inset:5% 2% 11%;border-radius:50%;border:1px solid #d6b87835;background:radial-gradient(ellipse at 50% 55%,#47617b44,transparent 64%);box-shadow:0 0 80px #97bce40c,inset 0 0 55px #d5e8ff0a}
+.hero-halo:before{content:'';position:absolute;inset:7%;border:1px solid #d5c59925;border-radius:50%}
+.festival-hero-art>img{position:absolute;bottom:60px;object-fit:contain;filter:drop-shadow(0 12px 14px #000b);height:85%;width:72%}
+.festival-hero-art .hero-male{left:-1%;z-index:2}
+.festival-hero-art .hero-female{right:-8%;z-index:1}
+.hero-art-caption{position:absolute;bottom:8px;left:10%;right:0;display:flex;align-items:center;flex-direction:column;gap:5px}
+.hero-art-caption span{font:10px Georgia,serif;letter-spacing:4px;color:#c8d9e7}
+.hero-art-caption strong{font:21px var(--display);letter-spacing:4px;color:#f0e4ce}
+.hero-art-caption small{font-size:10px;color:#a89989;letter-spacing:2px}
+.festival-jump{display:flex;align-items:center;border-top:1px solid #7a5b37;border-bottom:1px solid #7a5b37;background:#1a120dda;margin-top:12px}
+.festival-jump a{padding:18px 24px;color:#e8d9c0;text-decoration:none;font-size:13px}
+.festival-jump a:hover{background:#51361b4d;color:#ffe0a6}
+.festival-jump a span{color:#a3845e;font:12px Georgia,serif;margin-right:6px}
+.festival-jump button{margin-left:auto;margin-right:15px;font-size:11px;padding:8px 12px;border:1px solid #755a3b;border-radius:2px;color:#d5c5ae;background:transparent;cursor:pointer}
+.festival-section{margin-top:60px;scroll-margin-top:190px}
+.festival-section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:22px}
+.festival-section-head .eyebrow,.effect-copy .eyebrow{color:#c7a477;font-size:10px;letter-spacing:2px}
+.festival-section-head h2,.effect-copy h2{font:29px var(--display);letter-spacing:2px;color:#f0dfc0;margin:9px 0 0}
+.festival-section-head>p{font-size:12px;line-height:1.9;color:#c2ae93;margin:0 0 3px}
+.festival-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.festival-card{min-width:0;background:linear-gradient(135deg,#241a12,#100e0c);border:1px solid #785938;box-shadow:0 12px 28px #0003;border-radius:3px;overflow:hidden}
+.festival-card.silver{border-color:#688092}.festival-card.crimson{border-color:#7c3b35}.festival-card.blue{border-color:#3c626e}
+.card-top{display:flex;justify-content:space-between;align-items:center;min-height:48px;padding:8px 14px;background:#090a0ab3}
+.card-top>span{font-size:11px;letter-spacing:2px;color:#b39a75}
+.silver .card-top>span{color:#b6cdda}.crimson .card-top>span{color:#d39185}.blue .card-top>span{color:#9cbecb}
+.variant-switch{display:flex;gap:2px;background:#0b0d0f;border:1px solid #575351;padding:2px;border-radius:3px}
+.variant-switch button{font:11px 'Microsoft JhengHei',sans-serif;color:#b0aba3;background:transparent;padding:5px 12px;border:0;border-radius:1px;cursor:pointer}
+.variant-switch button[aria-pressed=true]{background:#b7c4ca;color:#111417}
+.crimson .variant-switch button[aria-pressed=true]{background:#c98677}.gold .variant-switch button[aria-pressed=true]{background:#d2b17c}
+.card-media{aspect-ratio:1;position:relative;background:#0b0e12;overflow:hidden}
+.card-media:after{content:'';position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 25px #0003}
+.card-media video{display:block;width:100%;height:100%;object-fit:cover}
+.live-tag{position:absolute;left:12px;top:12px;background:#111213aa;color:#eeefed;font-size:9px;letter-spacing:1px;padding:5px 7px;border:1px solid #dad5cc40;display:flex;align-items:center;gap:5px}
+.live-tag i{height:4px;width:4px;border-radius:50%;background:#cfe8f2}
+.loop-toggle{position:absolute;right:11px;bottom:11px;z-index:2;border:1px solid #d5cabd70;color:#f3ece1;background:#0b1016c9;border-radius:2px;padding:7px 11px;font-size:10px;cursor:pointer;backdrop-filter:blur(6px)}
+.card-copy{padding:20px 19px 15px}
+.card-copy h3{font:25px var(--display);letter-spacing:3px;color:#e9d6b3;margin:0 0 12px}
+.silver .card-copy h3{color:#d3e3ef}.crimson .card-copy h3{color:#e8ad99}.blue .card-copy h3{color:#bfdde8}
+.card-copy p{font-size:12px;line-height:1.85;min-height:45px;color:#baa993;margin:0 0 15px}
+.card-bottom{border-top:1px solid #7052366b;display:flex;align-items:center;justify-content:space-between;padding-top:13px}
+.variant-label{font-size:10px;color:#a58c6b;letter-spacing:1px}
+.inspect-button{border:0;background:none;font-size:11px;color:#e0c89e;padding:4px 0;cursor:pointer;display:flex;gap:13px;align-items:center}
+.inspect-button:hover{color:#fff0c8}
+.effect-section{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:10%;padding:34px 7%;border:1px solid #816035;background:radial-gradient(ellipse at 25% 60%,#6744143a,transparent 75%),#130e09b0}
+.effect-copy h2{font-size:43px;letter-spacing:6px;margin:17px 0 24px}
+.effect-tagline{font:21px var(--display);letter-spacing:2px;color:#e0b97c}
+.effect-copy>p:not(.effect-tagline){font-size:13px;line-height:2;color:#c1ac8e}
+.effect-note{display:inline-block;border-left:2px solid #b58a4e;padding:5px 12px;font-size:11px;color:#c9b392;margin-top:20px}
+.effect-section .festival-card{width:100%}.effect-section .card-top{min-height:40px}
+.effect-section .card-copy p{display:none}.effect-section .card-copy h3{font-size:21px}
+.promotion-section{margin-top:40px;border:1px solid #674d30;background:#18110beb}
+.promotion-section summary{display:flex;gap:16px;justify-content:space-between;padding:21px 24px;color:#d6bc94;font-size:14px;list-style:none;cursor:pointer}
+.promotion-section summary::-webkit-details-marker{display:none}.promotion-section summary>span:last-child{font-size:12px;color:#aa9272}
+.promotion-section summary b{margin-left:15px;font-weight:normal}.promotion-section details[open] summary{border-bottom:1px solid #705437}
+.promotion-section img{display:block;width:100%;height:auto}.festival-footnote{text-align:center;font-size:11px;color:#aa9273;margin:30px 0 2px;letter-spacing:1px}
+#media-dialog{width:min(760px,92vw);max-height:94vh;padding:0;overflow:auto;background:#100f10;border:1px solid #a58251;color:#eddfc6}
+#media-dialog::backdrop{background:#06090dee;backdrop-filter:blur(5px)}
+.festival-dialog-head{display:flex;justify-content:space-between;align-items:center;padding:18px 24px;background:linear-gradient(120deg,#2d2015,#110f0d);border-bottom:1px solid #64472b}
+.festival-dialog-head small{font-size:9px;letter-spacing:3px;color:#bba07d}.festival-dialog-head h2{font:25px var(--display);letter-spacing:2px;margin:6px 0 0}
+#close-media{border:1px solid #836649;background:none;color:#dec7a3;width:36px;height:36px;cursor:pointer;border-radius:2px}
+.dialog-mode{display:flex;gap:7px;padding:12px 22px}
+.dialog-mode button{border:1px solid #6a5238;border-radius:2px;padding:7px 14px;font-size:12px;background:transparent;color:#bda481;cursor:pointer}
+.dialog-mode button[aria-pressed=true]{color:#16120d;background:#d0b482;border-color:#d0b482}
+.dialog-media{display:flex;justify-content:center;align-items:center;background:#05080d;aspect-ratio:1;max-height:66vh}
+.dialog-media>video,.dialog-media>img{width:100%;height:100%;object-fit:contain;max-height:66vh;display:block}
+.media-error{font-size:12px;padding:0 22px;color:#d9be9b}
+.festival-page a:focus-visible,.festival-page button:focus-visible,.festival-page summary:focus-visible{outline:2px solid #e6ce9e;outline-offset:4px}
+.card-error{margin:0;padding:8px 12px;background:#281c12;color:#e0c6a0;font-size:10px}
+.festival-grid.fashion-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.fashion .card-media{aspect-ratio:3/4;background:radial-gradient(ellipse at center,#423b30,#171615)}
+.static-preview{display:block;width:100%;height:100%;object-fit:contain}
+.fashion .card-copy{padding:17px 13px}.fashion .card-copy h3{font-size:21px;letter-spacing:1px}.fashion .card-copy p{font-size:11px;min-height:61px}.fashion .card-top{padding:8px 9px}.fashion .card-top>span{font-size:9px;letter-spacing:1px}.fashion .variant-switch button{padding:5px 8px}
+.supply-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.supply-card{display:flex;align-items:center;gap:22px;padding:23px;border:1px solid #785933;background:linear-gradient(120deg,#2b2115,#120e0b)}.supply-card img{image-rendering:pixelated;border:1px solid #a98a56;box-shadow:0 5px 16px #0009;width:70px;height:70px;object-fit:contain}.supply-card small{font:9px Georgia,serif;letter-spacing:2px;color:#bca077}.supply-card h3{font:27px var(--display);color:#f2d9ae;letter-spacing:2px;margin:8px 0 0}
+.dialog-media>img{image-rendering:auto}
+.festival-page .fashion-grid .card-copy h3{overflow-wrap:break-word}
+.festival-page .festival-section{scroll-margin-top:18px}
+@media(max-width:760px){.festival-page .ornate-header .tools{grid-column:3;grid-row:1;justify-self:end;display:flex;width:auto;flex-wrap:nowrap}.festival-page .tools a.official-return .official-return-text{display:none}.festival-page .ornate-header .tools .official-return{width:30px;min-width:30px;min-height:34px;padding:5px}.festival-page .ornate-header .topbar{row-gap:0;padding-bottom:8px}.festival-page .festival-section{scroll-margin-top:-56px}}
+@media(max-width:1100px){.festival-hero{gap:10px;min-height:450px}.festival-hero-art{min-height:430px}.festival-intro h1{font-size:54px}.festival-intro .eyebrow{font-size:9px;letter-spacing:2px}.festival-lead{font-size:12px}.festival-numbers{gap:14px}.festival-jump a{padding:16px}.festival-grid{gap:15px}.card-copy{padding:16px 14px}.card-copy h3{font-size:22px}.variant-switch button{padding:5px 10px}}
+@media(max-width:800px){.festival-hero{grid-template-columns:1fr 1fr}.festival-intro h1{font-size:43px;letter-spacing:5px}.festival-tagline{font-size:18px}.festival-kicker{font-size:22px}.festival-kicker span{font-size:11px;letter-spacing:1px;padding-left:9px;margin-left:6px}.festival-hero-art{min-height:410px}.festival-numbers{gap:10px;font-size:9px;letter-spacing:0}.festival-numbers b{font-size:22px}.festival-actions{gap:8px}.festival-actions a{font-size:11px;padding:10px}.festival-section-head{align-items:start;flex-direction:column;gap:11px}.festival-section-head h2{font-size:25px}.festival-grid.weapons{grid-template-columns:repeat(2,minmax(0,1fr))}.card-top{padding:8px}.card-top>span{font-size:9px;letter-spacing:1px}.variant-switch button{padding:5px 8px;font-size:10px}.effect-section{gap:25px;padding:25px}.effect-copy h2{font-size:34px}}
+@media(max-width:600px){.festival-page .mainnav a{font-size:10px;padding:10px 2px}.festival-page .mainnav small{font-size:5px}.festival-page .topbar{grid-template-columns:1fr auto 1fr}.festival-page .official-return-text{display:none}.festival-page .tools .official-return{min-width:29px;width:30px;padding:5px}.festival-hero{grid-template-columns:1fr;gap:0;padding:8px 0 10px}.festival-intro{text-align:center}.festival-intro h1{font-size:51px;letter-spacing:8px}.festival-intro .eyebrow{font-size:9px;margin-bottom:18px}.festival-kicker{font-size:23px}.festival-tagline{font-size:20px;margin:20px 0 10px}.festival-lead{font-size:12px}.festival-actions{justify-content:center;margin:21px 0}.festival-actions a{font-size:12px;padding:11px 16px}.festival-numbers{justify-content:center;gap:21px;font-size:10px}.festival-numbers b{font-size:25px}.festival-hero-art{min-height:365px;max-width:420px;width:100%;margin:6px auto 5px}.festival-hero-art>img{bottom:50px;height:88%}.hero-art-caption{left:2%;bottom:0}.festival-jump{flex-wrap:wrap;justify-content:space-between}.festival-jump a{padding:14px 9px;font-size:11px}.festival-jump a span{font-size:10px;margin-right:2px}.festival-jump button{flex-basis:100%;margin:0;padding:9px;border-width:1px 0 0;border-color:#7052385c;font-size:10px}.festival-section{margin-top:38px;scroll-margin-top:155px}.festival-section-head{margin-bottom:17px}.festival-section-head .eyebrow{font-size:9px}.festival-section-head h2{font-size:24px;letter-spacing:1px}.festival-section-head>p{font-size:11px}.festival-grid.costumes{grid-template-columns:1fr}.festival-grid.weapons{gap:12px}.costumes .card-top{padding:10px 14px}.costumes .card-top>span{font-size:11px}.costumes .variant-switch button{padding:6px 16px;font-size:12px}.costumes .card-copy{padding:18px}.costumes .card-copy h3{font-size:27px}.costumes .card-copy p{min-height:0;font-size:12px}.weapons .card-copy{padding:13px 10px}.weapons .card-copy h3{font-size:19px;letter-spacing:1px}.weapons .card-copy p{display:none}.weapons .card-bottom{padding-top:10px;gap:5px}.weapons .variant-label{font-size:8px;letter-spacing:0}.weapons .inspect-button{font-size:10px;gap:5px}.live-tag{font-size:8px;padding:4px 5px;left:8px;top:8px}.loop-toggle{font-size:9px;padding:6px 8px;right:7px;bottom:7px}.effect-section{grid-template-columns:1fr;padding:23px 17px;gap:24px}.effect-copy h2{font-size:35px;margin:14px 0 18px}.effect-copy>p:not(.effect-tagline){font-size:12px}.effect-note{margin-top:8px}.promotion-section{margin-top:27px}.promotion-section summary{flex-direction:column;padding:18px;gap:12px;font-size:13px}.promotion-section summary>span:last-child{display:flex;justify-content:space-between}.festival-dialog-head{padding:15px}.festival-dialog-head h2{font-size:22px}.dialog-mode{padding:10px 14px}.dialog-media{max-height:65vh}.dialog-media>img,.dialog-media>video{max-height:65vh}.preview-note{font-size:9px;margin-bottom:18px}.preview-note span{font-size:10px}.festival-footnote{font-size:10px}}
+@media(prefers-reduced-motion:reduce){.festival-page{scroll-behavior:auto}.festival-page *{scroll-behavior:auto!important}}
+@media(max-width:1000px){.festival-grid.fashion-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.fashion .card-copy h3{font-size:24px}.fashion .card-copy p{min-height:0;font-size:12px}.fashion .variant-switch button{padding:6px 13px}.supply-card{gap:14px;padding:19px}.supply-card img{width:56px;height:56px}.festival-jump a{padding:16px 13px}.festival-jump button{font-size:10px;margin-right:8px;padding:8px}}
+@media(max-width:600px){.festival-jump{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));text-align:center}.festival-jump a{font-size:10px;padding:13px 4px}.festival-jump button{grid-column:auto;margin:0;height:100%;font-size:10px;padding:8px;border:0;background:#6c49142b}.festival-jump a span{display:none}.festival-grid.fashion-grid{gap:12px}.fashion .card-top{padding:8px 7px;gap:5px}.fashion .card-top>span{font-size:8px;letter-spacing:0}.fashion .variant-switch button{padding:5px 7px;font-size:9px}.fashion .card-copy{padding:13px 10px}.fashion .card-copy h3{font-size:18px;letter-spacing:0}.fashion .card-copy p{display:none}.fashion .card-bottom{gap:5px}.fashion .variant-label{font-size:9px}.fashion .inspect-button{font-size:10px;gap:4px}.supply-grid{gap:9px}.supply-card{padding:17px 5px;flex-direction:column;text-align:center;gap:13px}.supply-card img{width:56px;height:56px}.supply-card small{font-size:7px;letter-spacing:1px}.supply-card h3{font-size:22px;margin-top:6px}}
+@media(max-width:360px){.festival-grid.fashion-grid{grid-template-columns:1fr}.fashion .card-copy h3{font-size:23px}.fashion .card-top{padding:10px 14px}.fashion .card-top>span{font-size:11px}.fashion .variant-switch button{font-size:12px;padding:6px 16px}}

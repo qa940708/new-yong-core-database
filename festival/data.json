@@ -1,0 +1,442 @@
+{
+  "version": 1,
+  "event": {
+    "id": "dragon_descent_01",
+    "name": "幻藏祭",
+    "edition": "第一彈",
+    "title": "獄龍降臨",
+    "subtitle": "銀皇現世，冥焰覺醒。"
+  },
+  "items": [
+    {
+      "id": "dragon_silver_emperor",
+      "name": "獄龍銀皇",
+      "category": "costume",
+      "tone": "silver",
+      "description": "銀白龍紋甲冑，搭配環繞全身的冰藍光效。",
+      "variants": [
+        {
+          "id": "dragon_silver_emperor_male",
+          "label": "獄龍銀皇｜男款",
+          "presentation": "male",
+          "duration_seconds": 5.6,
+          "media": {
+            "mp4": "/assets/festival/dragon_silver_emperor_male.mp4",
+            "webm": "/assets/festival/dragon_silver_emperor_male.webm",
+            "gif": "/assets/festival/dragon_silver_emperor_male.gif",
+            "png": "/assets/festival/dragon_silver_emperor_male.png",
+            "poster": "/assets/festival/dragon_silver_emperor_male.webp"
+          },
+          "source_video": "20260914_134759.mp4"
+        },
+        {
+          "id": "dragon_silver_emperor_female",
+          "label": "獄龍銀皇｜女款",
+          "presentation": "female",
+          "duration_seconds": 3.6,
+          "media": {
+            "mp4": "/assets/festival/dragon_silver_emperor_female.mp4",
+            "webm": "/assets/festival/dragon_silver_emperor_female.webm",
+            "gif": "/assets/festival/dragon_silver_emperor_female.gif",
+            "png": "/assets/festival/dragon_silver_emperor_female.png",
+            "poster": "/assets/festival/dragon_silver_emperor_female.webp"
+          },
+          "source_video": "20260914_134832.mp4"
+        }
+      ]
+    },
+    {
+      "id": "dragon_crimson_fiend",
+      "name": "獄龍赤煞",
+      "category": "costume",
+      "tone": "crimson",
+      "description": "黑紅甲片與赤色紋理，呈現鮮明的暗焰風格。",
+      "variants": [
+        {
+          "id": "dragon_crimson_fiend_male",
+          "label": "獄龍赤煞｜男款",
+          "presentation": "male",
+          "duration_seconds": 4.2,
+          "media": {
+            "mp4": "/assets/festival/dragon_crimson_fiend_male.mp4",
+            "webm": "/assets/festival/dragon_crimson_fiend_male.webm",
+            "gif": "/assets/festival/dragon_crimson_fiend_male.gif",
+            "png": "/assets/festival/dragon_crimson_fiend_male.png",
+            "poster": "/assets/festival/dragon_crimson_fiend_male.webp"
+          },
+          "source_video": "20260914_134647.mp4"
+        },
+        {
+          "id": "dragon_crimson_fiend_female",
+          "label": "獄龍赤煞｜女款",
+          "presentation": "female",
+          "duration_seconds": 3.6,
+          "media": {
+            "mp4": "/assets/festival/dragon_crimson_fiend_female.mp4",
+            "webm": "/assets/festival/dragon_crimson_fiend_female.webm",
+            "gif": "/assets/festival/dragon_crimson_fiend_female.gif",
+            "png": "/assets/festival/dragon_crimson_fiend_female.png",
+            "poster": "/assets/festival/dragon_crimson_fiend_female.webp"
+          },
+          "source_video": "20260914_134719.mp4"
+        }
+      ]
+    },
+    {
+      "id": "dragon_ember_gold",
+      "name": "獄龍燼金",
+      "category": "costume",
+      "tone": "gold",
+      "description": "黑金甲冑交織熾金光芒，近看裝飾與細部輪廓。",
+      "variants": [
+        {
+          "id": "dragon_ember_gold_male",
+          "label": "獄龍燼金｜男款",
+          "presentation": "male",
+          "duration_seconds": 4.767,
+          "media": {
+            "mp4": "/assets/festival/dragon_ember_gold_male.mp4",
+            "webm": "/assets/festival/dragon_ember_gold_male.webm",
+            "gif": "/assets/festival/dragon_ember_gold_male.gif",
+            "png": "/assets/festival/dragon_ember_gold_male.png",
+            "poster": "/assets/festival/dragon_ember_gold_male.webp"
+          },
+          "source_video": "20260914_134446.mp4"
+        },
+        {
+          "id": "dragon_ember_gold_female",
+          "label": "獄龍燼金｜女款",
+          "presentation": "female",
+          "duration_seconds": 4.2,
+          "media": {
+            "mp4": "/assets/festival/dragon_ember_gold_female.mp4",
+            "webm": "/assets/festival/dragon_ember_gold_female.webm",
+            "gif": "/assets/festival/dragon_ember_gold_female.gif",
+            "png": "/assets/festival/dragon_ember_gold_female.png",
+            "poster": "/assets/festival/dragon_ember_gold_female.webp"
+          },
+          "source_video": "20260914_134559.mp4"
+        }
+      ]
+    },
+    {
+      "id": "netherflame_blade",
+      "name": "冥焰大刀",
+      "category": "weapon",
+      "tone": "blue",
+      "description": "冥焰系列武器外觀，展示幽藍光效與實際持握姿態。",
+      "variants": [
+        {
+          "id": "netherflame_blade",
+          "label": "冥焰大刀",
+          "presentation": "default",
+          "duration_seconds": 4.2,
+          "media": {
+            "gif": "/assets/festival/netherflame_blade.gif",
+            "png": "/assets/festival/netherflame_blade.png",
+            "poster": "/assets/festival/netherflame_blade.webp",
+            "mp4": "/assets/festival/netherflame_blade.mp4"
+          },
+          "source_video": "20260914_142026.mp4"
+        }
+      ]
+    },
+    {
+      "id": "netherflame_sword",
+      "name": "冥焰長劍",
+      "category": "weapon",
+      "tone": "blue",
+      "description": "冥焰系列武器外觀，展示幽藍光效與實際持握姿態。",
+      "variants": [
+        {
+          "id": "netherflame_sword",
+          "label": "冥焰長劍",
+          "presentation": "default",
+          "duration_seconds": 5.8,
+          "media": {
+            "gif": "/assets/festival/netherflame_sword.gif",
+            "png": "/assets/festival/netherflame_sword.png",
+            "poster": "/assets/festival/netherflame_sword.webp",
+            "mp4": "/assets/festival/netherflame_sword.mp4"
+          },
+          "source_video": "20260914_142026.mp4"
+        }
+      ]
+    },
+    {
+      "id": "netherflame_bow",
+      "name": "冥焰弓",
+      "category": "weapon",
+      "tone": "blue",
+      "description": "冥焰系列武器外觀，展示幽藍光效與實際持握姿態。",
+      "variants": [
+        {
+          "id": "netherflame_bow",
+          "label": "冥焰弓",
+          "presentation": "default",
+          "duration_seconds": 5.9,
+          "media": {
+            "gif": "/assets/festival/netherflame_bow.gif",
+            "png": "/assets/festival/netherflame_bow.png",
+            "poster": "/assets/festival/netherflame_bow.webp",
+            "mp4": "/assets/festival/netherflame_bow.mp4"
+          },
+          "source_video": "20260914_142026.mp4"
+        }
+      ]
+    },
+    {
+      "id": "netherflame_gauntlets",
+      "name": "冥焰拳套",
+      "category": "weapon",
+      "tone": "blue",
+      "description": "冥焰系列武器外觀，展示幽藍光效與實際持握姿態。",
+      "variants": [
+        {
+          "id": "netherflame_gauntlets",
+          "label": "冥焰拳套",
+          "presentation": "default",
+          "duration_seconds": 5.767,
+          "media": {
+            "gif": "/assets/festival/netherflame_gauntlets.gif",
+            "png": "/assets/festival/netherflame_gauntlets.png",
+            "poster": "/assets/festival/netherflame_gauntlets.webp",
+            "mp4": "/assets/festival/netherflame_gauntlets.mp4"
+          },
+          "source_video": "20260914_142026.mp4"
+        }
+      ]
+    },
+    {
+      "id": "netherflame_staff",
+      "name": "冥焰長杖",
+      "category": "weapon",
+      "tone": "blue",
+      "description": "冥焰系列武器外觀，展示幽藍光效與實際持握姿態。",
+      "variants": [
+        {
+          "id": "netherflame_staff",
+          "label": "冥焰長杖",
+          "presentation": "default",
+          "duration_seconds": 4.6,
+          "media": {
+            "gif": "/assets/festival/netherflame_staff.gif",
+            "png": "/assets/festival/netherflame_staff.png",
+            "poster": "/assets/festival/netherflame_staff.webp",
+            "mp4": "/assets/festival/netherflame_staff.mp4"
+          },
+          "source_video": "20260914_142026.mp4"
+        }
+      ]
+    },
+    {
+      "id": "golden_dragon_aura",
+      "name": "金龍環繞",
+      "category": "effect",
+      "tone": "gold",
+      "description": "金色龍影環繞角色流轉，觀看龍身、光芒與環繞動態。",
+      "variants": [
+        {
+          "id": "golden_dragon_aura",
+          "label": "金龍環繞特效",
+          "presentation": "default",
+          "duration_seconds": 6.0,
+          "media": {
+            "mp4": "/assets/festival/golden_dragon_aura.mp4",
+            "webm": "/assets/festival/golden_dragon_aura.webm",
+            "gif": "/assets/festival/golden_dragon_aura.gif",
+            "png": "/assets/festival/golden_dragon_aura.png",
+            "poster": "/assets/festival/golden_dragon_aura.webp"
+          },
+          "source_video": "20260914_135159.mp4"
+        }
+      ]
+    },
+    {
+      "id": "striped_streetwear",
+      "name": "條紋潮流服飾",
+      "category": "fashion",
+      "tone": "fashion",
+      "description": "紅黑條紋搭配斜背包，男女款皆可查看實際穿搭。",
+      "variants": [
+        {
+          "id": "striped_streetwear_male",
+          "label": "條紋潮流服飾｜男款",
+          "presentation": "male",
+          "duration_seconds": null,
+          "media": {
+            "png": "/assets/festival/striped_streetwear_male.png",
+            "poster": "/assets/festival/striped_streetwear_male.webp"
+          },
+          "source_image": "Codex 圖像 2026年9月14日 下午02_52_35.png"
+        },
+        {
+          "id": "striped_streetwear_female",
+          "label": "條紋潮流服飾｜女款",
+          "presentation": "female",
+          "duration_seconds": null,
+          "media": {
+            "png": "/assets/festival/striped_streetwear_female.png",
+            "poster": "/assets/festival/striped_streetwear_female.webp"
+          },
+          "source_image": "Codex 圖像 2026年9月14日 下午02_52_32.png"
+        }
+      ]
+    },
+    {
+      "id": "cute_raccoon_outfit",
+      "name": "可愛浣熊服飾",
+      "category": "fashion",
+      "tone": "fashion",
+      "description": "柔和米色與棕色搭配，展現可愛浣熊圖案。",
+      "variants": [
+        {
+          "id": "cute_raccoon_outfit_male",
+          "label": "可愛浣熊服飾｜男款",
+          "presentation": "male",
+          "duration_seconds": null,
+          "media": {
+            "png": "/assets/festival/cute_raccoon_outfit_male.png",
+            "poster": "/assets/festival/cute_raccoon_outfit_male.webp"
+          },
+          "source_image": "Codex 圖像 2026年9月14日 下午02_52_18.png"
+        },
+        {
+          "id": "cute_raccoon_outfit_female",
+          "label": "可愛浣熊服飾｜女款",
+          "presentation": "female",
+          "duration_seconds": null,
+          "media": {
+            "png": "/assets/festival/cute_raccoon_outfit_female.png",
+            "poster": "/assets/festival/cute_raccoon_outfit_female.webp"
+          },
+          "source_image": "Codex 圖像 2026年9月14日 下午02_52_25.png"
+        }
+      ]
+    },
+    {
+      "id": "lv_streetwear",
+      "name": "LV 潮流服飾",
+      "category": "fashion",
+      "tone": "fashion",
+      "description": "藍色印花吊帶造型，搭配帽子與休閒鞋。",
+      "variants": [
+        {
+          "id": "lv_streetwear_male",
+          "label": "LV 潮流服飾｜男款",
+          "presentation": "male",
+          "duration_seconds": null,
+          "media": {
+            "png": "/assets/festival/lv_streetwear_male.png",
+            "poster": "/assets/festival/lv_streetwear_male.webp"
+          },
+          "source_image": "Codex 圖像 2026年9月14日 下午02_52_14.png"
+        },
+        {
+          "id": "lv_streetwear_female",
+          "label": "LV 潮流服飾｜女款",
+          "presentation": "female",
+          "duration_seconds": null,
+          "media": {
+            "png": "/assets/festival/lv_streetwear_female.png",
+            "poster": "/assets/festival/lv_streetwear_female.webp"
+          },
+          "source_image": "Codex 圖像 2026年9月14日 下午02_52_22.png"
+        }
+      ]
+    },
+    {
+      "id": "suspender_style",
+      "name": "吊帶褲風格",
+      "category": "fashion",
+      "tone": "fashion",
+      "description": "米色長褲與單邊吊帶，呈現俐落休閒風格。",
+      "variants": [
+        {
+          "id": "suspender_style_male",
+          "label": "吊帶褲風格｜男款",
+          "presentation": "male",
+          "duration_seconds": null,
+          "media": {
+            "png": "/assets/festival/suspender_style_male.png",
+            "poster": "/assets/festival/suspender_style_male.webp"
+          },
+          "source_image": "Codex 圖像 2026年9月14日 下午02_52_47.png"
+        },
+        {
+          "id": "suspender_style_female",
+          "label": "吊帶褲風格｜女款",
+          "presentation": "female",
+          "duration_seconds": null,
+          "media": {
+            "png": "/assets/festival/suspender_style_female.png",
+            "poster": "/assets/festival/suspender_style_female.webp"
+          },
+          "source_image": "Codex 圖像 2026年9月14日 下午02_52_28.png"
+        }
+      ]
+    },
+    {
+      "id": "m_supply_box",
+      "name": "M 箱",
+      "category": "supply",
+      "tone": "gold",
+      "description": "箱子展示",
+      "variants": [
+        {
+          "id": "m_supply_box",
+          "label": "M 箱",
+          "presentation": "default",
+          "duration_seconds": null,
+          "media": {
+            "png": "/assets/festival/supply_box.png",
+            "poster": "/assets/festival/supply_box.png"
+          }
+        }
+      ]
+    },
+    {
+      "id": "p_supply_box",
+      "name": "P 箱",
+      "category": "supply",
+      "tone": "gold",
+      "description": "箱子展示",
+      "variants": [
+        {
+          "id": "p_supply_box",
+          "label": "P 箱",
+          "presentation": "default",
+          "duration_seconds": null,
+          "media": {
+            "png": "/assets/festival/supply_box.png",
+            "poster": "/assets/festival/supply_box.png"
+          }
+        }
+      ]
+    },
+    {
+      "id": "e_supply_box",
+      "name": "E 箱",
+      "category": "supply",
+      "tone": "gold",
+      "description": "箱子展示",
+      "variants": [
+        {
+          "id": "e_supply_box",
+          "label": "E 箱",
+          "presentation": "default",
+          "duration_seconds": null,
+          "media": {
+            "png": "/assets/festival/supply_box.png",
+            "poster": "/assets/festival/supply_box.png"
+          }
+        }
+      ]
+    }
+  ],
+  "promotion": {
+    "name": "獄龍銀皇套組樂透箱",
+    "image": "/assets/festival/dragon_silver_emperor_lottery_promo_1920x1080.jpg",
+    "original": "/assets/festival/dragon_silver_emperor_lottery_promo_1920x1080.png"
+  }
+}
