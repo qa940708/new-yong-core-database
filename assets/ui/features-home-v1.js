@@ -12,7 +12,7 @@ function openFeature(id){
  const details=document.getElementById('feature-details');details.replaceChildren();
  for(const line of feature.details){const p=document.createElement('p');p.textContent=line;details.append(p);}
  const links=document.getElementById('feature-links');links.replaceChildren();
- for(const link of feature.links){const a=document.createElement('a');a.textContent=link.label+' ↗';a.href=link.href;a.target='_blank';a.rel='noopener noreferrer';links.append(a);}
+ for(const link of feature.links){const a=document.createElement('a');a.textContent=link.label+' →';a.href=link.href;links.append(a);}
  if(!dialog.open)dialog.showModal();
 }
 document.querySelectorAll('[data-feature]').forEach(button=>button.addEventListener('click',()=>openFeature(button.dataset.feature)));
@@ -47,7 +47,7 @@ function renderSearch(){
   const type=document.createElement('small');type.textContent=item.type;
   element.append(name,type);
   if(item.feature){element.type='button';element.addEventListener('click',()=>openFeature(item.feature));}
-  else{element.href=item.href;if(item.href.startsWith('https:')){element.target='_blank';element.rel='noopener noreferrer';}element.addEventListener('click',()=>search.close());}
+  else{element.href=item.href;element.addEventListener('click',()=>search.close());}
   searchResults.append(element);
  }
  if(!matches.length){const empty=document.createElement('p');empty.className='search-empty';empty.textContent='找不到符合的功能或入口，請試試其他關鍵字。';searchResults.append(empty);}
