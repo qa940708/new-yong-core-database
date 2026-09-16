@@ -4,6 +4,18 @@ const dialog=document.getElementById('feature-dialog');
 const search=document.getElementById('home-search');
 const searchInput=document.getElementById('home-search-input');
 const searchResults=document.getElementById('home-search-results');
+// Keep database navigation in the current tab, including older cached markup.
+function navigateInCurrentTab(event){
+ if(event.defaultPrevented||event.button!==0||event.ctrlKey||event.metaKey||event.shiftKey||event.altKey)return;
+ const link=event.target.closest?.('a[href]');
+ if(!link||link.hasAttribute('download'))return;
+ const destination=new URL(link.href,location.href);
+ if(destination.origin!=='https://newyongdata.online')return;
+ if(destination.pathname===location.pathname&&destination.search===location.search&&destination.hash)return;
+ event.preventDefault();
+ location.assign(destination.href);
+}
+document.addEventListener('click',navigateInCurrentTab,{capture:true});
 function openFeature(id){
  const feature=data.features.find(f=>f.id===id);if(!feature)return;
  if(search.open)search.close();
@@ -12,7 +24,7 @@ function openFeature(id){
  const details=document.getElementById('feature-details');details.replaceChildren();
  for(const line of feature.details){const p=document.createElement('p');p.textContent=line;details.append(p);}
  const links=document.getElementById('feature-links');links.replaceChildren();
- for(const link of feature.links){const a=document.createElement('a');a.textContent=link.label+' →';a.href=link.href;links.append(a);}
+ for(const link of feature.links){const a=document.createElement('a');a.textContent=link.label+' →';a.href=link.href;a.target='_self';links.append(a);}
  if(!dialog.open)dialog.showModal();
 }
 document.querySelectorAll('[data-feature]').forEach(button=>button.addEventListener('click',()=>openFeature(button.dataset.feature)));
@@ -47,7 +59,7 @@ function renderSearch(){
   const type=document.createElement('small');type.textContent=item.type;
   element.append(name,type);
   if(item.feature){element.type='button';element.addEventListener('click',()=>openFeature(item.feature));}
-  else{element.href=item.href;element.addEventListener('click',()=>search.close());}
+  else{element.href=item.href;element.target='_self';element.addEventListener('click',()=>search.close());}
   searchResults.append(element);
  }
  if(!matches.length){const empty=document.createElement('p');empty.className='search-empty';empty.textContent='找不到符合的功能或入口，請試試其他關鍵字。';searchResults.append(empty);}
