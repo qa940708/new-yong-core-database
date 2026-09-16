@@ -87,11 +87,11 @@
       const d=data.departments.find(d=>d.id===id),s=d.stages.initial.skills[0];
       return `<div class="book-option">${framed(s.bookIcon)}<span><strong>${esc(d.name)}</strong><small>${esc(s.bookName)}</small></span></div>`;
     }).join('');
-    $('upgrade-table').innerHTML=`<table class="ougi-table"><thead><tr><th scope="col">升級</th><th scope="col">本次費用</th><th scope="col">累計升級費用</th></tr></thead><tbody>${Array.from({length:8},(_,i)=>`<tr><td>Lv.${i+1} → Lv.${i+2}</td><td>${fmt(a.upgradeCostPerLevel/1e8)} 億</td><td>${fmt((i+1)*a.upgradeCostPerLevel/1e8)} 億</td></tr>`).join('')}</tbody></table>`;
+    $('upgrade-table').innerHTML=`<table class="ougi-table"><thead><tr><th scope="col">升級</th><th scope="col">本次費用</th><th scope="col">累計升級費用</th></tr></thead><tbody>${Array.from({length:8},(_,i)=>`<tr><td>Lv.${i+1} → Lv.${i+2}</td><td>${fmt(a.upgradeCostPerLevel/1e4)} 萬</td><td>${fmt((i+1)*a.upgradeCostPerLevel/1e8)} 億</td></tr>`).join('')}</tbody></table>`;
   }
   async function boot() {
     try {
-      const response=await fetch(new URL('ougi/data.json',base),{cache:'no-store'});if(!response.ok)throw new Error('技能資料載入失敗');data=await response.json();
+      const response=await fetch(new URL('ougi/data.json?v=ougi-balance-20260916',base),{cache:'no-store'});if(!response.ok)throw new Error('技能資料載入失敗');data=await response.json();
       if(data.schemaVersion!==2||!Array.isArray(data.departments)||!Array.isArray(data.stages))throw new Error('技能資料格式錯誤');
       for(const d of data.departments)for(const stage of data.stages){const t=d.stages[stage.id];if(!t||!Array.isArray(t.skills))throw new Error('階段資料不完整');for(const s of t.skills){if(!Number.isInteger(s.maxLevel)||s.effects.some(e=>e.values.length!==s.maxLevel)||s.duration.length!==s.maxLevel||s.cooldown.length!==s.maxLevel)throw new Error('等級資料不完整');}}
       fromUrl();guide();render();$('updated').textContent='奧義技能預覽 v5｜資料整理 '+data.updated;
