@@ -1,11 +1,11 @@
 {
-  "version": "feature-guide-preview-v5",
-  "updated": "2026-09-09",
+  "version": "feature-icons-v2-20260924",
+  "updated": "2026-09-24",
   "features": [
     {
       "id": "item-shop",
       "category": "daily",
-      "icon": "assets/feature-icons/item-shop.png",
+      "icon": "assets/feature-icons/v2/item-shop.png",
       "name": "道具商城",
       "alias": "線上商城",
       "location": "遊戲畫面中央下方的快捷功能列",
@@ -28,7 +28,7 @@
     {
       "id": "limited-shop",
       "category": "daily",
-      "icon": "assets/feature-icons/limited-shop.png",
+      "icon": "assets/feature-icons/v2/limited-shop.png",
       "name": "限時商城",
       "alias": "限時商品",
       "location": "遊戲畫面中央下方的快捷功能列",
@@ -51,7 +51,7 @@
     {
       "id": "collection",
       "category": "growth",
-      "icon": "assets/feature-icons/collection.png",
+      "icon": "assets/feature-icons/v2/collection.png",
       "name": "個人收藏",
       "alias": "收藏系統",
       "location": "遊戲畫面中央下方的快捷功能列",
@@ -80,7 +80,7 @@
     {
       "id": "life-log",
       "category": "battle",
-      "icon": "assets/feature-icons/life-log.png",
+      "icon": "assets/feature-icons/v2/life-log.png",
       "name": "生活紀錄簿",
       "alias": "角色紀錄",
       "location": "遊戲畫面中央下方的快捷功能列",
@@ -102,7 +102,7 @@
     {
       "id": "ranking",
       "category": "battle",
-      "icon": "assets/feature-icons/ranking.png",
+      "icon": "assets/feature-icons/v2/ranking.png",
       "name": "玩家排名",
       "alias": "排行榜",
       "location": "遊戲畫面中央下方的快捷功能列",
@@ -124,7 +124,7 @@
     {
       "id": "boss-info",
       "category": "battle",
-      "icon": "assets/feature-icons/boss-info.png",
+      "icon": "assets/feature-icons/v2/boss-info.png",
       "name": "王怪資訊",
       "alias": "怪物資訊",
       "location": "遊戲畫面中央下方的快捷功能列",
@@ -147,7 +147,7 @@
     {
       "id": "ougi-system",
       "category": "growth",
-      "icon": "assets/feature-icons/ougi-system.png",
+      "icon": "assets/feature-icons/v2/ougi-system.png",
       "name": "奧義系統",
       "alias": "奧義技能",
       "location": "遊戲畫面中央下方的快捷功能列",
@@ -189,7 +189,8 @@
         "url": "assets/feature-media/auto-potion-v3.mp4",
         "poster": "assets/feature-media/auto-potion-v3.jpg",
         "duration": 13.8
-      }
+      },
+      "icon": "assets/feature-icons/v2/auto-potion.png"
     },
     {
       "id": "crafting",
@@ -212,7 +213,8 @@
         "url": "assets/feature-media/crafting-v4.mp4",
         "poster": "assets/feature-media/crafting-v4.jpg",
         "duration": 20
-      }
+      },
+      "icon": "assets/feature-icons/v2/crafting.png"
     },
     {
       "id": "pet-system",
@@ -234,7 +236,8 @@
         "url": "assets/feature-media/pet-system-v1.mp4",
         "poster": "assets/feature-media/pet-system-v1.jpg",
         "duration": 37.417
-      }
+      },
+      "icon": "assets/feature-icons/v2/pet-system.png"
     },
     {
       "id": "appearance",
@@ -257,7 +260,8 @@
         "url": "assets/feature-media/appearance-v3.mp4",
         "poster": "assets/feature-media/appearance-v3.jpg",
         "duration": 16.5
-      }
+      },
+      "icon": "assets/feature-icons/v2/appearance.png"
     },
     {
       "id": "quest-guide",
@@ -280,7 +284,8 @@
         "url": "assets/feature-media/quest-guide-v3.mp4",
         "poster": "assets/feature-media/quest-guide-v3.jpg",
         "duration": 29.25
-      }
+      },
+      "icon": "assets/feature-icons/v2/quest-guide.png"
     }
   ]
 }
