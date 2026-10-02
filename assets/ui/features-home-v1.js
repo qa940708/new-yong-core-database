@@ -10,7 +10,7 @@ function navigateInCurrentTab(event){
  const link=event.target.closest?.('a[href]');
  if(!link||link.hasAttribute('download'))return;
  const destination=new URL(link.href,location.href);
- if(destination.origin!=='https://newyongdata.online')return;
+ if(destination.origin!=='https://yongorigindata.online')return;
  if(destination.pathname===location.pathname&&destination.search===location.search&&destination.hash)return;
  event.preventDefault();
  location.assign(destination.href);
@@ -42,11 +42,11 @@ const entries=[
  {title:'裝備進度',terms:'武器 特武 強化精靈弓 防具 A級精鋼 修羅燄',href:'#equipment',type:'本頁章節'},
  {title:'開服版本',terms:'175 等級 147 技能 本洞 地圖 經驗 掉寶 倍率 純手動',href:'#version',type:'本頁章節'},
  {title:'遊戲理念',terms:'NO AUTO PLAY FREE TRADE FAIR PLAY STYLE POWER',href:'#philosophy',type:'本頁章節'},
- {title:'核心圖鑑',terms:'裝備 核心 怪物 掉落',href:'https://newyongdata.online/',type:'原資料庫'},
- {title:'收藏圖鑑',terms:'收藏 組合 核心 需求',href:'https://newyongdata.online/collections/',type:'原資料庫'},
- {title:'遊玩指南',terms:'實機 操作 影片 教學',href:'https://newyongdata.online/guide/overview.html',type:'原資料庫'},
- {title:'奧義技能',terms:'職業 技能 學習 需求',href:'https://newyongdata.online/ougi/',type:'原資料庫'},
- {title:'幻藏祭 第一彈｜獄龍降臨',terms:'銀皇 赤煞 燼金 金龍 冥焰 武器 套組 外觀 活動',href:'https://newyongdata.online/festival/',type:'本期活動'}
+ {title:'核心圖鑑',terms:'裝備 核心 怪物 掉落',href:'https://yongorigindata.online/',type:'原資料庫'},
+ {title:'收藏圖鑑',terms:'收藏 組合 核心 需求',href:'https://yongorigindata.online/collections/',type:'原資料庫'},
+ {title:'遊玩指南',terms:'實機 操作 影片 教學',href:'https://yongorigindata.online/guide/overview.html',type:'原資料庫'},
+ {title:'奧義技能',terms:'職業 技能 學習 需求',href:'https://yongorigindata.online/ougi/',type:'原資料庫'},
+ {title:'幻藏祭 第一彈｜獄龍降臨',terms:'銀皇 赤煞 燼金 金龍 冥焰 武器 套組 外觀 活動',href:'https://yongorigindata.online/festival/',type:'本期活動'}
 ];
 function renderSearch(){
  const terms=searchInput.value.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);

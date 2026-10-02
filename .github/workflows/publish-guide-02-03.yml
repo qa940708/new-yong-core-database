@@ -113,7 +113,7 @@ jobs:
           import hashlib, json, pathlib, time, urllib.request
           root = pathlib.Path('.')
           domain = (root/'CNAME').read_text().strip()
-          assert domain == 'newyongdata.online'
+          assert domain == 'yongorigindata.online'
           base = 'https://' + domain + '/'
           manifest = json.loads((root/'assets/guide-media/guide-02-03-manifest.json').read_text())
           report = {'domain':domain, 'guides':[]}
