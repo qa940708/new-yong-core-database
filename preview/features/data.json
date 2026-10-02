@@ -1,5 +1,5 @@
 {
-  "version": "text-guides-20261002",
+  "version": "collection-images-20261002",
   "updated": "2026-10-02",
   "features": [
     {
@@ -45,12 +45,43 @@
       "location": "遊戲畫面中央下方的快捷功能列",
       "summary": "登錄指定核心，完成收藏組合並累積能力加成。",
       "steps": [
-        "開啟「個人收藏」，選擇收藏組合。",
-        "核對指定核心、數量與成功率。",
-        "選取對應核心並按「註冊」，完成後查看效果。"
+        "點擊畫面下方快捷列的「個人收藏」圖示。",
+        "選擇收藏組合與核心，查看所需數量、成功率及完成加成。",
+        "點選右側的對應核心，再按右下角「註冊」。",
+        "組合完成後會顯示 COMPLETED；點「效果」查看總加成與整體進度。"
       ],
       "tips": [
         "必須使用指定核心，同類別的其他核心不能替代。"
+      ],
+      "illustrations": [
+        {
+          "name": "開啟個人收藏",
+          "hint": "點擊畫面下方快捷列的「個人收藏」圖示。",
+          "image": "assets/guide-media/collection-step-01-open-20261002.png",
+          "width": 469,
+          "height": 468
+        },
+        {
+          "name": "核對收藏需求",
+          "hint": "選擇收藏組合與核心，查看所需數量、成功率及完成加成。",
+          "image": "assets/guide-media/collection-step-02-requirements-20261002.png",
+          "width": 710,
+          "height": 508
+        },
+        {
+          "name": "選取核心並註冊",
+          "hint": "點選右側的對應核心，再按右下角「註冊」。",
+          "image": "assets/guide-media/collection-step-03-register-20261002.png",
+          "width": 708,
+          "height": 508
+        },
+        {
+          "name": "查看收藏成果",
+          "hint": "組合完成後會顯示 COMPLETED；點「效果」查看總加成與整體進度。",
+          "image": "assets/guide-media/collection-step-04-results-20261002.png",
+          "width": 708,
+          "height": 506
+        }
       ]
     },
     {

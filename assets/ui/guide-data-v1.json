@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "version": "text-guides-20261002",
+  "version": "collection-images-20261002",
   "guides": [
     {
       "id": "index",
@@ -52,16 +52,32 @@
       "note": "指定核心不能用同類別的其他核心替代。",
       "chapters": [
         {
-          "name": "選擇組合",
-          "hint": "開啟個人收藏，核對指定核心、數量與成功率。"
+          "name": "開啟個人收藏",
+          "hint": "點擊畫面下方快捷列的「個人收藏」圖示。",
+          "image": "assets/guide-media/collection-step-01-open-20261002.png",
+          "width": 469,
+          "height": 468
         },
         {
-          "name": "登錄核心",
-          "hint": "選取右側對應道具並按「註冊」，依序完成登錄。"
+          "name": "核對收藏需求",
+          "hint": "選擇收藏組合與核心，查看所需數量、成功率及完成加成。",
+          "image": "assets/guide-media/collection-step-02-requirements-20261002.png",
+          "width": 710,
+          "height": 508
         },
         {
-          "name": "確認成果",
-          "hint": "查看完成標記，按「效果」確認總加成與進度。"
+          "name": "選取核心並註冊",
+          "hint": "點選右側的對應核心，再按右下角「註冊」。",
+          "image": "assets/guide-media/collection-step-03-register-20261002.png",
+          "width": 708,
+          "height": 508
+        },
+        {
+          "name": "查看收藏成果",
+          "hint": "組合完成後會顯示 COMPLETED；點「效果」查看總加成與整體進度。",
+          "image": "assets/guide-media/collection-step-04-results-20261002.png",
+          "width": 708,
+          "height": 506
         }
       ]
     },

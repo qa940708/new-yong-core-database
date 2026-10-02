@@ -106,3 +106,15 @@ a.control-link.req-name,a.control-link.name{background:none;border:0;padding:0;t
 .text-guide-panel{margin-top:24px}.text-guide-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;padding:0;margin:0;list-style:none}.text-guide-steps li{padding:26px;border:1px solid #594329;background:linear-gradient(135deg,#21180f,#100e0c)}
 .text-guide-steps h2{font-size:21px;margin:14px 0 10px;color:#ead9b7}.text-guide-steps p{line-height:1.9;margin:0;color:#c5b8a3}
 @media(max-width:760px){.feature-text-detail,.text-guide-steps{grid-template-columns:1fr}.feature-text-detail{gap:24px;padding:20px}.guide-text-card{min-height:190px;padding:22px}.text-guide-steps li{padding:22px}.text-guide-steps h2{font-size:20px}}
+
+/* Collection walkthrough, using the original supplied game screenshots. */
+.feature-illustrated{margin-top:24px;padding:28px;border:1px solid #594329;background:linear-gradient(130deg,#21180f,#110e0b)}
+.feature-illustrated>header h2{font-size:28px;margin:8px 0 12px}.feature-illustrated .location{margin-top:18px}.feature-illustrated>.chipbar{margin-top:22px}
+.illustrated-guide .section-head{margin:28px 0 18px}.illustrated-guide .section-head h2{font-size:21px}
+.illustrated-steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;list-style:none;padding:0;margin:0}
+.illustrated-steps>li{min-width:0;border:1px solid #594329;background:#15110d;overflow:hidden;display:flex;flex-direction:column}
+.illustrated-copy{padding:22px}.illustrated-copy h3{font-size:21px;color:#ead9b7;margin:10px 0}.illustrated-copy p{font-size:15px;line-height:1.85;color:#c5b8a3;margin:0}
+.illustrated-image{display:flex;align-items:center;justify-content:center;width:100%;padding:0;border:0;border-top:1px solid #594329;border-radius:0;background:#0f0d0b;cursor:zoom-in;flex:1}
+.illustrated-image img{display:block;width:100%;height:auto;max-width:710px;object-fit:contain}.illustrated-image img[width="469"]{max-width:469px}
+.illustrated-image:hover{background:#21180f}.illustrated-image:focus-visible{outline:2px solid #e0b66b;outline-offset:-3px}
+@media(max-width:760px){.feature-illustrated{padding:18px}.illustrated-steps{grid-template-columns:1fr;gap:18px}.illustrated-copy{padding:18px}.illustrated-copy h3{font-size:20px}}
