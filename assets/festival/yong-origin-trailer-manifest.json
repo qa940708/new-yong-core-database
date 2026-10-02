@@ -1,0 +1,12 @@
+{
+  "source": "GitHub release asset",
+  "release_tag": "festival-yong-origin-source-20261002",
+  "video": "assets/festival/style_festival_five_weapons_YONG_ORIGIN_1080p.mp4",
+  "bytes": 92547769,
+  "sha256": "5e41d2c94396d37919f37f21789f1aada8681baa1b3993e41c5c16abee820f78",
+  "duration": 42.9,
+  "width": 1920,
+  "height": 1080,
+  "poster": "assets/festival/style_festival_yong_origin_poster.jpg",
+  "note": "The existing Pages build downloads and verifies the exact video before deployment. No repository-write permission is added."
+}

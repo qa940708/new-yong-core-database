@@ -27,6 +27,10 @@ jobs:
         uses: actions/configure-pages@v5
         with:
           enablement: true
+      - name: Fetch the approved festival trailer
+        run: |
+          curl --fail --location --retry 3 --output assets/festival/style_festival_five_weapons_YONG_ORIGIN_1080p.mp4 https://github.com/qa940708/new-yong-core-database/releases/download/festival-yong-origin-source-20261002/style_festival_five_weapons_YONG_ORIGIN_1080p.mp4
+          echo "5e41d2c94396d37919f37f21789f1aada8681baa1b3993e41c5c16abee820f78  assets/festival/style_festival_five_weapons_YONG_ORIGIN_1080p.mp4" | sha256sum --check
       - name: Upload site
         uses: actions/upload-pages-artifact@v3
         with:
