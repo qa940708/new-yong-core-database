@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "version": "collection-images-20261002",
+  "version": "play-guide-images-20261002",
   "guides": [
     {
       "id": "index",
@@ -10,16 +10,32 @@
       "note": "部分新手裝備有期限，使用前請查看道具說明。",
       "chapters": [
         {
-          "name": "開啟禮盒",
-          "hint": "打開背包中的新生禮盒，領取裝備與道具。"
+          "name": "查看新生禮盒",
+          "hint": "在背包找到新生禮盒，查看內含的裝備與道具。",
+          "image": "assets/guide-media/play-index-step-01-gift-20261002.png",
+          "width": 1029,
+          "height": 800
         },
         {
-          "name": "準備出發",
-          "hint": "穿上武器、防具，配置補給快捷列與自動喝水。"
+          "name": "領取新生補給",
+          "hint": "使用新生禮盒，領取裝備與補給，並留意道具期限。",
+          "image": "assets/guide-media/play-index-step-02-open-20261002.png",
+          "width": 1025,
+          "height": 799
+        },
+        {
+          "name": "穿戴裝備",
+          "hint": "穿上武器與防具，將恢復道具放到快捷列。",
+          "image": "assets/guide-media/play-index-step-03-equip-20261002.png",
+          "width": 1027,
+          "height": 798
         },
         {
           "name": "開始練等",
-          "hint": "前往附近怪物區，手動打怪累積經驗。"
+          "hint": "前往附近的怪物區，手動攻擊並累積經驗。",
+          "image": "assets/guide-media/play-index-step-04-battle-20261002.png",
+          "width": 1028,
+          "height": 800
         }
       ]
     },
@@ -31,16 +47,32 @@
       "note": "",
       "chapters": [
         {
-          "name": "設定熱鍵",
-          "hint": "在熱鍵設定選擇 A 或 B 模式，完成後套用。"
+          "name": "開啟快捷鍵設定",
+          "hint": "開啟遊戲選單，點選「快捷鍵設置」。",
+          "image": "assets/guide-media/play-travel-step-01-menu-20261002.png",
+          "width": 1024,
+          "height": 791
         },
         {
-          "name": "前往目的地",
-          "hint": "查看公車目的地與練等區間，選擇合適的地圖。"
+          "name": "選擇操作模式",
+          "hint": "選擇「鍵盤操作模式 A／B」，調整按鍵後按「應用」或「確定」。",
+          "image": "assets/guide-media/play-travel-step-02-keys-20261002.png",
+          "width": 459,
+          "height": 525
         },
         {
-          "name": "查詢地圖",
-          "hint": "按 M 切到「資訊」，查看怪物分布與掉落物；上方可切換地圖。"
+          "name": "搭乘公車",
+          "hint": "與學院服務員對話，選「公車站」，再挑選目的地並按「OK」。",
+          "image": "assets/guide-media/play-travel-step-03-bus-20261002.png",
+          "width": 1023,
+          "height": 798
+        },
+        {
+          "name": "查詢怪物與掉落",
+          "hint": "按 M 開啟地圖並切到「資訊」，勾選怪物查看分布與掉落物。",
+          "image": "assets/guide-media/play-travel-step-04-map-20261002.png",
+          "width": 1026,
+          "height": 797
         }
       ]
     },
@@ -89,16 +121,46 @@
       "note": "開孔器可能失敗並消耗，但不會損壞裝備或清除原有孔位；移除器使用後會消耗。",
       "chapters": [
         {
-          "name": "開啟孔位",
-          "hint": "確認裝備核心槽後使用開孔器；成功一次開一孔，最多三孔。"
+          "name": "確認核心槽",
+          "hint": "查看裝備說明中的「核心槽」，確認目前孔位與上限。",
+          "image": "assets/guide-media/play-core-step-01-slots-20261002.png",
+          "width": 1027,
+          "height": 798
         },
         {
-          "name": "裝入核心",
-          "hint": "每孔放入一顆核心，同一件裝備不能重複相同類別。"
+          "name": "開啟核心孔位",
+          "hint": "點選核心打洞器，再對裝備按右鍵；每次成功開一孔，最多三孔。",
+          "image": "assets/guide-media/play-core-step-02-drill-20261002.png",
+          "width": 1026,
+          "height": 797
         },
         {
-          "name": "移除核心",
-          "hint": "對裝備使用核心移除器，全部核心返回背包；無法只取下一顆。"
+          "name": "挑選核心",
+          "hint": "查看核心的類別與能力，挑選需要的加成。",
+          "image": "assets/guide-media/play-core-step-03-select-20261002.png",
+          "width": 1026,
+          "height": 797
+        },
+        {
+          "name": "鑲嵌並確認加成",
+          "hint": "將核心鑲嵌到已開啟的孔位；每孔一顆，同件裝備不能重複相同類別。",
+          "image": "assets/guide-media/play-core-step-04-insert-20261002.png",
+          "width": 1026,
+          "height": 798
+        },
+        {
+          "name": "使用核心移除器",
+          "hint": "點選核心移除器，再對裝備按右鍵，一次取下全部核心。",
+          "image": "assets/guide-media/play-core-step-05-remove-20261002.png",
+          "width": 1025,
+          "height": 795
+        },
+        {
+          "name": "確認核心返回背包",
+          "hint": "查看核心是否已回到背包，裝備開啟的孔位會保留。",
+          "image": "assets/guide-media/play-core-step-06-return-20261002.png",
+          "width": 1027,
+          "height": 801
         }
       ]
     },
@@ -110,16 +172,32 @@
       "note": "防爆不保證成功；觸發保護時會消耗材料與一條項鍊，並將強化等級歸零。",
       "chapters": [
         {
-          "name": "確認材料",
-          "hint": "一般磨石與護貝劑可強化至 +4；繼續強化需使用適用的進階材料。"
+          "name": "確認強化材料",
+          "hint": "武器使用磨石，防具使用護貝劑；一般材料可強化至 +4。",
+          "image": "assets/guide-media/play-enhancement-step-01-material-20261002.png",
+          "width": 1028,
+          "height": 798
         },
         {
-          "name": "準備保護",
-          "hint": "需要防爆時先穿戴防爆項鍊，再對裝備使用強化材料。"
+          "name": "強化並查看加值",
+          "hint": "對裝備使用適用的強化材料，查看成功訊息與裝備加值。",
+          "image": "assets/guide-media/play-enhancement-step-02-success-20261002.png",
+          "width": 1027,
+          "height": 798
         },
         {
-          "name": "檢查結果",
-          "hint": "查看裝備加值與能力；失敗可能降級、歸零或使裝備消失。"
+          "name": "穿戴防爆項鍊",
+          "hint": "進階強化前，可先穿戴防爆項鍊，防止觸發裝備消失的結果。",
+          "image": "assets/guide-media/play-enhancement-step-03-protect-20261002.png",
+          "width": 1022,
+          "height": 798
+        },
+        {
+          "name": "確認進階強化結果",
+          "hint": "進階強化也可能失敗；查看系統訊息與裝備加值，確認是否降級或歸零。",
+          "image": "assets/guide-media/play-enhancement-step-04-result-20261002.png",
+          "width": 1026,
+          "height": 796
         }
       ]
     },
@@ -131,16 +209,60 @@
       "note": "改造會消耗卡片；使用鎖定卡也會消耗。未鎖定的屬性不保證變得更好。",
       "chapters": [
         {
+          "name": "使用隨機改造卡",
+          "hint": "使用隨機屬性改造卡，開啟道具改造視窗。",
+          "image": "assets/guide-media/play-remodel-step-01-open-20261002.png",
+          "width": 1024,
+          "height": 799
+        },
+        {
           "name": "放入裝備",
-          "hint": "使用改造卡，放入裝備；勾選「維持原有屬性」以比較改造結果。"
+          "hint": "放入要改造的裝備，勾選「維持原有屬性」，以便比較新舊結果。",
+          "image": "assets/guide-media/play-remodel-step-02-equipment-20261002.png",
+          "width": 1028,
+          "height": 800
         },
         {
-          "name": "選擇保留項目",
-          "hint": "使用單項、雙重或三重鎖定卡，分別勾選 1、2 或 3 項屬性。"
+          "name": "執行改造",
+          "hint": "點「執行改造」，確認後按「是」。",
+          "image": "assets/guide-media/play-remodel-step-03-confirm-20261002.png",
+          "width": 1025,
+          "height": 801
         },
         {
-          "name": "執行並確認",
-          "hint": "執行改造；要採用新結果時，點「選取結果數值」並確認。"
+          "name": "比較並選取結果",
+          "hint": "比較左右兩側屬性；要採用新結果時，點「選取結果數值」。",
+          "image": "assets/guide-media/play-remodel-step-04-compare-20261002.png",
+          "width": 1027,
+          "height": 798
+        },
+        {
+          "name": "單項鎖定",
+          "hint": "放入單項鎖定卡，勾選 1 項要保留的屬性，再執行改造。",
+          "image": "assets/guide-media/play-remodel-step-05-lock-one-20261002.png",
+          "width": 1026,
+          "height": 797
+        },
+        {
+          "name": "雙重鎖定",
+          "hint": "放入雙重鎖定卡，可勾選 2 項屬性；未鎖定的項目會重新隨機。",
+          "image": "assets/guide-media/play-remodel-step-06-lock-two-20261002.png",
+          "width": 608,
+          "height": 630
+        },
+        {
+          "name": "三重鎖定",
+          "hint": "放入三重鎖定卡，可勾選 3 項屬性，保留後再改造其他項目。",
+          "image": "assets/guide-media/play-remodel-step-07-lock-three-20261002.png",
+          "width": 1025,
+          "height": 798
+        },
+        {
+          "name": "按住 Ctrl 查看數值範圍",
+          "hint": "在改造視窗按住 Ctrl，即可查看各項屬性的數值範圍。",
+          "image": "assets/guide-media/play-remodel-step-08-ctrl-range-20261002.png",
+          "width": 1025,
+          "height": 796
         }
       ]
     }
