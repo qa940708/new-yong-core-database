@@ -1,5 +1,5 @@
 {
-  "version": "collection-images-20261002",
+  "version": "item-shop-images-20261002",
   "updated": "2026-10-02",
   "features": [
     {
@@ -9,14 +9,37 @@
       "name": "道具商城",
       "alias": "線上商城",
       "location": "遊戲畫面中央下方的快捷功能列",
-      "summary": "使用商城幣購買道具，部分商品可預覽外觀。",
+      "summary": "瀏覽商城商品，確認價格與餘額後購買。",
       "steps": [
-        "開啟快捷列的「遊戲商城」。",
-        "依分類或名稱搜尋商品。",
-        "確認價格、數量與餘額後購買。"
+        "點擊畫面下方快捷列的「遊戲商城」圖示。",
+        "依分類或名稱搜尋商品，查看價格、庫存與右側預覽。",
+        "將商品加入下方購買欄，核對商品與總價後點「購買」，再按「是」確認。"
       ],
       "tips": [
-        "購買前請核對商品名稱與使用條件。"
+        "購買前請確認商品、數量與積分餘額。"
+      ],
+      "illustrations": [
+        {
+          "name": "開啟道具商城",
+          "hint": "點擊畫面下方快捷列的「遊戲商城」圖示。",
+          "image": "assets/guide-media/item-shop-step-01-open-20261002.png",
+          "width": 551,
+          "height": 578
+        },
+        {
+          "name": "挑選商品",
+          "hint": "依分類或名稱搜尋商品，查看價格、庫存與右側預覽。",
+          "image": "assets/guide-media/item-shop-step-02-browse-20261002.png",
+          "width": 1006,
+          "height": 517
+        },
+        {
+          "name": "確認購買",
+          "hint": "將商品加入下方購買欄，核對商品與總價後點「購買」，再按「是」確認。",
+          "image": "assets/guide-media/item-shop-step-03-confirm-20261002.png",
+          "width": 1008,
+          "height": 514
+        }
       ]
     },
     {
