@@ -118,3 +118,6 @@ a.control-link.req-name,a.control-link.name{background:none;border:0;padding:0;t
 .illustrated-image img{display:block;width:100%;height:auto;max-width:710px;object-fit:contain}.illustrated-image img[width="469"]{max-width:469px}
 .illustrated-image:hover{background:#21180f}.illustrated-image:focus-visible{outline:2px solid #e0b66b;outline-offset:-3px}
 @media(max-width:760px){.feature-illustrated{padding:18px}.illustrated-steps{grid-template-columns:1fr;gap:18px}.illustrated-copy{padding:18px}.illustrated-copy h3{font-size:20px}}
+
+/* Let a single illustrated step use the available reading width. */
+.illustrated-steps>li:only-child{grid-column:1/-1}

@@ -1,5 +1,5 @@
 {
-  "version": "item-shop-images-20261002",
+  "version": "feature-images-20261002",
   "updated": "2026-10-02",
   "features": [
     {
@@ -51,12 +51,27 @@
       "location": "遊戲畫面中央下方的快捷功能列",
       "summary": "查看每日、每週與每月的限時商品。",
       "steps": [
-        "開啟快捷列的「限時商城」。",
-        "選擇每日、每週或每月分類。",
-        "確認商品內容與重置時間後購買。"
+        "點擊畫面下方快捷列的「限時商店」圖示。",
+        "切換「每日／每週／每月」，查看商品與重置時間，再確認購買。"
       ],
       "tips": [
         "各分類依自己的週期更新。"
+      ],
+      "illustrations": [
+        {
+          "name": "開啟限時商城",
+          "hint": "點擊畫面下方快捷列的「限時商店」圖示。",
+          "image": "assets/guide-media/limited-shop-step-01-open-20261002.png",
+          "width": 312,
+          "height": 559
+        },
+        {
+          "name": "選擇商品週期",
+          "hint": "切換「每日／每週／每月」，查看商品與重置時間，再確認購買。",
+          "image": "assets/guide-media/limited-shop-step-02-period-20261002.png",
+          "width": 557,
+          "height": 488
+        }
       ]
     },
     {
@@ -116,10 +131,26 @@
       "location": "遊戲畫面中央下方的快捷功能列",
       "summary": "查看角色積分、遊玩時間與 PVP／PVE 戰鬥紀錄。",
       "steps": [
-        "開啟快捷列的「生活紀錄簿」。",
-        "查看角色統計或切換戰鬥紀錄。"
+        "點擊畫面下方快捷列的「生活紀錄簿」圖示。",
+        "左側查看積分、遊玩時間與連殺紀錄，右側查看 PVP／PVE 戰鬥統計。"
       ],
-      "tips": []
+      "tips": [],
+      "illustrations": [
+        {
+          "name": "開啟生活紀錄簿",
+          "hint": "點擊畫面下方快捷列的「生活紀錄簿」圖示。",
+          "image": "assets/guide-media/life-log-step-01-open-20261002.png",
+          "width": 351,
+          "height": 568
+        },
+        {
+          "name": "查看角色紀錄",
+          "hint": "左側查看積分、遊玩時間與連殺紀錄，右側查看 PVP／PVE 戰鬥統計。",
+          "image": "assets/guide-media/life-log-step-02-records-20261002.png",
+          "width": 778,
+          "height": 447
+        }
+      ]
     },
     {
       "id": "ranking",
@@ -128,12 +159,28 @@
       "name": "玩家排名",
       "alias": "排行榜",
       "location": "遊戲畫面中央下方的快捷功能列",
-      "summary": "依榜單、遊戲模式與職業查看玩家排名。",
+      "summary": "切換榜單並篩選職業，查看玩家排名。",
       "steps": [
-        "開啟快捷列的「玩家排名」。",
-        "選擇榜單，再設定模式與職業條件。"
+        "點擊畫面下方快捷列的「排行榜」圖示。",
+        "上方切換全部、擊殺、復活、富豪或組織榜單，左側可篩選職業。"
       ],
-      "tips": []
+      "tips": [],
+      "illustrations": [
+        {
+          "name": "開啟玩家排名",
+          "hint": "點擊畫面下方快捷列的「排行榜」圖示。",
+          "image": "assets/guide-media/ranking-step-01-open-20261002.png",
+          "width": 328,
+          "height": 566
+        },
+        {
+          "name": "切換榜單與職業",
+          "hint": "上方切換全部、擊殺、復活、富豪或組織榜單，左側可篩選職業。",
+          "image": "assets/guide-media/ranking-step-02-filter-20261002.png",
+          "width": 763,
+          "height": 434
+        }
+      ]
     },
     {
       "id": "boss-info",
@@ -144,11 +191,27 @@
       "location": "遊戲畫面中央下方的快捷功能列",
       "summary": "查詢王怪能力、掉落物、出沒地圖與重生時間。",
       "steps": [
-        "開啟快捷列的「王怪資訊」。",
-        "選擇王怪，查看右側資料與重生倒數。"
+        "點擊畫面下方快捷列的「BOSS資訊表」圖示。",
+        "從左側選擇王怪，查看能力、掉落物、出沒位置與重生資訊。"
       ],
       "tips": [
         "出現狀態以遊戲內即時資訊為準。"
+      ],
+      "illustrations": [
+        {
+          "name": "開啟王怪資訊",
+          "hint": "點擊畫面下方快捷列的「BOSS資訊表」圖示。",
+          "image": "assets/guide-media/boss-info-step-01-open-20261002.png",
+          "width": 421,
+          "height": 568
+        },
+        {
+          "name": "查看王怪資料",
+          "hint": "從左側選擇王怪，查看能力、掉落物、出沒位置與重生資訊。",
+          "image": "assets/guide-media/boss-info-step-02-details-20261002.png",
+          "width": 752,
+          "height": 519
+        }
       ]
     },
     {
@@ -158,16 +221,31 @@
       "name": "奧義系統",
       "alias": "奧義技能",
       "location": "遊戲畫面中央下方的快捷功能列",
-      "summary": "查看所屬職業的奧義技能、學習需求與效果。",
+      "summary": "查看奧義技能與學習需求，預覽施放效果。",
       "steps": [
-        "開啟快捷列的「奧義系統」。",
-        "選擇已開放的階段。",
-        "將滑鼠移到技能圖示，查看需求與效果。"
+        "點擊畫面下方快捷列的「奧義系統」圖示。",
+        "選擇已開放的奧義階段與技能，勾選「顯示技能預覽」查看施放效果。"
       ],
       "tips": [
         "目前開放階段以遊戲公告為準。"
       ],
-      "link": "../ougi/"
+      "link": "../ougi/",
+      "illustrations": [
+        {
+          "name": "開啟奧義系統",
+          "hint": "點擊畫面下方快捷列的「奧義系統」圖示。",
+          "image": "assets/guide-media/ougi-system-step-01-open-20261002.png",
+          "width": 432,
+          "height": 563
+        },
+        {
+          "name": "查看技能與預覽",
+          "hint": "選擇已開放的奧義階段與技能，勾選「顯示技能預覽」查看施放效果。",
+          "image": "assets/guide-media/ougi-system-step-02-preview-20261002.png",
+          "width": 618,
+          "height": 523
+        }
+      ]
     },
     {
       "id": "auto-potion",
@@ -177,14 +255,21 @@
       "location": "左上方 Q／W／E／A／S／D 快捷列旁的齒輪",
       "summary": "設定 HP、MP、SP 門檻，自動使用恢復道具。",
       "steps": [
-        "將恢復道具放入快捷列。",
-        "點擊快捷列旁的齒輪，設定補給百分比。",
-        "按下「開始」啟用。"
+        "將恢復道具放入快捷列，點齒輪設定 HP／MP／SP 門檻，再按「開始」。"
       ],
       "tips": [
         "請備妥恢復道具；戰鬥仍需手動操作。"
       ],
-      "icon": "assets/feature-icons/v2/auto-potion.png"
+      "icon": "assets/feature-icons/v2/auto-potion.png",
+      "illustrations": [
+        {
+          "name": "設定自動喝水",
+          "hint": "將恢復道具放入快捷列，點齒輪設定 HP／MP／SP 門檻，再按「開始」。",
+          "image": "assets/guide-media/auto-potion-step-01-settings-20261002.png",
+          "width": 619,
+          "height": 550
+        }
+      ]
     },
     {
       "id": "crafting",
@@ -211,14 +296,29 @@
       "location": "背包內的寵物卡，以及召喚後的「寵物」視窗",
       "summary": "召喚寵物，配置技能並查看飽滿度。",
       "steps": [
-        "使用背包內的寵物卡召喚寵物。",
-        "開啟寵物視窗，查看資料與飽滿度。",
-        "使用技能文書學習，再配置到 A／B 欄位。"
+        "在背包找到寵物卡，使用後即可召喚寵物。",
+        "開啟寵物視窗，查看飽滿度，並在 A／B 欄位配置已學會的技能。"
       ],
       "tips": [
         "技能與飼料的使用條件請查看道具說明。"
       ],
-      "icon": "assets/feature-icons/v2/pet-system.png"
+      "icon": "assets/feature-icons/v2/pet-system.png",
+      "illustrations": [
+        {
+          "name": "使用寵物卡",
+          "hint": "在背包找到寵物卡，使用後即可召喚寵物。",
+          "image": "assets/guide-media/pet-system-step-01-card-20261002.png",
+          "width": 238,
+          "height": 323
+        },
+        {
+          "name": "查看寵物與配置技能",
+          "hint": "開啟寵物視窗，查看飽滿度，並在 A／B 欄位配置已學會的技能。",
+          "image": "assets/guide-media/pet-system-step-02-skills-20261002.png",
+          "width": 568,
+          "height": 580
+        }
+      ]
     },
     {
       "id": "appearance",
@@ -228,14 +328,29 @@
       "location": "角色裝備視窗下方的「外觀」選項",
       "summary": "穿戴外觀道具，搭配自己的角色造型。",
       "steps": [
-        "開啟角色裝備視窗，切換「外觀」。",
-        "將外觀道具放入對應部位。",
-        "關閉視窗，確認角色造型。"
+        "開啟角色裝備視窗，點選下方的「外觀」。",
+        "將外觀道具放入對應部位，確認角色造型。"
       ],
       "tips": [
         "外觀道具僅供造型使用，沒有能力值加成。"
       ],
-      "icon": "assets/feature-icons/v2/appearance.png"
+      "icon": "assets/feature-icons/v2/appearance.png",
+      "illustrations": [
+        {
+          "name": "切換外觀欄位",
+          "hint": "開啟角色裝備視窗，點選下方的「外觀」。",
+          "image": "assets/guide-media/appearance-step-01-tab-20261002.png",
+          "width": 469,
+          "height": 517
+        },
+        {
+          "name": "穿戴外觀道具",
+          "hint": "將外觀道具放入對應部位，確認角色造型。",
+          "image": "assets/guide-media/appearance-step-02-equip-20261002.png",
+          "width": 459,
+          "height": 525
+        }
+      ]
     },
     {
       "id": "quest-guide",
@@ -245,14 +360,29 @@
       "location": "任務視窗，以及遊戲畫面右側的任務追蹤列",
       "summary": "追蹤任務，讓角色自動移動到目標地點。",
       "steps": [
-        "開啟任務視窗，勾選要追蹤的任務。",
-        "點擊畫面右側的任務目標，開始移動。",
-        "抵達後與 NPC 互動或繼續完成任務。"
+        "開啟任務視窗，勾選要追蹤的任務，目標會顯示在畫面右側。",
+        "選取右側追蹤的任務，再點「執行任務」，讓角色移動到目標地點。"
       ],
       "tips": [
-        "可按「停止行動」中止移動；任務仍需自行完成。"
+        "抵達後與 NPC 互動或繼續完成任務；引導不會代替你完成任務。"
       ],
-      "icon": "assets/feature-icons/v2/quest-guide.png"
+      "icon": "assets/feature-icons/v2/quest-guide.png",
+      "illustrations": [
+        {
+          "name": "勾選追蹤任務",
+          "hint": "開啟任務視窗，勾選要追蹤的任務，目標會顯示在畫面右側。",
+          "image": "assets/guide-media/quest-guide-step-01-track-20261002.png",
+          "width": 857,
+          "height": 542
+        },
+        {
+          "name": "執行任務引導",
+          "hint": "選取右側追蹤的任務，再點「執行任務」，讓角色移動到目標地點。",
+          "image": "assets/guide-media/quest-guide-step-02-execute-20261002.png",
+          "width": 860,
+          "height": 534
+        }
+      ]
     }
   ]
 }
