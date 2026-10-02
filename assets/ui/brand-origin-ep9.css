@@ -1,0 +1,4 @@
+/* Brand text shares the existing black and gold layout. */
+.crest-label strong{font-family:Georgia,"Times New Roman",serif;font-size:12px;line-height:1.5;letter-spacing:.12em;white-space:nowrap}
+.brand img[src*="yong-origin-ep9"],.brand-logo[src*="yong-origin-ep9"]{object-fit:contain;image-rendering:auto}
+@media(max-width:760px){.world-rail{gap:10px}.world-rail span:last-child{font-size:7px;letter-spacing:0}}
