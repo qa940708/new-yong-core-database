@@ -94,3 +94,15 @@ a.control-link.req-name,a.control-link.name{background:none;border:0;padding:0;t
 @media(max-width:760px){.archive-rail a{display:grid}.tools .control-link{min-height:29px}}
 
 .mainnav a.control-link{text-align:center}
+
+/* Compact feature explanations and play guides. */
+.feature-text-detail{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:36px;padding:28px;margin-top:24px;border:1px solid #594329;background:linear-gradient(130deg,#21180f,#110e0b)}
+.feature-text-detail h2{margin:8px 0 12px;font-size:28px}.feature-text-detail h3{margin:0 0 12px;font-size:17px;color:#eed6a8}
+.feature-text-summary{line-height:1.85;color:#c9bba5}.feature-text-detail .location{margin-top:20px}.feature-text-detail .steps{margin:0}
+.text-guide-note{margin:24px 0 0;padding:16px 18px;border-left:2px solid #bb873c;background:#251b11;color:#cabcaa;line-height:1.85;font-size:14px}
+.text-guide-note strong{display:block;color:#ebc889;margin-bottom:4px}.feature-text-detail .btn{margin-top:18px}
+.guide-text-card{display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding:26px;min-height:224px;text-align:left;background:linear-gradient(135deg,#21180f,#100e0c)}
+.text-guide-number{font:16px Georgia,serif;letter-spacing:.1em;color:#c79b52}.guide-text-card>strong{font-size:22px;color:#ead9b7}.guide-text-card p{margin:0;color:#bfb19b;line-height:1.8;font-size:15px}.text-guide-link{margin-top:auto;padding-top:8px;color:#e0b66b;font-size:13px}
+.text-guide-panel{margin-top:24px}.text-guide-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;padding:0;margin:0;list-style:none}.text-guide-steps li{padding:26px;border:1px solid #594329;background:linear-gradient(135deg,#21180f,#100e0c)}
+.text-guide-steps h2{font-size:21px;margin:14px 0 10px;color:#ead9b7}.text-guide-steps p{line-height:1.9;margin:0;color:#c5b8a3}
+@media(max-width:760px){.feature-text-detail,.text-guide-steps{grid-template-columns:1fr}.feature-text-detail{gap:24px;padding:20px}.guide-text-card{min-height:190px;padding:22px}.text-guide-steps li{padding:22px}.text-guide-steps h2{font-size:20px}}
