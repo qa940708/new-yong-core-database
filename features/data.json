@@ -1,5 +1,5 @@
 {
-  "version": "feature-images-20261002",
+  "version": "crafting-images-20261002",
   "updated": "2026-10-02",
   "features": [
     {
@@ -279,14 +279,29 @@
       "location": "遊戲畫面右下方功能列的工匠系統按鈕",
       "summary": "依配方消耗材料與遊戲幣，製作所需道具。",
       "steps": [
-        "從右下功能列開啟「工匠系統」。",
-        "選擇配方，核對材料、費用與成功率。",
-        "輸入數量並開始製作，再到背包確認結果。"
+        "點擊遊戲畫面右下方的「工匠系統」按鈕。",
+        "選擇配方，核對材料、成功率與費用；設定生產數量後按「開始製作」。"
       ],
       "tips": [
-        "材料、費用與成功率依配方而異。"
+        "材料不足時無法製作；材料、費用與成功率依配方而異。"
       ],
-      "icon": "assets/feature-icons/v2/crafting.png"
+      "icon": "assets/feature-icons/v2/crafting.png",
+      "illustrations": [
+        {
+          "name": "開啟工匠系統",
+          "hint": "點擊遊戲畫面右下方的「工匠系統」按鈕。",
+          "image": "assets/guide-media/crafting-step-01-open-20261002.png",
+          "width": 557,
+          "height": 604
+        },
+        {
+          "name": "選擇配方並製作",
+          "hint": "選擇配方，核對材料、成功率與費用；設定生產數量後按「開始製作」。",
+          "image": "assets/guide-media/crafting-step-02-craft-20261002.png",
+          "width": 576,
+          "height": 448
+        }
+      ]
     },
     {
       "id": "pet-system",
