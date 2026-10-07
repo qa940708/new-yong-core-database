@@ -1,0 +1,455 @@
+{
+  "version": 1,
+  "updated": "2026-10-07",
+  "currency": "TWD",
+  "supplies": [
+    {
+      "id": "remodel",
+      "name": "隨機屬性改造卡",
+      "short": "改造卡",
+      "unit": "張",
+      "icon": "/assets/topup/remodel.png"
+    },
+    {
+      "id": "single-lock",
+      "name": "隨機屬性鎖定卡",
+      "short": "單鎖卡",
+      "unit": "張",
+      "icon": "/assets/topup/single-lock.png"
+    },
+    {
+      "id": "double-lock",
+      "name": "隨機屬性雙重鎖定卡",
+      "short": "雙鎖卡",
+      "unit": "張",
+      "icon": "/assets/topup/double-lock.png"
+    },
+    {
+      "id": "triple-lock",
+      "name": "隨機屬性三重鎖定卡",
+      "short": "三鎖卡",
+      "unit": "張",
+      "icon": "/assets/topup/triple-lock.png"
+    },
+    {
+      "id": "protection",
+      "name": "防爆項鍊",
+      "short": "防爆項鍊",
+      "unit": "個",
+      "icon": "/assets/topup/protection.png"
+    },
+    {
+      "id": "anti-drop",
+      "name": "裝備防噴符咒",
+      "short": "防噴符咒",
+      "unit": "個",
+      "icon": "/assets/topup/anti-drop.png"
+    }
+  ],
+  "rewards": [
+    {
+      "id": "origin-companion",
+      "name": "起源同行者",
+      "category": "徽章",
+      "amount": 20000,
+      "description": "月門、山水與銀藍光影，記錄同行的起點。",
+      "icon": "/assets/topup/origin-companion.png",
+      "video": "/assets/topup/origin-companion-character-v2.mp4",
+      "poster": "/assets/topup/origin-companion-character-v2.webp",
+      "sourceVideo": "20261007_094847.mp4",
+      "videoWidth": 560,
+      "videoHeight": 420
+    },
+    {
+      "id": "nether-soul-eater",
+      "name": "幽冥・蝕魂套裝",
+      "category": "服飾",
+      "amount": 30000,
+      "description": "幽綠魂焰與鬼面骨甲交織的服飾外觀。",
+      "icon": "/assets/topup/nether-soul-eater.png",
+      "video": "/assets/topup/nether-soul-eater-character-v2.mp4",
+      "poster": "/assets/topup/nether-soul-eater-character-v2.webp",
+      "sourceVideo": "20261007_100532.mp4",
+      "videoWidth": 640,
+      "videoHeight": 480
+    },
+    {
+      "id": "inferno-dragon-aura",
+      "name": "焚天炎龍光圈",
+      "category": "光圈",
+      "amount": 50000,
+      "description": "環繞角色的橘金炎龍與熾熱火光。",
+      "icon": "/assets/topup/inferno-dragon-aura.png",
+      "video": "/assets/topup/inferno-dragon-aura-character-v2.mp4",
+      "poster": "/assets/topup/inferno-dragon-aura-character-v2.webp",
+      "sourceVideo": "20261007_100426.mp4",
+      "videoWidth": 672,
+      "videoHeight": 504
+    },
+    {
+      "id": "origin-radiance",
+      "name": "起源之耀",
+      "category": "徽章",
+      "amount": 100000,
+      "description": "星晶與環繞光軌，綻放起源之耀。",
+      "icon": "/assets/topup/origin-radiance.png",
+      "video": "/assets/topup/origin-radiance-character-v2.mp4",
+      "poster": "/assets/topup/origin-radiance-character-v2.webp",
+      "sourceVideo": "20261007_094948.mp4",
+      "videoWidth": 560,
+      "videoHeight": 420
+    },
+    {
+      "id": "frostbloom-wings",
+      "name": "霜華幻羽之翼",
+      "category": "翅膀",
+      "amount": 150000,
+      "description": "冰藍羽翼舒展，呈現輕盈的霜華光影。",
+      "icon": "/assets/topup/frostbloom-wings.png",
+      "video": "/assets/topup/frostbloom-wings-character-v2.mp4",
+      "poster": "/assets/topup/frostbloom-wings-character-v2.webp",
+      "sourceVideo": "20261007_095255.mp4",
+      "videoWidth": 672,
+      "videoHeight": 504
+    },
+    {
+      "id": "radiant-gold-dragon",
+      "name": "龍皇曜金聖龍",
+      "category": "坐騎",
+      "amount": 200000,
+      "description": "金色龍身與寬幅雙翼構成的龍皇坐騎。",
+      "icon": "/assets/topup/radiant-gold-dragon.png",
+      "video": "/assets/topup/radiant-gold-dragon-character-v2.mp4",
+      "poster": "/assets/topup/radiant-gold-dragon-character-v2.webp",
+      "sourceVideo": "20261007_095327.mp4",
+      "videoWidth": 672,
+      "videoHeight": 504
+    },
+    {
+      "id": "origin-glory",
+      "name": "起源榮耀",
+      "category": "徽章",
+      "amount": 300000,
+      "description": "冰龍、長劍與戰旗，凝聚起源榮耀。",
+      "icon": "/assets/topup/origin-glory.png",
+      "video": "/assets/topup/origin-glory-character-v2.mp4",
+      "poster": "/assets/topup/origin-glory-character-v2.webp",
+      "sourceVideo": "20261007_095006.mp4",
+      "videoWidth": 560,
+      "videoHeight": 420
+    },
+    {
+      "id": "abyssal-emperor",
+      "name": "冥皇・鎮獄套裝",
+      "category": "服飾",
+      "amount": 300000,
+      "description": "紫色冥焰與黑金重甲交織的服飾外觀。",
+      "icon": "/assets/topup/abyssal-emperor.png",
+      "video": "/assets/topup/abyssal-emperor-character-v2.mp4",
+      "poster": "/assets/topup/abyssal-emperor-character-v2.webp",
+      "sourceVideo": "20261007_100603.mp4",
+      "videoWidth": 640,
+      "videoHeight": 480
+    },
+    {
+      "id": "origin-legacy",
+      "name": "起源傳承",
+      "category": "徽章",
+      "amount": 500000,
+      "description": "學院、旗幟與銀白光環，延續起源傳承。",
+      "icon": "/assets/topup/origin-legacy.png",
+      "video": "/assets/topup/origin-legacy-character-v2.mp4",
+      "poster": "/assets/topup/origin-legacy-character-v2.webp",
+      "sourceVideo": "20261007_095024.mp4",
+      "videoWidth": 560,
+      "videoHeight": 420
+    },
+    {
+      "id": "nether-dragon-aura",
+      "name": "冥曜天龍幻環光圈",
+      "category": "光圈",
+      "amount": 500000,
+      "description": "紫藍龍影與流轉光效環繞角色。",
+      "icon": "/assets/topup/nether-dragon-aura.png",
+      "video": "/assets/topup/nether-dragon-aura-character-v2.mp4",
+      "poster": "/assets/topup/nether-dragon-aura-character-v2.webp",
+      "sourceVideo": "20261007_095210.mp4",
+      "videoWidth": 672,
+      "videoHeight": 504
+    },
+    {
+      "id": "celestial-wings",
+      "name": "天穹神翼",
+      "category": "翅膀",
+      "amount": 700000,
+      "description": "金藍交映的展翼輪廓與鮮明能量光效。",
+      "icon": "/assets/topup/celestial-wings.png",
+      "video": "/assets/topup/celestial-wings-character-v2.mp4",
+      "poster": "/assets/topup/celestial-wings-character-v2.webp",
+      "sourceVideo": "20261007_095238.mp4",
+      "videoWidth": 672,
+      "videoHeight": 504
+    },
+    {
+      "id": "origin-legend",
+      "name": "起源傳說",
+      "category": "徽章",
+      "amount": 1000000,
+      "description": "銀白聖樹、浮島與光環，承載起源傳說。",
+      "icon": "/assets/topup/origin-legend.png",
+      "video": "/assets/topup/origin-legend-character-v2.mp4",
+      "poster": "/assets/topup/origin-legend-character-v2.webp",
+      "sourceVideo": "20261007_095052.mp4",
+      "videoWidth": 560,
+      "videoHeight": 420
+    },
+    {
+      "id": "skyfire-demon-dragon",
+      "name": "龍皇焚天魔龍",
+      "category": "坐騎",
+      "amount": 1000000,
+      "description": "黑紅龍翼與烈焰色澤構成的龍皇坐騎。",
+      "icon": "/assets/topup/skyfire-demon-dragon.png",
+      "video": "/assets/topup/skyfire-demon-dragon-character-v2.mp4",
+      "poster": "/assets/topup/skyfire-demon-dragon-character-v2.webp",
+      "sourceVideo": "20261007_095347.mp4",
+      "videoWidth": 672,
+      "videoHeight": 504
+    }
+  ],
+  "tiers": [
+    {
+      "id": "1k",
+      "amount": 1000,
+      "label": "1K",
+      "icon": "/assets/topup/cumulative_topup_1k_box.png",
+      "quantities": {
+        "remodel": 10,
+        "single-lock": 4,
+        "double-lock": 0,
+        "triple-lock": 0,
+        "protection": 0,
+        "anti-drop": 0
+      },
+      "rewards": []
+    },
+    {
+      "id": "3k",
+      "amount": 3000,
+      "label": "3K",
+      "icon": "/assets/topup/cumulative_topup_3k_box.png",
+      "quantities": {
+        "remodel": 10,
+        "single-lock": 10,
+        "double-lock": 4,
+        "triple-lock": 0,
+        "protection": 0,
+        "anti-drop": 0
+      },
+      "rewards": []
+    },
+    {
+      "id": "5k",
+      "amount": 5000,
+      "label": "5K",
+      "icon": "/assets/topup/cumulative_topup_5k_box.png",
+      "quantities": {
+        "remodel": 10,
+        "single-lock": 0,
+        "double-lock": 5,
+        "triple-lock": 5,
+        "protection": 0,
+        "anti-drop": 0
+      },
+      "rewards": []
+    },
+    {
+      "id": "10k",
+      "amount": 10000,
+      "label": "10K",
+      "icon": "/assets/topup/cumulative_topup_10k_box.png",
+      "quantities": {
+        "remodel": 20,
+        "single-lock": 10,
+        "double-lock": 10,
+        "triple-lock": 5,
+        "protection": 1,
+        "anti-drop": 0
+      },
+      "rewards": []
+    },
+    {
+      "id": "20k",
+      "amount": 20000,
+      "label": "20K",
+      "icon": "/assets/topup/cumulative_topup_20k_box.png",
+      "quantities": {
+        "remodel": 30,
+        "single-lock": 20,
+        "double-lock": 20,
+        "triple-lock": 15,
+        "protection": 1,
+        "anti-drop": 1
+      },
+      "rewards": [
+        "origin-companion"
+      ]
+    },
+    {
+      "id": "30k",
+      "amount": 30000,
+      "label": "30K",
+      "icon": "/assets/topup/cumulative_topup_30k_box.png",
+      "quantities": {
+        "remodel": 20,
+        "single-lock": 20,
+        "double-lock": 25,
+        "triple-lock": 15,
+        "protection": 1,
+        "anti-drop": 1
+      },
+      "rewards": [
+        "nether-soul-eater"
+      ]
+    },
+    {
+      "id": "50k",
+      "amount": 50000,
+      "label": "50K",
+      "icon": "/assets/topup/cumulative_topup_50k_box.png",
+      "quantities": {
+        "remodel": 50,
+        "single-lock": 40,
+        "double-lock": 50,
+        "triple-lock": 20,
+        "protection": 3,
+        "anti-drop": 2
+      },
+      "rewards": [
+        "inferno-dragon-aura"
+      ]
+    },
+    {
+      "id": "100k",
+      "amount": 100000,
+      "label": "100K",
+      "icon": "/assets/topup/cumulative_topup_100k_box.png",
+      "quantities": {
+        "remodel": 50,
+        "single-lock": 40,
+        "double-lock": 60,
+        "triple-lock": 60,
+        "protection": 4,
+        "anti-drop": 4
+      },
+      "rewards": [
+        "origin-radiance"
+      ]
+    },
+    {
+      "id": "150k",
+      "amount": 150000,
+      "label": "150K",
+      "icon": "/assets/topup/cumulative_topup_150k_box.png",
+      "quantities": {
+        "remodel": 50,
+        "single-lock": 40,
+        "double-lock": 60,
+        "triple-lock": 60,
+        "protection": 4,
+        "anti-drop": 4
+      },
+      "rewards": [
+        "frostbloom-wings"
+      ]
+    },
+    {
+      "id": "200k",
+      "amount": 200000,
+      "label": "200K",
+      "icon": "/assets/topup/cumulative_topup_200k_box.png",
+      "quantities": {
+        "remodel": 50,
+        "single-lock": 40,
+        "double-lock": 60,
+        "triple-lock": 60,
+        "protection": 4,
+        "anti-drop": 4
+      },
+      "rewards": [
+        "radiant-gold-dragon"
+      ]
+    },
+    {
+      "id": "300k",
+      "amount": 300000,
+      "label": "300K",
+      "icon": "/assets/topup/cumulative_topup_300k_box.png",
+      "quantities": {
+        "remodel": 50,
+        "single-lock": 60,
+        "double-lock": 100,
+        "triple-lock": 80,
+        "protection": 4,
+        "anti-drop": 4
+      },
+      "rewards": [
+        "origin-glory",
+        "abyssal-emperor"
+      ]
+    },
+    {
+      "id": "500k",
+      "amount": 500000,
+      "label": "500K",
+      "icon": "/assets/topup/cumulative_topup_500k_box.png",
+      "quantities": {
+        "remodel": 100,
+        "single-lock": 120,
+        "double-lock": 200,
+        "triple-lock": 160,
+        "protection": 8,
+        "anti-drop": 8
+      },
+      "rewards": [
+        "origin-legacy",
+        "nether-dragon-aura"
+      ]
+    },
+    {
+      "id": "700k",
+      "amount": 700000,
+      "label": "700K",
+      "icon": "/assets/topup/cumulative_topup_700k_box.png",
+      "quantities": {
+        "remodel": 100,
+        "single-lock": 120,
+        "double-lock": 200,
+        "triple-lock": 160,
+        "protection": 8,
+        "anti-drop": 8
+      },
+      "rewards": [
+        "celestial-wings"
+      ]
+    },
+    {
+      "id": "1m",
+      "amount": 1000000,
+      "label": "1M",
+      "icon": "/assets/topup/cumulative_topup_1m_box.png",
+      "quantities": {
+        "remodel": 100,
+        "single-lock": 120,
+        "double-lock": 200,
+        "triple-lock": 160,
+        "protection": 8,
+        "anti-drop": 8
+      },
+      "rewards": [
+        "origin-legend",
+        "skyfire-demon-dragon"
+      ]
+    }
+  ]
+}

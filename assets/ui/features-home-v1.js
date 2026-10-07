@@ -37,6 +37,7 @@ document.querySelectorAll('[data-filter]').forEach(button=>button.addEventListen
  document.getElementById('feature-count').textContent='顯示 '+visible+' 項功能';
 }));
 const entries=[
+ {"title": "累積儲值獎勵", "terms": "累儲 禮盒 改造卡 徽章 服飾 光圈 翅膀 坐騎 焚天炎龍 起源傳說", "href": "/topup/", "type": "獎勵介紹"},
  ...data.features.map(f=>({title:f.name,terms:f.summary+' '+f.description,feature:f.id,type:'功能說明'})),
  {title:'開放職業',terms:'劍道 格鬥 弓箭 氣功 終極 超能 忍者',href:'#classes',type:'本頁章節'},
  {title:'裝備進度',terms:'武器 特武 強化精靈弓 防具 A級精鋼 修羅燄',href:'#equipment',type:'本頁章節'},
