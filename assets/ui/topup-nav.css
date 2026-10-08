@@ -1,4 +1,4 @@
 /* Seven database sections. */
-.mainnav{grid-template-columns:repeat(7,minmax(0,1fr))}
+.mainnav{grid-template-columns:repeat(8,minmax(0,1fr))}
 @media(max-width:680px){html{scroll-padding-top:240px}.mainnav{grid-template-columns:repeat(4,minmax(0,1fr))}.mainnav a{letter-spacing:0;font-size:11px}.mainnav a small{font-size:7px;letter-spacing:0}}
 @media(min-width:981px){.origin-portals{grid-template-columns:repeat(4,minmax(0,1fr))}}

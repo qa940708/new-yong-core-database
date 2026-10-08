@@ -1,0 +1,132 @@
+{
+  "updated": "2026-10-08",
+  "individual": [
+    100,
+    80,
+    60,
+    50,
+    40,
+    35,
+    30,
+    25,
+    20,
+    15
+  ],
+  "guild": [
+    30,
+    25,
+    20,
+    15,
+    10
+  ],
+  "products": [
+    {
+      "id": "m_box",
+      "name": "M箱",
+      "category": "補給",
+      "quantity": 5,
+      "price": 100,
+      "icon": "/assets/pvp/icons/supply_box.png",
+      "description": "Madness Time 幸運箱"
+    },
+    {
+      "id": "p_box",
+      "name": "P箱",
+      "category": "補給",
+      "quantity": 5,
+      "price": 100,
+      "icon": "/assets/pvp/icons/supply_box.png",
+      "description": "POWER UP 命運箱"
+    },
+    {
+      "id": "e_box",
+      "name": "E箱",
+      "category": "補給",
+      "quantity": 5,
+      "price": 100,
+      "icon": "/assets/pvp/icons/supply_box.png",
+      "description": "EXP TIME 命運箱"
+    },
+    {
+      "id": "remodel",
+      "name": "基礎改造卡",
+      "category": "改造",
+      "quantity": 3,
+      "price": 100,
+      "icon": "/assets/pvp/icons/remodel.png",
+      "description": "裝備屬性改造"
+    },
+    {
+      "id": "single-lock",
+      "name": "單鎖卡",
+      "category": "改造",
+      "quantity": 2,
+      "price": 160,
+      "icon": "/assets/pvp/icons/single-lock.png",
+      "description": "隨機屬性鎖定卡"
+    },
+    {
+      "id": "double-lock",
+      "name": "雙鎖卡",
+      "category": "改造",
+      "quantity": 1,
+      "price": 500,
+      "icon": "/assets/pvp/icons/double-lock.png",
+      "description": "隨機屬性雙重鎖定卡"
+    },
+    {
+      "id": "triple-lock",
+      "name": "三鎖卡",
+      "category": "改造",
+      "quantity": 1,
+      "price": 1000,
+      "icon": "/assets/pvp/icons/triple-lock.png",
+      "description": "隨機屬性三重鎖定卡"
+    },
+    {
+      "id": "protection",
+      "name": "防爆項鍊",
+      "category": "強化",
+      "quantity": 1,
+      "price": 1500,
+      "icon": "/assets/pvp/icons/protection.png",
+      "description": "強化防爆道具"
+    },
+    {
+      "id": "azure_thunder",
+      "name": "蒼雷戰魂服飾禮盒",
+      "category": "外觀",
+      "quantity": 1,
+      "price": 5000,
+      "icon": "/assets/pvp/icons/azure_thunder.png",
+      "description": "服飾"
+    },
+    {
+      "id": "lightning_aura",
+      "name": "閃電光圈",
+      "category": "外觀",
+      "quantity": 1,
+      "price": 7500,
+      "icon": "/assets/pvp/icons/lightning_aura.png",
+      "description": "光圈"
+    },
+    {
+      "id": "kagura_flags",
+      "name": "神樂御祭之旗",
+      "category": "外觀",
+      "quantity": 1,
+      "price": 10000,
+      "icon": "/assets/pvp/icons/kagura_flags.png",
+      "description": "翅膀"
+    },
+    {
+      "id": "tribal_boar",
+      "name": "部落衝鋒豬",
+      "category": "外觀",
+      "quantity": 1,
+      "price": 15000,
+      "icon": "/assets/pvp/icons/tribal_boar.png",
+      "description": "坐騎"
+    }
+  ]
+}
