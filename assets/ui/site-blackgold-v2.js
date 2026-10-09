@@ -5,7 +5,7 @@ const assetURL=path=>new URL(String(path||'').replace(/^\/+/,''),SITE_ROOT).href
 const uiVersion='blackgold-v2';
 async function getJSON(path){const c=new AbortController();const timer=setTimeout(()=>c.abort(),15000);try{const r=await fetch(assetURL(path),{cache:'no-cache',signal:c.signal});if(!r.ok)throw new Error('HTTP '+r.status+' '+path);return await r.json();}finally{clearTimeout(timer);}}
 async function start(){
-const [manifest,col,features,ougi,guideData]=await Promise.all([getJSON('cores/manifest.json'),getJSON('collections.json'),getJSON('features/data.json?v=auto-hunt-images-20261006'),getJSON('ougi/data.json?v=ougi-balance-20260916'),getJSON('assets/ui/guide-data-v1.json?v=play-guide-images-20261002')]);
+const [manifest,col,features,ougi,guideData]=await Promise.all([getJSON('cores/manifest.json'),getJSON('collections.json'),getJSON('features/data.json?v=auto-hunt-patrol-20261009'),getJSON('ougi/data.json?v=ougi-balance-20260916'),getJSON('assets/ui/guide-data-v1.json?v=play-guide-images-20261002')]);
 if(!Array.isArray(manifest.files)||!Array.isArray(col.collections)||!Array.isArray(features.features)||!Array.isArray(ougi.departments)||!Array.isArray(guideData.guides))throw new Error('資料結構不完整');
 const chunks=await Promise.all(manifest.files.map(f=>getJSON('cores/'+f)));
 const coreData=chunks.flatMap(c=>c.cores);
