@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-10-07",
+  "updated": "2026-10-10",
   "currency": "TWD",
   "supplies": [
     {
@@ -210,11 +210,11 @@
       "amount": 1000000,
       "description": "黑紅龍翼與烈焰色澤構成的龍皇坐騎。",
       "icon": "/assets/topup/skyfire-demon-dragon.png",
-      "video": "/assets/topup/skyfire-demon-dragon-character-v2.mp4",
-      "poster": "/assets/topup/skyfire-demon-dragon-character-v2.webp",
-      "sourceVideo": "20261007_095347.mp4",
-      "videoWidth": 672,
-      "videoHeight": 504
+      "video": "/assets/topup/skyfire-demon-dragon-20261010.mp4",
+      "poster": "/assets/topup/skyfire-demon-dragon-20261010.webp",
+      "sourceVideo": "20261010_192940.mp4",
+      "videoWidth": 496,
+      "videoHeight": 662
     }
   ],
   "tiers": [
