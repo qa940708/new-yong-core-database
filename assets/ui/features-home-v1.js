@@ -36,7 +36,7 @@ document.querySelectorAll('[data-filter]').forEach(button=>button.addEventListen
  let visible=0;document.querySelectorAll('[data-category]').forEach(card=>{card.hidden=button.dataset.filter!=='all'&&card.dataset.category!==button.dataset.filter;if(!card.hidden)visible++;});
  document.getElementById('feature-count').textContent='顯示 '+visible+' 項功能';
 }));
-const entries=[
+const entries=[{title:"疑難雜症彙整",terms:"ERROR CODE 5 14001 SXSTRACE FINISH 亂碼 防毒 白名單 隔離 搜狗 QQ 拼音 VPN 中文 安裝 登入 連線",href:"/faq/",type:"玩家支援"},
  {title:"PVP 戰場",terms:"組織 擊殺 排行榜 榮譽水晶 蒼雷戰魂 閃電光圈 神樂御祭之旗 部落衝鋒豬",href:"/pvp/",type:"活動介紹"},
  {"title": "累積儲值獎勵", "terms": "累儲 禮盒 改造卡 徽章 服飾 光圈 翅膀 坐騎 焚天炎龍 起源傳說", "href": "/topup/", "type": "獎勵介紹"},
  ...data.features.map(f=>({title:f.name,terms:f.summary+' '+f.description,feature:f.id,type:'功能說明'})),
