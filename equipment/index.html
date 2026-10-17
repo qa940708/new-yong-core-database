@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ORIGIN｜裝備改造查詢</title><meta name="description" content="輸入道具名稱，查看改造與掉落的屬性設定、數值範圍和區間設定。"><link rel="stylesheet" href="styles.css?v=2"><script defer src="data.js"></script><script defer src="app.js?v=2"></script></head>
+<body>
+<header class="top"><a class="brand" href="index.html" aria-label="ORIGIN 裝備改造查詢"><img src="origin-logo.png" alt="ORIGIN YONG EPISODE IX ONLINE"></a><span class="edition">裝備資料庫 <b>設定核對預覽</b></span><time>2026.10.17</time></header>
+<main>
+<section class="intro"><div><div class="eyebrow">EQUIPMENT REFERENCE</div><h1>每一件裝備，<br class="mobile">都有跡可查。</h1><p>輸入道具名稱，查閱改造屬性、可取得的數值與區間設定。</p></div><div class="data-count"><strong id="linkedCount">—</strong><span>筆道具已連結設定</span></div></section>
+<aside class="notice"><span class="notice-icon">i</span><div><strong>目前為設定資料預覽，尚未作為正式機率公告。</strong><p>下方 Rate 與區間百分比是編輯器設定值。最終屬性出現率、指定數值機率及多屬性組合機率，仍須核對伺服器抽選規則。</p></div></aside>
+<section class="search-card" aria-label="搜尋道具"><label for="query">道具名稱或編號</label><div class="search-row"><div class="search-input"><span aria-hidden="true">⌕</span><input id="query" type="search" placeholder="例如：特皮龍刀、龍刀，或 1/10" autocomplete="off"></div><label class="sr-only" for="category">裝備類型</label><select id="category"><option value="all">全部類型</option><option value="weapon">武器</option><option value="armor">防具</option><option value="other">其他</option></select><button id="searchButton" class="primary">查詢道具 <span aria-hidden="true">→</span></button></div><div class="search-hint">支援部分名稱搜尋；同名道具可用編號辨識。<label class="check"><input id="linkedOnly" type="checkbox">僅顯示已連結設定的道具</label></div></section>
+<div class="workspace"><aside class="results-panel"><div class="panel-heading"><h2>搜尋結果</h2><span id="resultCount" aria-live="polite"></span></div><div id="results" class="result-list"></div><button id="moreButton" class="more" hidden>再顯示 80 筆</button></aside>
+<section id="detail" class="detail" aria-live="polite"></section></div>
+<section class="how"><h2>如何閱讀這些數值？</h2><div class="how-grid"><article><span>01</span><h3>先選擇裝備</h3><p>搜尋名稱後，確認道具編號。不同裝備即使名稱相同，也可能使用不同設定。</p></article><article><span>02</span><h3>區分改造與掉落</h3><p>改造後的屬性與掉落時的屬性可能不同。兩套設定可在同一件道具中切換查看。</p></article><article><span>03</span><h3>展開數值區間</h3><p>同一屬性可能分成數個區間。區間的 5% 設定不代表整次改造有 5% 機率取得最高值。</p></article></div></section>
+
+</main></body></html>
