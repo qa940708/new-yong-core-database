@@ -57,5 +57,8 @@ $('searchButton').addEventListener('click',()=>{clearTimeout(debounce);search(tr
 $('category').addEventListener('change',()=>search());$('linkedOnly').addEventListener('change',()=>search());
 $('moreButton').addEventListener('click',()=>{limit+=80;renderResults();});
 $('linkedCount').textContent=num(D.meta.stats.matched);
-const hash=new URLSearchParams(location.hash.slice(1));if(byId.has(hash.get('item'))){selected=hash.get('item');$('query').value=byId.get(selected).name||selected;}if(['Drop','Remodel'].includes(hash.get('mode')))mode=hash.get('mode');
+const incomingQuery=new URLSearchParams(location.search).get('q');
+if(incomingQuery?.trim())$('query').value=incomingQuery;
+const hash=new URLSearchParams(location.hash.slice(1));if(!incomingQuery?.trim()&&byId.has(hash.get('item'))){selected=hash.get('item');$('query').value=byId.get(selected).name||selected;}if(['Drop','Remodel'].includes(hash.get('mode')))mode=hash.get('mode');
 search();
+
