@@ -44,6 +44,8 @@ files on all existing branches using fast-forward commits, and dispatches the fi
 backup. It will not force-update a branch.
 
 Do not paste tokens or OAuth secrets into chat or commit the local configuration.
+You can download the Desktop client's JSON from Google and supply its local path with
+-OAuthClientFile. The installer reads it privately without displaying its contents.
 If authorization is revoked, rerun with -ReconnectGoogle. For another repository you own:
 
     powershell -NoProfile -ExecutionPolicy Bypass -File .github/backup/setup.ps1 -Repository qa940708/OTHER_REPOSITORY
