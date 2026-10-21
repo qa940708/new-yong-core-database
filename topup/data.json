@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-10-10",
+  "updated": "2026-10-21",
   "currency": "TWD",
   "supplies": [
     {
@@ -37,13 +37,6 @@
       "short": "防爆項鍊",
       "unit": "個",
       "icon": "/assets/topup/protection.png"
-    },
-    {
-      "id": "anti-drop",
-      "name": "裝備防噴符咒",
-      "short": "防噴符咒",
-      "unit": "個",
-      "icon": "/assets/topup/anti-drop.png"
     }
   ],
   "rewards": [
@@ -228,8 +221,7 @@
         "single-lock": 4,
         "double-lock": 0,
         "triple-lock": 0,
-        "protection": 0,
-        "anti-drop": 0
+        "protection": 0
       },
       "rewards": []
     },
@@ -243,8 +235,7 @@
         "single-lock": 10,
         "double-lock": 4,
         "triple-lock": 0,
-        "protection": 0,
-        "anti-drop": 0
+        "protection": 0
       },
       "rewards": []
     },
@@ -258,8 +249,7 @@
         "single-lock": 0,
         "double-lock": 5,
         "triple-lock": 5,
-        "protection": 0,
-        "anti-drop": 0
+        "protection": 0
       },
       "rewards": []
     },
@@ -273,8 +263,7 @@
         "single-lock": 10,
         "double-lock": 10,
         "triple-lock": 5,
-        "protection": 1,
-        "anti-drop": 0
+        "protection": 1
       },
       "rewards": []
     },
@@ -288,8 +277,7 @@
         "single-lock": 20,
         "double-lock": 20,
         "triple-lock": 15,
-        "protection": 1,
-        "anti-drop": 1
+        "protection": 1
       },
       "rewards": [
         "origin-companion"
@@ -305,8 +293,7 @@
         "single-lock": 20,
         "double-lock": 25,
         "triple-lock": 15,
-        "protection": 1,
-        "anti-drop": 1
+        "protection": 1
       },
       "rewards": [
         "nether-soul-eater"
@@ -322,8 +309,7 @@
         "single-lock": 40,
         "double-lock": 50,
         "triple-lock": 20,
-        "protection": 3,
-        "anti-drop": 2
+        "protection": 3
       },
       "rewards": [
         "inferno-dragon-aura"
@@ -339,8 +325,7 @@
         "single-lock": 40,
         "double-lock": 60,
         "triple-lock": 60,
-        "protection": 4,
-        "anti-drop": 4
+        "protection": 4
       },
       "rewards": [
         "origin-radiance"
@@ -356,8 +341,7 @@
         "single-lock": 40,
         "double-lock": 60,
         "triple-lock": 60,
-        "protection": 4,
-        "anti-drop": 4
+        "protection": 4
       },
       "rewards": [
         "frostbloom-wings"
@@ -373,8 +357,7 @@
         "single-lock": 40,
         "double-lock": 60,
         "triple-lock": 60,
-        "protection": 4,
-        "anti-drop": 4
+        "protection": 4
       },
       "rewards": [
         "radiant-gold-dragon"
@@ -390,8 +373,7 @@
         "single-lock": 60,
         "double-lock": 100,
         "triple-lock": 80,
-        "protection": 4,
-        "anti-drop": 4
+        "protection": 4
       },
       "rewards": [
         "origin-glory",
@@ -408,8 +390,7 @@
         "single-lock": 120,
         "double-lock": 200,
         "triple-lock": 160,
-        "protection": 8,
-        "anti-drop": 8
+        "protection": 8
       },
       "rewards": [
         "origin-legacy",
@@ -426,8 +407,7 @@
         "single-lock": 120,
         "double-lock": 200,
         "triple-lock": 160,
-        "protection": 8,
-        "anti-drop": 8
+        "protection": 8
       },
       "rewards": [
         "celestial-wings"
@@ -443,8 +423,7 @@
         "single-lock": 120,
         "double-lock": 200,
         "triple-lock": 160,
-        "protection": 8,
-        "anti-drop": 8
+        "protection": 8
       },
       "rewards": [
         "origin-legend",
