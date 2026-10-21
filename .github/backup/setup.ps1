@@ -1,6 +1,7 @@
 param(
     [string]$Repository = 'qa940708/new-yong-core-database',
     [string]$FolderId = '18VBKe_iQVWt2KbtjUxyYd1b5NgTbSsUe',
+    [string]$OAuthClientFile,
     [switch]$ReconnectGoogle
 )
 
@@ -62,8 +63,15 @@ function Invoke-Rclone {
 
 try {
     Write-Host 'Sign in to the GitHub account that owns the repository.'
-    & $gh auth status --hostname github.com 2>$null | Out-Null
-    if ($LASTEXITCODE -ne 0) {
+    $statusPreference = $ErrorActionPreference
+    try {
+        $ErrorActionPreference = 'Continue'
+        & $gh auth status --hostname github.com 2>$null | Out-Null
+        $authStatus = $LASTEXITCODE
+    } finally {
+        $ErrorActionPreference = $statusPreference
+    }
+    if ($authStatus -ne 0) {
         & $gh auth login --hostname github.com --web --git-protocol https --scopes workflow
         if ($LASTEXITCODE -ne 0) { throw 'GitHub sign-in did not complete.' }
     }
@@ -81,9 +89,17 @@ try {
         Write-Host 'https://console.cloud.google.com/apis/credentials'
         Write-Host 'Enable Google Drive API and publish the OAuth consent configuration to Production.'
         Write-Host 'The README beside this script has the detailed steps. Use the Google account with write access to your folder.'
-        $clientId = (Read-Host 'Google OAuth client ID').Trim()
-        $secureClientSecret = Read-Host 'Google OAuth client secret (hidden)' -AsSecureString
-        $clientSecret = (New-Object System.Net.NetworkCredential('', $secureClientSecret)).Password
+        if ($OAuthClientFile) {
+            $clientDocument = Get-Content -LiteralPath $OAuthClientFile -Raw | ConvertFrom-Json
+            if (-not $clientDocument.installed) { throw 'The OAuth JSON must be for a Desktop app.' }
+            $clientId = $clientDocument.installed.client_id
+            $clientSecret = $clientDocument.installed.client_secret
+            $clientDocument = $null
+        } else {
+            $clientId = (Read-Host 'Google OAuth client ID').Trim()
+            $secureClientSecret = Read-Host 'Google OAuth client secret (hidden)' -AsSecureString
+            $clientSecret = (New-Object System.Net.NetworkCredential('', $secureClientSecret)).Password
+        }
         if ($clientId -notmatch '^[A-Za-z0-9_.-]+\.apps\.googleusercontent\.com$' -or
             [string]::IsNullOrWhiteSpace($clientSecret) -or $clientSecret -match '[\r\n]') {
             throw 'Invalid OAuth client credentials.'
@@ -138,7 +154,8 @@ try {
             message = 'Add verified whole-repository Google Drive backups'
             tree = $tree.sha; parents = @($branch.commit.sha)
         }
-        $refRoute = "repos/" + $Repository + '/git/refs/heads/' + [Uri]::EscapeDataString($branch.name)
+        $encodedBranch = ($branch.name.Split('/') | ForEach-Object { [Uri]::EscapeDataString($_) }) -join '/'
+        $refRoute = "repos/" + $Repository + '/git/refs/heads/' + $encodedBranch
         Invoke-GitHubApi $refRoute 'PATCH' @{ sha = $commit.sha; force = $false } | Out-Null
         Write-Host "Installed backup workflow on $($branch.name)."
     }
