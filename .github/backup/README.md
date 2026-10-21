@@ -20,9 +20,19 @@ Drive to a chat application does not grant an Actions runner access.
    existing destination folder. The commands fix their destination to the folder ID;
    this is a path restriction, not an OAuth permission boundary.
 5. Create an **OAuth client ID**, application type **Desktop app**.
-6. Publish the consent configuration to **Production**. Testing mode can expire the
-   authorization after seven days. If Google displays an unverified-app prompt,
-   verify that the project and client belong to you.
+6. Complete **Branding** before publishing. For this owner's deployment, use:
+
+   - Application home page: https://yongorigindata.online/backup-app/
+   - Application privacy policy link: https://yongorigindata.online/backup-app/privacy.html
+   - Application terms of service link: https://yongorigindata.online/backup-app/terms.html
+   - Authorized domain: yongorigindata.online
+
+   Save Branding, then return to **Audience** and publish to **Production**. A disabled
+   Publish app button can indicate incomplete Branding links even when the starred
+   name and email fields are filled. Another operator must provide accurate pages
+   on their own domain. Testing mode can expire authorization after seven days.
+   If Google displays an unverified-app prompt, verify that the project and client
+   belong to you. Personal use does not normally require submitting for verification.
 7. Run the installer in PowerShell from this checkout:
 
        powershell -NoProfile -ExecutionPolicy Bypass -File .github/backup/setup.ps1

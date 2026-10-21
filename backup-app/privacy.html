@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="How GitHub Drive Backup accesses, uses, stores, and shares data when saving repository archives to Google Drive.">
+  <title>Privacy policy | GitHub Drive Backup</title>
+  <link rel="canonical" href="https://yongorigindata.online/backup-app/privacy.html">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <header><a href="./">GitHub Drive Backup</a></header>
+  <main id="main">
+    <p class="eyebrow">GitHub Drive Backup</p>
+    <h1>Privacy policy</h1>
+    <p class="date">Updated 22 October 2026</p>
+    <p>This notice describes the personal backup utility operated by <a href="https://github.com/qa940708">qa940708</a>. It covers the backup workflow and its Google Drive authorization.</p>
+    <h2>Data accessed and its purpose</h2>
+    <p>The utility reads the configured GitHub repository's committed files, history, references, release metadata, and release assets to create a backup archive.</p>
+    <p>Through the Google Drive API, the uploader accesses file and folder identifiers, names, metadata, and uploaded backup contents. It uses this data to locate the selected backup destination, create folders, upload archives, check uploaded bytes, and record successful verification. Setup also writes, checks, and deletes a temporary test file.</p>
+    <h2>Google Drive permission</h2>
+    <p>The utility requests <code>https://www.googleapis.com/auth/drive</code> to work with the owner's existing destination folder. This permission technically allows access to read, create, change, and delete Drive files. The uploader is configured to operate inside the selected backup folder; that configuration is a path restriction rather than a folder-specific Google authorization.</p>
+    <h2>Credential storage</h2>
+    <p>The OAuth client credentials and access and refresh tokens are stored locally in a directory restricted to the Windows user and system, and in an encrypted GitHub Actions repository secret. A workflow runner loads a temporary credential file to perform the upload and removes it when the backup process finishes. The uploader does not add its credential configuration to the backup archive.</p>
+    <h2>Where data is processed and shared</h2>
+    <p>GitHub Actions processes the repository data and temporary upload credentials while running the backup. Google Drive stores the resulting archives and processes the Drive API requests. Access also depends on the owner's repository permissions and Drive sharing settings.</p>
+    <p>The utility uses Google data only to carry out the requested backup and verification. It does not sell Google user data or use it for advertising or model training. This documentation site adds no analytics scripts or tracking cookies; its hosting provider may process ordinary web request logs.</p>
+    <h2>Retention and deletion</h2>
+    <p>Each successful run creates a separate backup. There is no automatic deletion policy. The owner controls how long archives remain and can delete them directly in Google Drive. Local setup credentials and the GitHub Actions secret remain until the owner removes or replaces them.</p>
+    <h2>Stop access</h2>
+    <p>The owner can disable the backup workflow in GitHub, remove its Actions secret, and revoke this app from <a href="https://myaccount.google.com/connections">Google Account connections</a>. Revoking access stops future authorized API operations; existing archives remain until deleted by the owner.</p>
+    <h2>Contact and changes</h2>
+    <p>Use the support email displayed on the app's Google consent screen or contact <a href="https://github.com/qa940708">qa940708</a> about this utility or its data handling. This page will be updated if the utility's data practices change.</p>
+  </main>
+  <footer><nav aria-label="App information"><a href="./">App homepage</a><a href="terms.html">Terms of use</a><a href="https://github.com/qa940708/new-yong-core-database/tree/main/.github/backup">Source code</a></nav></footer>
+</body>
+</html>
