@@ -229,7 +229,8 @@ export const RESTORE = [
 ].join('\n') + '\n';
 
 export async function createArchive({ source, repository, stage, label, event = {},
-  fallbackSha = '', env = gitEnvironment(), writeReleases = async () => [] }) {
+  fallbackSha = '', env = gitEnvironment(), writeReleases = async () => [],
+  restoreInstructions = RESTORE }) {
   validateRepository(repository);
   assert(/^[A-Za-z0-9_-]+$/.test(label), 'Invalid backup label.');
   const content = path.join(stage, 'content');
@@ -263,14 +264,14 @@ export async function createArchive({ source, repository, stage, label, event = 
     capturedCommits: captured, refs, lfsObjects, releaseFiles,
   };
   await fs.writeFile(path.join(content, 'manifest.json'), JSON.stringify(manifest, null, 2) + '\n');
-  await fs.writeFile(path.join(content, 'RESTORE.txt'), RESTORE);
+  await fs.writeFile(path.join(content, 'RESTORE.txt'), restoreInstructions);
   const archive = path.join(payload, 'repository.tar.gz');
   command('tar', ['-czf', archive, '-C', content, '.']);
   command('tar', ['-tzf', archive]); // Validate the completed archive before upload.
   const sha256 = await hashFile(archive);
   const bytes = (await fs.stat(archive)).size;
   await fs.writeFile(path.join(payload, 'SHA256SUMS'), sha256 + '  repository.tar.gz\n');
-  await fs.writeFile(path.join(payload, 'RESTORE.txt'), RESTORE);
+  await fs.writeFile(path.join(payload, 'RESTORE.txt'), restoreInstructions);
   return { payload, archive, sha256, bytes, manifest };
 }
 
@@ -315,7 +316,7 @@ export async function main(args = process.argv.slice(2), environment = process.e
     assert(token, 'BACKUP_GITHUB_TOKEN is missing.');
     assert(/^[A-Za-z0-9_-]{10,}$/.test(folderId), 'GDRIVE_FOLDER_ID is missing or invalid.');
     assert(environment.GDRIVE_RCLONE_CONFIG?.trim(),
-      'Drive is not configured. Run .github/backup/setup.ps1 to authorize Drive and set the Actions secret.');
+      'Drive is not configured. Use .github/backup/setup-local.ps1 for Google Drive for desktop backups.');
   }
   const stage = await fs.mkdtemp(path.join(os.tmpdir(), 'github-drive-backup-'));
   try {
