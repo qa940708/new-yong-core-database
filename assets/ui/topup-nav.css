@@ -1,5 +1,5 @@
 /* Shared database navigation and the equipment lookup entry. */
-.mainnav{grid-template-columns:repeat(10,minmax(0,1fr))}
+.mainnav{grid-template-columns:repeat(11,minmax(0,1fr))}
 .mainnav a{letter-spacing:.02em}
 .mainnav a.equipment-nav,nav[aria-label="資料庫導覽"] a.equipment-nav{color:#d9f6ff;background:linear-gradient(145deg,#245c79,#15354f);box-shadow:inset 0 -3px #81ddff}
 .mainnav a.equipment-nav small{color:#9bdef6;letter-spacing:0}
@@ -21,5 +21,8 @@
 @media(max-width:680px){html{scroll-padding-top:200px}.mainnav{grid-template-columns:repeat(5,minmax(0,1fr))}.mainnav a{letter-spacing:0;font-size:10px;padding:12px 1px;white-space:normal}.mainnav a small{display:none}.equipment-shortcut{grid-template-columns:1fr;gap:16px;padding:18px;margin:16px 0 20px}.equipment-shortcut h2{font-size:23px}.equipment-shortcut-form button{padding:11px 13px}.equipment-shortcut p{font-size:12px}}
 @media(max-width:360px){.mainnav a{font-size:9px}}
 @media(min-width:981px){.origin-portals{grid-template-columns:repeat(4,minmax(0,1fr))}}
-.brand-row+nav.mainnav{grid-template-columns:repeat(10,minmax(0,1fr))}
+.brand-row+nav.mainnav{grid-template-columns:repeat(11,minmax(0,1fr))}
 @media(max-width:980px){.brand-row+nav.mainnav{grid-template-columns:repeat(5,minmax(0,1fr))!important}}
+/* Game download entry. */
+.mainnav a.download-nav,nav[aria-label="資料庫導覽"] a.download-nav{color:#ffe6b5;background:linear-gradient(145deg,#3c3426,#272820);box-shadow:inset 0 -3px #d5b574}.mainnav a.download-nav small{color:#d8c59f;letter-spacing:.04em}.mainnav a.download-nav:hover{background:#4a3d2b;color:#fff3da}.download-shortcut{display:flex;justify-content:space-between;align-items:center;gap:26px;margin:20px 0;padding:25px 28px;border:1px solid #9bcada;border-left:4px solid #a9ebff;border-radius:8px;background:linear-gradient(115deg,#1d4055,#13283b 75%)}.download-shortcut>div>span{color:#a7e1f4;font-size:10px;letter-spacing:.16em}.download-shortcut h2{color:#eff9ff;font-size:26px;line-height:1.5;margin:6px 0}.download-shortcut p{color:#b5cede;font-size:13px;margin:0}.download-shortcut-actions{display:flex;flex-direction:column;align-items:center;gap:9px;flex-shrink:0}.download-shortcut .download-cta{display:inline-flex;align-items:center;gap:26px;padding:13px 24px;border:1px solid #b2efff;border-radius:4px;background:#9ae4ff;color:#0b2c40;font-weight:700;font-size:15px}.download-shortcut .download-cta:hover{background:#c6f2ff}.download-shortcut .download-guide-link{color:#b1e6fa;font-size:12px}.download-shortcut a:focus-visible{outline:2px solid #e4f8ff;outline-offset:4px}@media(max-width:680px){.download-shortcut{align-items:stretch;flex-direction:column;gap:18px;padding:20px;margin:16px 0}.download-shortcut h2{font-size:23px}.download-shortcut-actions{align-items:stretch;text-align:center}.download-shortcut .download-cta{justify-content:center}.mainnav a.download-nav{grid-column:span 2}}
+@media(max-width:680px){.mainnav,.brand-row+nav.mainnav{grid-template-columns:repeat(4,minmax(0,1fr))!important}}
