@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="canonical" href="https://yongorigindata.online/monsters/">
+  <title>怪物圖鑑｜YONG ORIGIN 玩家資料庫</title>
+  <meta name="description" content="YONG ORIGIN 怪物圖鑑：查詢怪物能力、基礎經驗、外觀與出沒地點。">
+  <link rel="icon" href="assets/icon-64.png"><link rel="stylesheet" href="assets/style.css">
+  <script defer src="assets/data.js"></script><script defer src="assets/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#catalogue">跳至怪物圖鑑</a>
+  <header class="site-header">
+    <div class="brand-row wrap">
+      <a class="brand-label" href="https://yongorigindata.online/">YONG ORIGIN EP9<span>PLAYER DATABASE</span></a>
+      <a class="logo" href="https://yongorigindata.online/" aria-label="返回 YONG ORIGIN 資訊站"><img src="assets/wordmark.webp" alt="ORIGIN YONG EPISODE IX ONLINE" width="180" height="79"></a>
+      <a class="back-link" href="https://yongorigindata.online/">← <span>返回資訊站</span></a>
+    </div>
+    <nav class="main-nav wrap" aria-label="網站導覽">
+      <a href="https://yongorigindata.online/features/">功能導覽</a>
+      <a href="https://yongorigindata.online/equipment/">裝備改造查詢</a>
+      <a href="/monsters/" aria-current="page">怪物圖鑑</a>
+      <a href="https://yongorigindata.online/">核心圖鑑</a>
+      <a href="https://yongorigindata.online/collections/">收藏圖鑑</a>
+      <a href="https://yongorigindata.online/guide/overview.html">遊玩指南</a>
+    </nav>
+  </header>
+  <main class="wrap" id="catalogue">
+    <section class="page-intro" aria-labelledby="page-title">
+      <div class="intro-copy"><div class="eyebrow"><span></span> FIELD GUIDE / MONSTER ARCHIVE</div><h1 id="page-title">怪物圖鑑<span>知己知彼，再踏上旅途。</span></h1><p>從校園到洞區，查找怪物的能力、經驗與出沒地點。</p></div>
+      <div class="intro-counts"><div><strong>254</strong><span>收錄怪物</span></div><div><strong>56</strong><span>出沒地圖</span></div></div>
+    </section>
+    <div class="preview-note"><span class="preview-badge">怪物圖鑑</span><span>收錄指定地圖中的怪物，可依出沒地點與等級查詢。</span></div>
+    <form id="filters" class="filter-bar" role="search" aria-label="搜尋怪物">
+      <label class="search-field"><span class="sr-only">搜尋怪物名稱或地圖</span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input id="search" type="search" placeholder="搜尋怪物或地圖，例如：俗辣、聖門學院…" autocomplete="off"></label>
+      <label class="select-field"><span>出沒地圖</span><select id="map-filter"><option value="">所有地圖</option></select></label>
+      <label class="select-field level-filter"><span>怪物等級</span><select id="level-filter"><option value="">全部等級</option><option value="1-20">Lv. 1–20</option><option value="21-40">Lv. 21–40</option><option value="41-60">Lv. 41–60</option><option value="61-100">Lv. 61–100</option><option value="101-150">Lv. 101–150</option><option value="151-200">Lv. 151–200</option><option value="201-300">Lv. 201–300</option><option value="301-500">Lv. 301–500</option><option value="501-9999">Lv. 501 以上</option><option value="0-0">Lv. 0</option></select></label>
+      <label class="select-field sort-field"><span>排序</span><select id="sort-filter"><option value="default">預設順序</option><option value="level-asc">等級由低到高</option><option value="level-desc">等級由高到低</option><option value="exp-desc">經驗由高到低</option><option value="name">名稱排序</option></select></label><button class="reset" id="reset" type="button">重設篩選</button>
+    </form>
+    <div class="filter-meta"><span id="filter-summary" aria-live="polite"></span><span>僅收錄指定地圖</span><input type="checkbox" id="located-only" hidden></div><noscript><p>請啟用 JavaScript，才能搜尋與查看怪物圖鑑。</p></noscript><div class="catalogue-layout">
+      <aside class="monster-rail" aria-label="怪物清單"><div class="rail-heading"><h2>怪物清單</h2><span id="result-count" aria-live="polite"></span></div><div class="monster-list" id="monster-list"></div><button type="button" id="load-more" class="load-more" hidden>顯示更多</button><div class="rail-footer"><span class="status-dot"></span> 點選怪物查看詳細資料</div></aside>
+      <section class="detail-panel" id="detail-panel" aria-label="怪物詳細資料"></section>
+    </div>
+    <section class="empty-panel" id="empty-panel" hidden><div class="empty-symbol">⌕</div><h2>找不到符合的怪物</h2><p>試試部分名稱，或調整地圖與等級篩選。</p><button type="button" id="empty-reset">清除篩選，查看全部怪物</button></section>
+    <div class="data-note"><span>資料日期 <b>2026.10.27</b></span><p>經驗值列出基礎設定，實際獲得依遊戲加成。僅列出本圖鑑收錄的出沒地點，實際開放以遊戲公告為準。</p></div>
+  </main>
+  <footer class="wrap site-footer"><span>YONG ORIGIN EP9 <small>玩家資料庫</small></span><span>每一次相遇，都為冒險留下紀錄。</span></footer>
+  <dialog id="image-dialog" aria-labelledby="image-title"><div class="dialog-head"><h2 id="image-title">怪物外觀</h2><button type="button" id="close-image" aria-label="關閉外觀預覽">×</button></div><img id="large-image" alt=""><p>遊戲原始模型・靜態外觀預覽</p></dialog>
+  <div class="sr-only" id="announcement" role="status" aria-live="polite"></div>
+</body>
+</html>
