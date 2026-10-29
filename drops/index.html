@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>道具掉落查詢｜YONG ORIGIN 玩家資料庫</title>
+  <meta name="description" content="輸入 YONG ORIGIN 道具名稱，查詢掉落怪物與出沒地圖，快速找到打寶目的地。">
+  <link rel="canonical" href="https://yongorigindata.online/drops/">
+  <link rel="icon" href="/assets/brand/origin-ice/icon-64.png">
+  <link rel="stylesheet" href="/monsters/assets/style.css">
+  <link rel="stylesheet" href="assets/style.css?v=20261029">
+  <script defer src="assets/search.js?v=20261029"></script>
+  <script defer src="assets/app.js?v=20261029"></script>
+</head>
+<body>
+  <a class="skip-link" href="#lookup">跳至道具查詢</a>
+  <header class="site-header">
+    <div class="brand-row wrap">
+      <a class="brand-label" href="/features/">YONG ORIGIN EP9<span>PLAYER DATABASE</span></a>
+      <a class="logo" href="/features/" aria-label="返回資訊站"><img src="/assets/brand/origin-ice/wordmark.webp" alt="ORIGIN YONG EPISODE IX ONLINE" width="180" height="79"></a>
+      <a class="back-link" href="/features/">← <span>返回資訊站</span></a>
+    </div>
+    <nav class="main-nav wrap" aria-label="網站導覽">
+      <a href="/features/">功能導覽</a><a href="/equipment/">裝備改造查詢</a><a href="/monsters/">怪物圖鑑</a><a href="/drops/" aria-current="page">道具掉落查詢</a><a href="/">核心圖鑑</a><a href="/collections/">收藏圖鑑</a><a href="/guide/overview.html">遊玩指南</a>
+    </nav>
+  </header>
+  <main class="wrap" id="lookup">
+    <section class="drop-intro" aria-labelledby="page-title">
+      <div class="eyebrow"><span></span> ITEM DROP / FIELD GUIDE</div>
+      <h1 id="page-title">這件道具，<em>去哪裡打？</em></h1>
+      <p>輸入道具名稱，從掉落怪物找到你的下一個目的地。</p>
+      <a class="intro-related" href="/monsters/">探索怪物圖鑑 <span aria-hidden="true">↗</span></a>
+    </section>
+    <form class="drop-search" id="search-form" role="search" aria-label="道具掉落查詢">
+      <label class="field-title" for="item-query">想找什麼道具？</label>
+      <div class="search-line">
+        <div class="query-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input id="item-query" type="search" placeholder="輸入完整或部分名稱，例如：核心、靈珠…" autocomplete="off" maxlength="120" aria-describedby="search-hint"></div>
+        <label class="type-field"><span class="sr-only">物品類別</span><select id="item-type"><option value="">全部物品</option></select></label>
+        <button class="search-submit" id="search-submit" type="submit" disabled>載入資料中…</button>
+      </div>
+      <div class="search-bottom"><p id="search-hint">支援部分名稱搜尋，選擇結果即可查看怪物與地圖。</p><button type="button" id="clear-search" class="text-button" hidden>清除搜尋</button></div>
+    </form>
+    <div id="load-error" class="load-error" role="alert" hidden><strong>資料暫時無法載入</strong><p>請確認網路連線，稍後再試。</p><button type="button" id="retry-load">重新載入</button></div>
+    <section class="start-panel" id="start-panel" aria-label="查詢說明">
+      <div class="start-symbol" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="m13 20 19-10 19 10v24L32 54 13 44ZM13 20l19 10 19-10M32 30v24M23 15l19 10"/><circle cx="46" cy="43" r="10"/><path d="m53 51 7 7"/></svg></div>
+      <h2>先有目標，再出發。</h2><p>在上方輸入道具名稱，<br class="mobile-only">我們幫你找出已知的掉落地點。</p>
+      <div class="search-steps"><span><b>01</b> 搜尋道具</span><i aria-hidden="true">→</i><span><b>02</b> 找到怪物</span><i aria-hidden="true">→</i><span><b>03</b> 前往地圖</span></div>
+    </section>
+    <section class="no-results" id="no-results" hidden><h2>找不到符合名稱的道具</h2><p>試試較短的關鍵字，或將類別切換為「全部物品」。</p></section>
+    <div class="drop-workspace" id="drop-workspace" hidden>
+      <aside class="item-rail" aria-label="道具搜尋結果"><div class="rail-heading"><h2>搜尋結果</h2><span id="result-count" aria-live="polite"></span></div><div class="item-results" id="item-results"></div><button type="button" id="more-items" class="load-more" hidden>顯示更多道具</button></aside>
+      <section class="drop-detail" id="drop-detail" aria-label="道具掉落來源"></section>
+    </div>
+    <div class="drop-data-note"><span>資料更新 <b>2026.10.29</b></span><p>僅列出本資料庫收錄地圖中的已知怪物掉落。任務、商店、合成、活動獎勵與寶箱內容不在此查詢範圍；實際取得方式以遊戲內資訊為準。</p></div>
+    <noscript><p class="load-error">請啟用 JavaScript，才能使用道具掉落查詢。</p></noscript>
+  </main>
+  <footer class="wrap site-footer"><span>YONG ORIGIN EP9 <small>玩家資料庫</small></span><span>帶著目標，出發打寶。</span></footer>
+  <div id="announcement" class="sr-only" role="status" aria-live="polite"></div>
+</body>
+</html>
