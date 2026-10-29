@@ -86,7 +86,7 @@
     $('load-error').hidden=true; $('search-submit').disabled=true; $('search-submit').textContent='載入資料中…';
     const controller=new AbortController(), timeout=setTimeout(()=>controller.abort(),20000);
     try {
-      const response=await fetch('assets/data.json?v=20261029',{signal:controller.signal});
+      const response=await fetch('assets/data.json?v=20261029-map55',{signal:controller.signal});
       if (!response.ok) throw new Error('HTTP '+response.status);
       const data=await response.json();
       if (!Array.isArray(data.items) || !Array.isArray(data.monsters)) throw new Error('資料格式不正確');
