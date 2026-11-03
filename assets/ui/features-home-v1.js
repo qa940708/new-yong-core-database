@@ -38,7 +38,7 @@ document.querySelectorAll('[data-filter]').forEach(button=>button.addEventListen
 }));
 const entries=[{title:"道具掉落查詢",terms:"物品 道具 裝備 掉落 打寶 來源 怪物 地圖 核心 靈珠",href:"/drops/",type:"掉落查詢"},{title:"怪物圖鑑",terms:"怪物 能力值 HP MP SP 等級 經驗值 外觀 圖片 出沒 地圖 重生",href:"/monsters/",type:"怪物查詢"},{title:"裝備改造查詢",terms:"裝備 武器 防具 道具 改造 機率 屬性 數值 範圍",href:"/equipment/",type:"裝備查詢"},{title:"疑難雜症彙整",terms:"ERROR CODE 5 14001 SXSTRACE FINISH 亂碼 防毒 白名單 隔離 搜狗 QQ 拼音 VPN 中文 安裝 登入 連線",href:"/faq/",type:"玩家支援"},
  {title:"PVP 戰場",terms:"組織 擊殺 排行榜 榮譽水晶 蒼雷戰魂 閃電光圈 神樂御祭之旗 部落衝鋒豬",href:"/pvp/",type:"活動介紹"},
- {"title": "累積儲值獎勵", "terms": "累儲 禮盒 改造卡 徽章 服飾 光圈 翅膀 坐騎 焚天炎龍 起源傳說", "href": "/topup/", "type": "獎勵介紹"},
+ {"title": "累積贊助獎勵", "terms": "累儲 贊助 累積贊助 禮盒 改造卡 徽章 服飾 光圈 翅膀 坐騎 焚天炎龍 起源傳說", "href": "/topup/", "type": "獎勵介紹"},
  ...data.features.map(f=>({title:f.name,terms:f.summary+' '+f.description,feature:f.id,type:'功能說明'})),
  {title:'開放職業',terms:'劍道 格鬥 弓箭 氣功 終極 超能 忍者',href:'#classes',type:'本頁章節'},
  {title:'裝備進度',terms:'武器 特武 強化精靈弓 防具 A級精鋼 修羅燄',href:'#equipment',type:'本頁章節'},
