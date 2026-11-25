@@ -1,0 +1,32 @@
+/* Scoped global navigation. Original controls remain hidden for legacy scripts. */
+[data-yo-legacy="header"],body>.world-rail{display:none!important}
+#yo-site-header,#yo-site-header *{box-sizing:border-box}
+#yo-site-header{position:relative;z-index:80;width:100%;max-width:none;margin:0;padding:0;background:#11151f;border:0;border-bottom:1px solid #363741;color:#e3dfd5;font:14px/1.5 "Microsoft JhengHei","PingFang TC",sans-serif;letter-spacing:0;text-align:left}
+#yo-site-header .yo-header-inner{max-width:1280px;min-height:87px;padding:10px 28px;margin:auto;display:flex;align-items:center;gap:24px}
+#yo-site-header a{color:#e3dfd5;text-decoration:none;text-shadow:none;box-shadow:none;background:none;border:0;border-radius:0;transition:color .16s}
+#yo-site-header .yo-brand{display:flex;align-items:center;gap:17px;flex:none;padding:0;margin:0}
+#yo-site-header .yo-brand img{width:142px;height:62px;max-width:none;object-fit:contain;filter:none}
+#yo-site-header .yo-brand>span{border-left:1px solid #4d4950;padding-left:17px;white-space:nowrap;font-size:14px;color:#ddd0b2}
+#yo-site-header .yo-brand small{display:block;font-size:9px;letter-spacing:1.6px;color:#8e8f9b;margin-top:4px}
+#yo-site-header .yo-navigation{position:static;display:flex;flex:1;justify-content:center;gap:4px;width:auto;margin:0;padding:0;overflow:visible;isolation:auto;background:none;border:0;box-shadow:none}
+#yo-site-header .yo-nav-group{position:relative;flex:none;margin:0;padding:0;background:none;border:0;color:inherit}
+#yo-site-header .yo-nav-group>summary{display:flex;align-items:center;gap:4px;cursor:pointer;list-style:none;margin:0;padding:13px 10px;font-size:14px;white-space:nowrap;border-radius:4px;color:#bec0ca;font-weight:400;user-select:none}
+#yo-site-header summary::-webkit-details-marker{display:none}
+#yo-site-header .yo-nav-group>summary svg{width:13px;height:13px;transition:transform .16s;color:#777b8e}
+#yo-site-header .yo-nav-group[open]>summary,#yo-site-header .yo-nav-group>summary:hover,#yo-site-header .yo-current>summary{color:#ead6ad;background:#ffffff05}
+#yo-site-header .yo-nav-group[open]>summary svg{transform:rotate(180deg)}
+#yo-site-header .yo-nav-panel{position:absolute;top:calc(100% + 9px);left:-16px;width:292px;padding:16px;background:#1b1e29;border:1px solid #55505b;border-top:2px solid #b9a576;border-radius:0 0 6px 6px;box-shadow:0 16px 40px #0009}
+#yo-site-header .yo-nav-group:last-child .yo-nav-panel{left:auto;right:0}
+#yo-site-header .yo-nav-panel>p{margin:0 9px 10px;color:#9c92aa;font-size:12px}
+#yo-site-header .yo-nav-panel>a{display:block;padding:9px 10px;border-radius:3px;line-height:1.5}
+#yo-site-header .yo-nav-panel>a:hover,#yo-site-header .yo-nav-panel>a:focus-visible{background:#aaa0d617;color:#eedbb7}
+#yo-site-header .yo-nav-panel strong{display:block;font-size:14px;font-weight:500}
+#yo-site-header .yo-nav-panel small{display:block;font-size:12px;color:#9295a6;margin-top:2px;white-space:normal}
+#yo-site-header .yo-download{display:flex;align-items:center;gap:8px;flex:none;border:1px solid #786a50;background:#b19a6420;padding:9px 13px;border-radius:3px;color:#ead5a8;font-size:13px;white-space:nowrap}
+#yo-site-header .yo-download:hover{background:#c5a96a30;color:#fff2d7}
+#yo-site-header svg{display:block;width:18px;height:18px;flex:none}
+#yo-site-header .yo-menu-toggle{display:none;background:none;border:1px solid #494653;color:#e3d8bd;border-radius:3px;min-width:40px;min-height:40px;padding:10px;cursor:pointer}
+#yo-site-header :focus-visible{outline:2px solid #bfabd7;outline-offset:3px}
+@media(max-width:1150px){#yo-site-header .yo-brand>span{display:none}#yo-site-header .yo-header-inner{gap:15px;padding-inline:22px}}
+@media(max-width:800px){#yo-site-header .yo-header-inner{flex-wrap:wrap;gap:12px;padding:7px 18px;min-height:76px}#yo-site-header .yo-brand img{width:128px;height:56px}#yo-site-header .yo-menu-toggle{display:block;order:3}#yo-site-header .yo-download{margin-left:auto;order:2}#yo-site-header .yo-navigation{display:none;order:4;flex-basis:100%;flex-direction:column;gap:0;padding-bottom:12px}#yo-site-header.yo-menu-open .yo-navigation{display:flex}#yo-site-header .yo-nav-group>summary{padding:13px 6px;justify-content:space-between;border-bottom:1px solid #ffffff0b;font-size:15px}#yo-site-header .yo-nav-panel{position:static;width:auto;border:0;border-left:1px solid #887354;margin:8px 3px 12px;padding:8px 12px;border-radius:0;box-shadow:none}#yo-site-header .yo-nav-group:last-child .yo-nav-panel{left:auto;right:auto}}
+@media(prefers-reduced-motion:reduce){#yo-site-header *{transition:none!important}}

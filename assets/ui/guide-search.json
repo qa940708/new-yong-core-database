@@ -1,0 +1,200 @@
+[
+  {
+    "title": "下載與安裝",
+    "url": "/downloads/",
+    "description": "完整主程式、安裝步驟與準備事項",
+    "category": "新手入門"
+  },
+  {
+    "title": "初入校園",
+    "url": "/guide/",
+    "description": "新手裝備、補給與起步方向",
+    "category": "新手入門"
+  },
+  {
+    "title": "操作與地圖",
+    "url": "/guide/travel.html",
+    "description": "快捷鍵、移動與交通",
+    "category": "新手入門"
+  },
+  {
+    "title": "入門指南總覽",
+    "url": "/guide/overview.html",
+    "description": "依順序認識遊戲的六篇指南",
+    "category": "新手入門"
+  },
+  {
+    "title": "道具掉落",
+    "url": "/drops/",
+    "description": "查找掉落怪物與出沒地圖",
+    "category": "資料查詢"
+  },
+  {
+    "title": "怪物圖鑑",
+    "url": "/monsters/",
+    "description": "能力、等級與分布地點",
+    "category": "資料查詢"
+  },
+  {
+    "title": "裝備改造查詢",
+    "url": "/equipment/",
+    "description": "裝備屬性與改造數值範圍",
+    "category": "資料查詢"
+  },
+  {
+    "title": "核心圖鑑",
+    "url": "/",
+    "description": "核心能力、來源與收藏用途",
+    "category": "資料查詢"
+  },
+  {
+    "title": "收藏圖鑑",
+    "url": "/collections/",
+    "description": "收藏組合、需求核心與加成",
+    "category": "資料查詢"
+  },
+  {
+    "title": "奧義技能",
+    "url": "/ougi/",
+    "description": "職業、階段與技能數值",
+    "category": "資料查詢"
+  },
+  {
+    "title": "收藏登錄",
+    "url": "/guide/collection.html",
+    "description": "收集核心與登錄收藏",
+    "category": "系統教學"
+  },
+  {
+    "title": "核心鑲嵌",
+    "url": "/guide/core.html",
+    "description": "裝備插槽與核心使用方式",
+    "category": "系統教學"
+  },
+  {
+    "title": "裝備強化",
+    "url": "/guide/enhancement.html",
+    "description": "磨石、護貝劑與強化流程",
+    "category": "系統教學"
+  },
+  {
+    "title": "隨機改造",
+    "url": "/guide/remodel.html",
+    "description": "改造卡、隨機屬性與鎖定",
+    "category": "系統教學"
+  },
+  {
+    "title": "工匠合成",
+    "url": "/features/tutorials/?feature=crafting#feature-detail",
+    "description": "材料需求與製作步驟",
+    "category": "系統教學"
+  },
+  {
+    "title": "自動掛打",
+    "url": "/features/tutorials/?feature=auto-hunt#feature-detail",
+    "description": "範圍、技能與掛打時間",
+    "category": "系統教學"
+  },
+  {
+    "title": "全部系統教學",
+    "url": "/features/tutorials/",
+    "description": "商城、寵物、外觀與更多功能",
+    "category": "系統教學"
+  },
+  {
+    "title": "幻藏祭・第二彈",
+    "url": "/festival/",
+    "description": "神兵降臨、獎池與保底兌換",
+    "category": "活動專區"
+  },
+  {
+    "title": "幻藏祭・第一彈",
+    "url": "/festival/season-1/",
+    "description": "獄龍系列與歷屆內容",
+    "category": "活動專區"
+  },
+  {
+    "title": "PVP 戰場",
+    "url": "/pvp/",
+    "description": "開放狀態、組織排名與獎勵",
+    "category": "活動專區"
+  },
+  {
+    "title": "累積贊助",
+    "url": "/topup/",
+    "description": "各階段門檻與完整獎勵",
+    "category": "活動專區"
+  },
+  {
+    "title": "疑難排解",
+    "url": "/faq/",
+    "description": "安裝、登入與遊戲執行問題",
+    "category": "常見問題"
+  },
+  {
+    "title": "重新查看安裝教學",
+    "url": "/downloads/",
+    "description": "確認下載與安裝步驟",
+    "category": "常見問題"
+  },
+  {
+    "title": "官方網站",
+    "url": "https://yongorigin.com/",
+    "description": "官方消息與聯絡入口",
+    "category": "常見問題"
+  },
+  {
+    "title": "自動喝水",
+    "url": "/features/tutorials/?feature=auto-potion#feature-detail",
+    "description": "查看遊戲內功能與操作教學",
+    "category": "系統教學"
+  },
+  {
+    "title": "任務引導",
+    "url": "/features/tutorials/?feature=quest-guide#feature-detail",
+    "description": "查看遊戲內功能與操作教學",
+    "category": "系統教學"
+  },
+  {
+    "title": "王怪資訊",
+    "url": "/features/tutorials/?feature=boss-info#feature-detail",
+    "description": "查看遊戲內功能與操作教學",
+    "category": "系統教學"
+  },
+  {
+    "title": "寵物系統",
+    "url": "/features/tutorials/?feature=pet-system#feature-detail",
+    "description": "查看遊戲內功能與操作教學",
+    "category": "系統教學"
+  },
+  {
+    "title": "外觀系統",
+    "url": "/features/tutorials/?feature=appearance#feature-detail",
+    "description": "查看遊戲內功能與操作教學",
+    "category": "系統教學"
+  },
+  {
+    "title": "道具商城",
+    "url": "/features/tutorials/?feature=item-shop#feature-detail",
+    "description": "查看遊戲內功能與操作教學",
+    "category": "系統教學"
+  },
+  {
+    "title": "限時商城",
+    "url": "/features/tutorials/?feature=limited-shop#feature-detail",
+    "description": "查看遊戲內功能與操作教學",
+    "category": "系統教學"
+  },
+  {
+    "title": "玩家排名",
+    "url": "/features/tutorials/?feature=ranking#feature-detail",
+    "description": "查看遊戲內功能與操作教學",
+    "category": "系統教學"
+  },
+  {
+    "title": "生活紀錄簿",
+    "url": "/features/tutorials/?feature=life-log#feature-detail",
+    "description": "查看遊戲內功能與操作教學",
+    "category": "系統教學"
+  }
+]
